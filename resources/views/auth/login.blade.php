@@ -1,47 +1,50 @@
-<x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login y Register - Guadalupana</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="{{ asset('asset/login.css') }}" rel="stylesheet">
+</head>
+<body>
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
-
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+<main>
+    <div class="contenedor__todo">
+        <div class="caja__trasera">
+            <div class="caja__trasera-login">
+                <h3>¿Ya tienes una cuenta?</h3>
+                <p>Inicia sesión para entrar en la página</p>
+                <a href="{{ route('login') }}"><button id="btn__iniciar-sesion">Iniciar Sesión</button></a>
+            </div>
+            <div class="caja__trasera-register">
+                <h3>¿Aún no tienes una cuenta?</h3>
+                <p>Regístrate para que puedas iniciar sesión</p>
+                <a href="{{ route('register') }}"><button id="btn__registrarse">Regístrarse</button></a>
+            </div>
         </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+        <div class="contenedor__login-register">
+            <form action="{{ route('login') }}" method="POST" class="formulario__login">
+                @csrf
+                <h2>Iniciar Sesión</h2>
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <x-input-label for="email" :value="__('email')" />
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Correo Electrónico" required autofocus autocomplete="username">
+                    <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                </div>
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <x-input-label for="password" :value="__('Password')" />
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" required autocomplete="current-password">
+                    <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                </div>
+                <button type="submit" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3">{{ __('Iniciar sesión') }}</button>
+            </form>
         </div>
+    </div>
+</main>
 
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ms-2 text-sm text-gray-600">{{ __('Recordarme') }}</span>
-            </label>
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                    {{ __('olvidaste tu contraseña?') }}
-                </a>
-            @endif
-
-            <x-primary-button class="ms-3">
-                {{ __('Iniciar sesion') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+<script src="{{ asset('js/script.js') }}"></script>
+</body>
+</html>
