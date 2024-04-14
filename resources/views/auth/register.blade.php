@@ -8,7 +8,6 @@
 <body>
     
 <x-guest-layout>
-<div class="contenedor__todo">
    <form method="POST" action="{{ route('register') }}" class="formulario__register">
         @csrf
 
@@ -80,7 +79,6 @@
             </x-primary-button>
         </div>
     </form>
-    </div>
 </x-guest-layout>
 
 </body>
