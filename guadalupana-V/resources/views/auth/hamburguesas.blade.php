@@ -1,4 +1,14 @@
-<x-guest-layout>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="{{ asset('asset/bebidas_alcoholicas.css') }}" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<script src="../Documents/hamburguesas.js"></script>
 
 <head>
     <meta charset="UTF-8">
@@ -10,6 +20,7 @@
 
 <script src="../Documents/hamburguesas.js"></script>
 
+<body>
 <div class="ContainerHamburguesas">
     <div class="Cuadro">
         <div class="img">
@@ -127,4 +138,4 @@
     </div>
 </div>
 
-</x-guest-layout>
+</body>

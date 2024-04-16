@@ -10,13 +10,13 @@
 <div class="toolbar">
         <div class="menu"></div>
         <div class="botonera">
-            <a routerLink="preguntas">
+            <a>
                 <div class="boton_toolbar1"></div>
             </a>
-            <a routerLink="'/home'">
+            <a href="/lista-pedidos">
                 <div class="boton_toolbar2"></div>
             </a>
-            <a routerLink="preguntas">
+            <a href="/bolsa">
                 <div class="boton_toolbar3"></div>
             </a>
             <div class="boton_iniciar">
@@ -38,13 +38,13 @@
             <img src="{{ asset('/img/Productos/vinos.jpg') }}" alt="Vinos" class="imagen">
             </div>
         </a>
-        <a class="Cuadro" >
+        <a class="Cuadro"  href="/hamburguesas">
             <h4>Hamburguesas</h4>
             <div class="Productos">
             <img src="{{ asset('/img/Productos/hamburguesa.jpg') }}" alt="hamburguesas" class="imagen">
             </div>
         </a>
-        <a class="Cuadro" >
+        <a class="Cuadro" href="/heladeria">
             <h4>Helados</h4>
             <div class="Productos">
             <img src="{{ asset('/img/Productos/helado.jpg') }}" alt="helados" class="imagen">

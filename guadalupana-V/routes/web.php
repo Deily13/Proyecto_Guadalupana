@@ -1,6 +1,10 @@
 <?php
 
 use App\Http\Controllers\BebidasAlcholicasController;
+use App\Http\Controllers\BolsaController;
+use App\Http\Controllers\HamburguesasController;
+use App\Http\Controllers\HeladeriaController;
+use App\Http\Controllers\ListaPedidosController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,5 +40,11 @@ Route::get('/auth', function () {
 require __DIR__.'/auth.php';
 
 /* crear rutas desde aqui */
-Route::get('/bebidas-alcholicas', [BebidasAlcholicasController::class, 'index']);
+Route::get('bebidas-alcoholicas', [BebidasAlcholicasController::class, 'index']);
+Route::get('hamburguesas', [HamburguesasController::class, 'index']);
+Route::get('heladeria', [HeladeriaController::class, 'index']);
+Route::get('bolsa', [BolsaController::class, 'index']);
+Route::get('lista-pedidos', [ListaPedidosController::class, 'index']);
+
+
 

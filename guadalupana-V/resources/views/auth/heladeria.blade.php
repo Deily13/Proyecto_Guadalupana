@@ -1,4 +1,4 @@
-<x-guest-layout>
+
 
 <head>
     <meta charset="UTF-8">
@@ -188,4 +188,3 @@
     </div>
 </div>
 
-</x-guest-layout>

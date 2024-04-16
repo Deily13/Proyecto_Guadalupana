@@ -8,6 +8,6 @@ class BebidasAlcholicasController extends Controller
 {
     public function index()
     {
-        return view('bebidas-alcoholicas');
+        return view('/auth/bebidas-alcoholicas');
     }
 }
