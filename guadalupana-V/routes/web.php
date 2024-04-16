@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\BebidasAlcholicasController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,7 +33,4 @@ Route::get('/auth', function () {
 });
 
 require __DIR__.'/auth.php';
-
-/* crear rutas desde aqui */
-Route::get('/bebidas-alcholicas', [BebidasAlcholicasController::class, 'index']);
 
