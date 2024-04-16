@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-image: url(../img/Icon/IMG-20240315-WA0006.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+}
+
+
+.Titulo{
+color: #ff0296;
+text-align: center;
+font-size: 60px;
+font-weight: bold;
+}
+
+.ContainerHeladeria {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 3%;
+    background-color: #12054183;
+    min-height: 100vh;
+}
+
+.Cuadro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #ffffff91;
+    border-radius: 10px;
+    width: calc(98% - 10px);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.Cuadro:hover {
+    box-shadow: 0px 0px 20px #ffffff;
+}
+
+.img {
+    background-image: url(../img/Icon/IMG-20240315-WA0011.jpg);
+    background-color: #ffffff;
+    background-size: cover;
+    /* Añadimos esta propiedad para asegurar que la imagen se ajuste correctamente */
+    background-position: center;
+    /* Centramos la imagen */
+    border-radius: 10px;
+    width: 25%;
+    /* Podrías ajustar este valor según tus necesidades */
+}
+
+.Calificador {
+    background-color: #000000;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-top: 200px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+.estrella {
+    cursor: pointer;
+}
+
+.estrella:hover,
+.estrella.activa {
+    color: gold;
+}
+
+.Detalle {
+    background-color: white;
+    border-radius: 10px;
+    word-wrap: break-word;
+    flex-direction: column;
+    width: calc(75% - 10px);
+    padding: 8px;
+}
+
+.Sabores {
+    width: calc(100% - 10px);
+    height: 60px;
+    display: flex;
+    align-items: center;
+
+}
+
+h3{
+    color: #000000;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+}
+
+.Sabor {
+    background-color: #ffffff;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    margin-left: 2%;
+   
+}
+
+.Sabor:hover{
+    box-shadow: 0px 0px 20px #040029;
+}
+
+
+.Sabor#sabor1{
+background: url(../img/Icon/IMG-20240315-WA0006.jpg);
+background-size: cover;
+background-position: center center;
+}
+
+.Sabor#sabor2{
+    background: url(../img/Icon/IMG-20240315-WA0011.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+
+.Sabor#sabor3{
+    background: url(../img/Icon/IMG-20240315-WA0006.jpg);
+    background-size: cover;
+    background-position: center center;
+    }
+
+.Sabor#sabor4{
+        background: url(../img/Icon/IMG-20240315-WA0011.jpg);
+        background-size: cover;
+        background-position: center center;
+    }
+
+    /* Estilos adicionales para el texto descriptivo */
+.texto-descriptivo {
+    
+        position: relative;
+        bottom: -50px; /* Ajusta la distancia del texto descriptivo respecto al borde inferior */
+left: 20%;
+        transform: translateX(-50%);
+        color: black;
+        font-size: 12px; 
+        opacity: 0;
+        transition: opacity 0.3s ease;
+}
+
+
+.Sabor:hover .texto-descriptivo {
+    opacity: 1;
+}
+
+.botones {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 10px);
+    position: sticky;
+    bottom: 0;
+}
+
+.BotonPedir {
+    background-image: linear-gradient(to top, blue, #133ABF, #1882FF,  #7A96F9 );
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 30px;
+    width: 150px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.BotonPedir:hover{
+    box-shadow: 0px 0px 20px #0228ff;
+}
