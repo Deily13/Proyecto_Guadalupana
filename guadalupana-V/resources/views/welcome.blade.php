@@ -32,7 +32,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Stardos+Stencil&display=swap" rel="stylesheet">
-        <a class="Cuadro" href="/bebidas-alcoholicas">
+        <a class="Cuadro" >
             <h4>Bebidas Alcoholicas</h4>
             <div class="Productos">
             <img src="{{ asset('/img/Productos/vinos.jpg') }}" alt="Vinos" class="imagen">

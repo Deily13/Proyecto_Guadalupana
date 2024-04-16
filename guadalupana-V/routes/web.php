@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Http\Controllers\BebidasAlcholicasController;
 use App\Http\Controllers\BolsaController;
 use App\Http\Controllers\HamburguesasController;
