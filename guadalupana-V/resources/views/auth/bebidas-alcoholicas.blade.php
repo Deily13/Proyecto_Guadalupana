@@ -10,18 +10,7 @@
 
 <script src="../Documents/hamburguesas.js"></script>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <link href="{{ asset('asset/hamburguesas.css') }}" rel="stylesheet">
-</head>
-
-
-<script src="../Documents/hamburguesas.js"></script>
-
-<body>
-<div class="ContainerHamburguesas">
+<div class="ContainerBebidasAlcoholicas">
     <div class="Cuadro">
         <div class="img">
             <div class="Calificador" id="calificacion1">
@@ -139,3 +128,4 @@
 </div>
 
 </body>
+</html>
