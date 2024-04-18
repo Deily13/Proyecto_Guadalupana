@@ -1,7 +1,8 @@
 <?php
 
 
-use App\Http\Controllers\BebidasAlcholicasController;
+
+use App\Http\Controllers\BebidasAlcoholicasController;
 use App\Http\Controllers\BolsaController;
 use App\Http\Controllers\HamburguesasController;
 use App\Http\Controllers\HeladeriaController;
@@ -34,14 +35,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/auth', function () {
-    return view('bebidas_alcoholicas');
-});
 
 require __DIR__.'/auth.php';
 
 /* crear rutas desde aqui */
-Route::get('bebidas-alcoholicas', [BebidasAlcholicasController::class, 'index']);
+Route::get('bebidas-alcoholicas', [BebidasAlcoholicasController::class, 'index']);
 Route::get('hamburguesas', [HamburguesasController::class, 'index']);
 Route::get('heladeria', [HeladeriaController::class, 'index']);
 Route::get('bolsa', [BolsaController::class, 'index']);
