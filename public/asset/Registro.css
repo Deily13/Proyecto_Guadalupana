@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #ff7e5f, #feb47b);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.formulario__register {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 500px;
+}
+.formulario__register h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.formulario__register div {
+    margin-bottom: 15px;
+}
+.formulario__register input[type="text"], .formulario__register input[type="email"], .formulario__register input[type="password"], .formulario__register input[type="number"], .formulario__register select {
+    width: calc(100% - 40px); /* Subtract the left and right margins from the width */
+    padding: 10px;
+    margin: 0 20px; /* Add 20px margin to the left and right */
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+.formulario__register button {
+    width: calc(100% - 40px); /* Subtract the left and right margins from the width */
+    padding: 10px;
+    margin: 0 20px; /* Add 20px margin to the left and right */
+    border: none;
+    border-radius: 4px;
+    background-color: #5c6bc0;
+    color: white;
+    cursor: pointer;
+}
+.formulario__register button:hover {
+    background-color: #3949ab;
+}
