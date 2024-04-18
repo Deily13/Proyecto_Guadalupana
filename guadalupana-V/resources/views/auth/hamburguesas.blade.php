@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="{{ asset('asset/bebidas_alcoholicas.css') }}" rel="stylesheet">
-    <title>Document</title>
-</head>
 
-<script src="../Documents/hamburguesas.js"></script>
 
 <head>
     <meta charset="UTF-8">
@@ -16,9 +8,6 @@
     <title>My Website</title>
     <link href="{{ asset('asset/hamburguesas.css') }}" rel="stylesheet">
 </head>
-
-
-<script src="../Documents/hamburguesas.js"></script>
 
 <body>
 <div class="ContainerHamburguesas">
@@ -77,7 +66,7 @@
         </div>
         <div class="Detalle">
 
-        
+
             <div class="btn">
             </div>
         </div>
@@ -124,11 +113,11 @@
     <div class="Cuadro">
         <div class="img">
             <div class="Calificador" id="calificacion6">
-                <span class="estrella" onclick="calificar(5, 1)">&#9734;</span>
-                <span class="estrella" onclick="calificar(5, 2)">&#9734;</span>
-                <span class="estrella" onclick="calificar(5, 3)">&#9734;</span>
-                <span class="estrella" onclick="calificar(5, 4)">&#9734;</span>
-                <span class="estrella" onclick="calificar(5, 5)">&#9734;</span>
+                    <span class="estrella" onclick="calificar(6, 1)">&#9734;</span>
+                    <span class="estrella" onclick="calificar(6, 2)">&#9734;</span>
+                    <span class="estrella" onclick="calificar(6, 3)">&#9734;</span>
+                    <span class="estrella" onclick="calificar(6, 4)">&#9734;</span>
+                    <span class="estrella" onclick="calificar(6, 5)">&#9734;</span>
             </div>
         </div>
         <div class="Detalle">
@@ -138,4 +127,6 @@
     </div>
 </div>
 
+
+<script src="{{ asset('asset/js/hamburguesas.js') }}"></script>
 </body>
