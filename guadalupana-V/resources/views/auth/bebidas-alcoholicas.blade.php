@@ -8,7 +8,6 @@
     <title>Document</title>
 </head>
 
-<script src="../Documents/hamburguesas.js"></script>
 
 <div class="ContainerBebidasAlcoholicas">
     <div class="Cuadro">
@@ -126,6 +125,7 @@
         </div>
     </div>
 </div>
+
 
 </body>
 </html>
