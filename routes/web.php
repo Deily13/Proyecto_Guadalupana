@@ -43,6 +43,7 @@ Route::get('/auth', function () {
 
 require __DIR__.'/auth.php';
 
+
 /* crear rutas desde aqui */
 Route::get('bebidas-alcoholicas', [BebidasAlcholicasController::class, 'index']);
 Route::get('hamburguesas', [HamburguesasController::class, 'index']);

@@ -33,7 +33,11 @@ class RegisteredUserController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+
             'password' => ['required'],
+
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+
             'first_name' => ['required', 'string', 'max:255'], // Nombre
             'last_name' => ['required', 'string', 'max:255'], // Apellidos
             'identification_type' => ['required', 'string', 'max:255'], // Tipo de Identificación
@@ -60,4 +64,8 @@ class RegisteredUserController extends Controller
 
         return redirect(RouteServiceProvider::HOME);
     }
+
 }
+
+}
+

@@ -35,9 +35,14 @@ html, body {
   margin: 1%;
   border-radius: 5px;
   padding: 3px;
+  background: url(../img/Icon/menu.png);
+  background-size: cover;
+  padding: 3px;
+  color: white;
   display: flex;
   justify-content: center;
 }
+
 
 .menu{
   background: url(../img/Icon/menu.png);
