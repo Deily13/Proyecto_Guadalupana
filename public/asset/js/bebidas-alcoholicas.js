@@ -11,3 +11,13 @@ function calificar(seccion, calificacion) {
     });
     // Aquí puedes enviar la calificación al servidor o realizar otras acciones necesarias
 }
+
+var botonPedir = document.getElementById('botonPedir');
+
+// Agrega un controlador de eventos para 'click'
+botonPedir.addEventListener('click', function() {
+    // Cambia el texto del botón
+    botonPedir.textContent = 'Seleccionado';
+    // Deshabilita el botón
+    botonPedir.disabled = true;
+});

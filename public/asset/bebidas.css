@@ -13,7 +13,7 @@ html, body {
     height: 100%;
 }
 
-.ContainerBebidasAlcoholicas{
+.ContainerBebidas{
     display: flex;
     flex-wrap: wrap;
     align-items: center;

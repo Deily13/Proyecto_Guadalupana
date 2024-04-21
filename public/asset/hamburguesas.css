@@ -89,20 +89,28 @@ p {
 }
 
 .botones {
-    background-color: aqua;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: calc(100% - 10px);
+    width: calc(100% - 140px);
     position: sticky;
     bottom: 0;
 }
 
-h5 {
-    color: #000000;
+.botones label {
+    margin-right: 10px; /* Espacio entre el label y el input */
 }
 
-.BotonPedir {
+/* Estilos para el input de cantidad */
+.botones input[type="number"] {
+    width: 50px; /* Ancho del input */
+    padding: 5px; /* Espacio interno dentro del input */
+    border: 1px solid #ccc; /* Borde del input */
+    border-radius: 5px; /* Bordes redondeados del input */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+}
+
+
+button {
     background-color: #000000;
     color: #ffffff;
     width: 100px;
@@ -110,4 +118,6 @@ h5 {
     display: flex;
     align-items: center;
    justify-content: center;
+   margin-left: auto;
+   margin-right: 10px;
 }

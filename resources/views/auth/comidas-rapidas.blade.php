@@ -6,11 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
-    <link href="{{ asset('asset/hamburguesas.css') }}" rel="stylesheet">
+    <link href="{{ asset('asset/comidas-rapidas.css') }}" rel="stylesheet">
 </head>
 
 <body>
-    <div class="ContainerHamburguesas">
+    <div class="ContainerComidasRapidas">
         <div class="Cuadro">
             <div class="img">
                 <div class="Calificador" id="calificacion1">
@@ -28,17 +28,6 @@
                     sodales. Integer et magna quis arcu interdum malesuada.</p>
 
                 <form action="/procesar_pedido" method="POST">
-            
-                    <label class="Sabor" id="sabor1">
-                        <input type="checkbox" name="sabor" value="Chocolate" class="SaborCheckbox-button">
-                        <div class="SaborImagen"></div>
-                        <span class="texto-descriptivo">Chocolate</span>
-                    </label>
-                    <label class="Sabor" id="sabor2">
-                        <input type="checkbox" name="sabor" value="Vainilla" class="SaborCheckbox-button">
-                        <div class="SaborImagen"></div>
-                        <span class="texto-descriptivo">Vainilla</span>
-                    </label>
                     @csrf <!-- Agrega esto si estás utilizando Blade para evitar el error CSRF -->
                     <div class="botones">
                         <label for="cantidad">
@@ -147,5 +136,5 @@
     </div>
     </div>
 
-    <script src="{{ asset('asset/js/hamburguesas.js') }}"></script>
+    <script src="{{ asset('asset/js/comidas-rapidas.js') }}"></script>
 </body>

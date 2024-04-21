@@ -13,7 +13,7 @@ html, body {
     height: 100%;
 }
 
-.ContainerBebidasAlcoholicas{
+.ContainerComidasRapidas {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -39,17 +39,12 @@ html, body {
 }
 
 .img {
-    background-image: url(../img/Icon/IMG-20240315-WA0006.jpg);
+    background-image: url(../img/Productos/hamburguesa.jpg);
     background-color: #ffffff;
     background-size: cover; /* Añadimos esta propiedad para asegurar que la imagen se ajuste correctamente */
     background-position: center; /* Centramos la imagen */
     border-radius: 10px;
     width: 25%; /* Podrías ajustar este valor según tus necesidades */
-}
-
-img {
-    width: 100%;
-    height: 60%;
 }
 
 .Calificador {
@@ -93,27 +88,32 @@ p {
     padding: 8px;
 }
 
-.Detalle .Sabores {
-    background-color: blue;
-    width: 50px; /* Ancho deseado */
-    height: 50px; /* Altura deseada */
-}
-
 .botones {
-    background-color: aqua;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: calc(100% - 10px);
+    width: calc(100% - 140px);
     position: sticky;
     bottom: 0;
+}
+
+.botones label {
+    margin-right: 10px; /* Espacio entre el label y el input */
+}
+
+/* Estilos para el input de cantidad */
+.botones input[type="number"] {
+    width: 50px; /* Ancho del input */
+    padding: 5px; /* Espacio interno dentro del input */
+    border: 1px solid #ccc; /* Borde del input */
+    border-radius: 5px; /* Bordes redondeados del input */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
 }
 
 h5 {
     color: #000000;
 }
 
-.BotonPedir {
+button {
     background-color: #000000;
     color: #ffffff;
     width: 100px;
@@ -121,4 +121,6 @@ h5 {
     display: flex;
     align-items: center;
    justify-content: center;
+   margin-left: auto;
+   margin-right: 10px;
 }
