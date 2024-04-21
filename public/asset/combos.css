@@ -13,7 +13,7 @@ html, body {
     height: 100%;
 }
 
-.ContainerHamburguesas {
+.ContainerCombos {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -92,15 +92,9 @@ p {
     display: flex;
     align-items: center;
     width: calc(100% - 140px);
-    background-color: aqua;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: calc(100% - 10px);
     position: sticky;
     bottom: 0;
 }
-
 
 .botones label {
     margin-right: 10px; /* Espacio entre el label y el input */
@@ -115,15 +109,11 @@ p {
     box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
 }
 
-
-button {
-}
-
 h5 {
     color: #000000;
 }
 
-.BotonPedir {
+button {
     background-color: #000000;
     color: #ffffff;
     width: 100px;

@@ -1,3 +1,6 @@
+
+<!DOCTYPE html>
+<html lang="en">
 <x-guest-layout>
 <head>
     <meta charset="UTF-8">
@@ -67,6 +70,7 @@
                     <div class="Eliminar"></div>
                 </div>
             </div>
+
             <div class="Producto">
                 <div class="img"></div>
                 <div class="Descripcion">
@@ -86,7 +90,20 @@
             <div class="Precio">$$$$$$</div>
         </div>
         <button class="BotonPagar">Pagar</button>
+
+        <div class="Sujerencias">
+        <div class="Mensaje">
+            <h3>Sugerencias</h3>
+        </div>
+        <div class="Elemento"></div>
+        </div>
     </div>
+
+
+   
 </body>
+</html>
+  
 
 </x-guest-layout>
+
