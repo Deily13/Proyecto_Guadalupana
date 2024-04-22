@@ -1,0 +1,175 @@
+body {
+  background-image: url(Fondo.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.login {
+  color: aliceblue;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  display: none;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+.content h2, .content p {
+  text-align: center;
+  margin-top: 90px;
+}
+
+.parent-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-horizontal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  margin-left: 260px;
+  margin-top: 50px;
+  order: 1;
+  width: 75%;
+  background-color: #111;
+  color: #f1f1f1;
+  box-sizing: border-box;
+  border-radius: 9px;
+}
+
+.form-horizontal div {
+  margin: 10px;
+  flex: 1; 
+}
+
+.form-horizontal input[type="button"] {
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.form-horizontal input[type="button"]:hover {
+  background-color: #f1f1f1;
+  color: #111;
+}
+
+.info-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  order: 1;
+  width: 80%;
+  margin-left: 30%
+}
+
+#info {
+  min-height: 200px; 
+  width: 75%; 
+  margin-top: 20px;
+  border: 1px solid #111;
+  padding: 20px;
+  background-color: #111;
+  color: #f1f1f1;
+  box-sizing: border-box; 
+  overflow: auto;
+  border-radius: 9px;
+}
+
+
+@media screen and (max-width: 1080px) {
+  body {
+      background-position: top;
+  }
+  .sidebar {
+      width: 0;
+  }
+  .openbtn {
+      display: block;
+  }
+  .form-horizontal {
+      margin-left: 0; /* Modificado para pantallas pequeñas */
+  }
+}
+
+@media screen and (min-width: 1081px) {
+  .sidebar {
+      width: 250px; /* Ancho fijo para pantallas grandes */
+  }
+  .openbtn {
+      display: none;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .sidebar .closebtn {
+      display: block; /* Muestra el botón de cierre en pantallas pequeñas */
+  }
+}
