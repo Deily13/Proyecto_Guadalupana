@@ -16,22 +16,22 @@ html, body {
 .ContainerCombos {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: start;
     justify-content: center;
-    margin: 40px 3%;
+    margin: 40px 1%;
     background-color: #12054183;
     min-height: 100vh;
 }
 
 .Cuadro {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    background-color: #ffffff91;
+    background-color: #ffffff;
     border-radius: 10px;
-    width: calc(98% - 10px);
+    width: calc(45% - 2px);
     margin-bottom: 20px;
-    overflow: hidden;
+    margin-left: 20px;
+    padding: 8px;
+    align-items: flex-start;
 }
 
 .Cuadro:hover {
@@ -41,10 +41,16 @@ html, body {
 .img {
     background-image: url(../img/Productos/hamburguesa.jpg);
     background-color: #ffffff;
-    background-size: cover; /* Añadimos esta propiedad para asegurar que la imagen se ajuste correctamente */
-    background-position: center; /* Centramos la imagen */
+    background-size: cover;
+    background-position: center;
     border-radius: 10px;
-    width: 25%; /* Podrías ajustar este valor según tus necesidades */
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 50% !important; 
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .Calificador {
@@ -54,16 +60,8 @@ html, body {
     text-align: center;
     font-size: 1.5rem;
     color: #ffffff;
-}
-
-.Calificador {
-    background-color: #000000;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    text-align: center;
-    font-size: 1.5rem;
-    color: #ffffff;
-    margin-top: 200px; /* Puedes ajustar este valor según sea necesario */
+    margin-top: calc(70% -30px);
+    bottom: 0;
 }
 
 p {
@@ -83,8 +81,7 @@ p {
     background-color: white;
     border-radius: 10px;
     word-wrap: break-word;
-    flex-direction: column;
-    width: calc(75% - 10px);
+    width: calc(65% - 10px);
     padding: 8px;
 }
 

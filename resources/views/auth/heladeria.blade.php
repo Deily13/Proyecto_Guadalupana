@@ -21,10 +21,7 @@
         </div>
         <div class="Detalle">
         <h1>Helado Especial</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor turpis nec velit pretium, nec
-                molestie mi
-                sodales. Integer et magna quis arcu interdum malesuada.ebgjhergherkhgkejhgerhgjherkjghe
-                erhhgjhjgkgheiugheirbgie
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor turpis nec velit pretium, 
             </p>
         <div class="Sabores">
             <h3>Sabores:</h3>
