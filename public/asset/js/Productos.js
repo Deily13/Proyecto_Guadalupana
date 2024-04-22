@@ -1,3 +1,12 @@
+function toggleDropdown() {
+    var dropdown = document.getElementById("dropdownMenu");
+    if (dropdown.style.display === "none") {
+        dropdown.style.display = "block";
+    } else {
+        dropdown.style.display = "none";
+    }
+}
+
 function calificar(seccion, calificacion) {
     var calificacionDiv = document.getElementById("calificacion".concat(seccion));
     var estrellas = calificacionDiv === null || calificacionDiv === void 0 ? void 0 : calificacionDiv.querySelectorAll('.estrella');
@@ -12,14 +21,17 @@ function calificar(seccion, calificacion) {
     // Aquí puedes enviar la calificación al servidor o realizar otras acciones necesarias
 }
 
-var botonPedir = document.getElementById('botonPedir');
+document.addEventListener('DOMContentLoaded', function() {
+    var botonesPedir = document.querySelectorAll('button[id^="botonPedir"]');
 
-// Agrega un controlador de eventos para 'click'
-botonPedir.addEventListener('click', function() {
-    // Cambia el texto del botón
-    botonPedir.textContent = 'Seleccionado';
-    // Deshabilita el botón
-    botonPedir.disabled = true;
+    botonesPedir.forEach(function(boton) {
+        boton.addEventListener('click', function(event) {
+        
+            event.preventDefault();
+            boton.textContent = 'Seleccionado';
+            boton.disabled = true;
+        });
+    });
 });
 
 var limite = 2;

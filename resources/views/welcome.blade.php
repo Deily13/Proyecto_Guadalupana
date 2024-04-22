@@ -10,8 +10,7 @@
 
 <body>
     <div class="toolbar">
-    <div class="menu">
-        <button class="menu-button" onclick="toggleDropdown()"></button>
+    <div class="menu"  onclick="toggleDropdown()">
     <div class="dropdown" id="dropdownMenu" style="display: none;">
         <!-- Elementos del menú -->
         <a href="/bebidas-alcoholicas">Bebidas Alcoholicas</a>
@@ -32,7 +31,7 @@
                 <div class="boton_toolbar2"></div>
             </a>
             <a href="/bolsa">
-                <div class="boton_toolbar3"></div>
+                <div class="boton_toolbar4"></div>
             </a>
             <div class="boton_iniciar">
                 <a href="{{ route('login')}}">Iniciar Sesión</a>
