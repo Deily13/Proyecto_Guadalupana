@@ -2,15 +2,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
-    <link href="{{ asset('asset/heladeria.css') }}" rel="stylesheet">
+    <link href="{{ asset('asset/Productos.css') }}" rel="stylesheet">
 </head>
 
 
 <div class="Titulo">Helados</div>
 
-<div class="ContainerHeladeria">
+<div class="ContainerProductos">
     <div class="Cuadro">
-        <div class="img">
+        <div class="img1">
             <div class="Calificador" id="calificacion1">
                 <span class="estrella" onclick="calificar(1, 1)">&#9734;</span>
                 <span class="estrella" onclick="calificar(1, 2)">&#9734;</span>
@@ -63,7 +63,7 @@
 
 
 <div class="Cuadro">
-    <div class="img">
+    <div class="img1">
         <div class="Calificador" id="calificacion2">
             <span class="estrella" onclick="calificar(2, 1)">&#9734</span>
             <span class="estrella" onclick="calificar(2, 2)">&#9734</span>
@@ -112,7 +112,7 @@
 
 
 <div class="Cuadro">
-    <div class="img">
+    <div class="img1">
 
         <div class="Calificador" id="calificacion3">
             <span class="estrella" onclick="calificar(3, 1)">&#9734;</span>

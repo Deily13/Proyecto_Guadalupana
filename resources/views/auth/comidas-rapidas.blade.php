@@ -6,11 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
-    <link href="{{ asset('asset/comidas-rapidas.css') }}" rel="stylesheet">
+    <link href="{{ asset('asset/Productos.css') }}" rel="stylesheet">
 </head>
 
 <body>
-    <div class="ContainerComidasRapidas">
+    <div class="ContainerProductos">
         <div class="Cuadro">
             <div class="img">
                 <div class="Calificador" id="calificacion1">
