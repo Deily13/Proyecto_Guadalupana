@@ -8,6 +8,44 @@
     <title>Document</title>
 </head>
 
+
+<body>
+
+<div class="toolbar">
+        <div class="menu" onclick="toggleDropdown()">
+            <div class="dropdown" id="dropdownMenu" style="display: none;">
+                <!-- Elementos del menú -->
+                <a href="/bebidas-alcoholicas">Bebidas Alcoholicas</a>
+                <a href="/hamburguesas">Hamburguesas</a>
+                <a href="/heladeria">Heladeria</a>
+                <a href="/comidas-rapidas">Comidas Rapidas</a>
+                <a href="/bebidas">Bebidas</a>
+                <a href="/combos">Combos</a>
+            </div>
+        </div>
+
+        <div class="botonera">
+            <a>
+                <div class="boton_toolbar1"></div>
+            </a>
+            <a href="/dashboard">
+                <div class="boton_toolbar2"></div>
+            </a>
+            <a href="/bolsa">
+                <div class="boton_toolbar3"></div>
+            </a>
+            <a href="/lista-pedidos">
+                <div class="boton_toolbar4"></div>
+            </a>
+
+            <!--nombre de usuario registrado (perfil)  -->
+            <a>
+                <div class="usuario">usuario</div>
+            </a>
+
+        </div>
+    </div>
+
 <div class="ContainerProductos">
 
     @foreach ($bebidas as $bebida)
@@ -27,7 +65,7 @@
             <p>{{ $bebida->Descripción }}</p>
             <div class="botones">
                 <h5>{{ $bebida->Stock }}</</h5>
-                <div class="BotonPedir">Pedir</div>
+                <div class="BotonPedir1">Pedir</div>
             </div>
         </div>
     </div>
@@ -35,6 +73,6 @@
 
 </div>
 
-<script src="{{ asset('asset/js/bebidas.js') }}"></script>
+<script src="{{ asset('asset/js/Productos.js') }}"></script>
 </body>
 </html>

@@ -14,6 +14,132 @@ body {
     height: 100%;
 }
 
+.toolbar {
+    width: 96%;
+    height: 80px;
+    position: relative;
+    margin: 2%;
+    margin-top: 5px;
+    padding-left: 2px;
+    padding-right: 5px;
+    border-radius: 5px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .menu {
+    width: 55px;
+    height: 55px;
+    margin: 1%;
+    border-radius: 5px;
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    background: url(../img/Icon/menu.png);
+    background-size: cover;
+  }
+  
+  
+  .dropdown {
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000;
+    left: 0; /* Alinea el menú desplegable con el borde izquierdo del botón .menu */
+    top: 0;
+  }
+  
+  .dropdown a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  
+  .botonera {
+    width: 30%;
+    height: 70px;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  
+  .boton_toolbar1, .boton_toolbar2, .boton_toolbar3, .boton_toolbar4,.boton_iniciar, .usuario {
+    height: 80%;
+    margin: 3px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.705);
+    display: flex;
+    align-items: center;
+  }
+  
+  .boton_toolbar1, .boton_toolbar2, .boton_toolbar3, .boton_toolbar4{
+    width: 60px;
+  }
+  
+  .boton_toolbar1 {
+    background: url(../img/Icon/buscar.png);
+    background-size: cover;
+    background-color: white;
+  }
+  
+  
+  .boton_toolbar2 {
+    background: url(../img/icon/inicio.png);
+    background-size: cover;
+    background-color: white;
+  }
+  
+  .boton_toolbar3 {
+    background: url(../img/icon/bolsa.png);
+    background-size: cover;
+      background-color: white;
+  }
+  
+  .boton_toolbar4 {
+    background: url(../img/icon/busqueda.png);
+    background-size: cover;
+      background-color: white;
+  }
+  
+  .usuario {
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  
+  .boton_iniciar {
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+   
+  }
+  
+  
+  .toolbar_img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 150px;
+   
+  }
+
 .ContainerProductos {
     display: flex;
     flex-wrap: wrap;
