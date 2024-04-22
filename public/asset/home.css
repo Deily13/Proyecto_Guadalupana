@@ -52,7 +52,7 @@ html, body {
 
 .dropdown {
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: red;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1000;
@@ -79,7 +79,7 @@ html, body {
 }
 
 
-.boton_toolbar1, .boton_toolbar2, .boton_toolbar3,.boton_iniciar {
+.boton_toolbar1, .boton_toolbar2, .boton_toolbar3, .boton_toolbar4,.boton_iniciar, .usuario {
   height: 80%;
   margin: 3px;
   border-radius: 5px;
@@ -90,7 +90,7 @@ html, body {
   align-items: center;
 }
 
-.boton_toolbar1, .boton_toolbar2, .boton_toolbar3{
+.boton_toolbar1, .boton_toolbar2, .boton_toolbar3, .boton_toolbar4{
   width: 60px;
 }
 
@@ -108,10 +108,22 @@ html, body {
 }
 
 .boton_toolbar3 {
+  background: url(../img/icon/bolsa.png);
+  background-size: cover;
+    background-color: white;
+}
+
+.boton_toolbar4 {
   background: url(../img/icon/busqueda.png);
   background-size: cover;
     background-color: white;
 }
+
+.usuario {
+  align-items: center;
+  font-family: 'Times New Roman', Times, serif;
+}
+
 
 .boton_iniciar {
   align-items: center;
@@ -172,6 +184,7 @@ html, body {
   border-radius: 10px;
   backdrop-filter: blur(10px);
   border: 1px solid white;
+  z-index: 1;
 }
 
 .Cuadro:hover {

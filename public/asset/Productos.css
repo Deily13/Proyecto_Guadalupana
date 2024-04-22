@@ -14,15 +14,7 @@ body {
     height: 100%;
 }
 
-
-.Titulo{
-color: #ff0296;
-text-align: center;
-font-size: 60px;
-font-weight: bold;
-}
-
-.ContainerHeladeria {
+.ContainerProductos {
     display: flex;
     flex-wrap: wrap;
     align-items: start;
@@ -47,12 +39,22 @@ font-weight: bold;
     box-shadow: 0px 0px 20px #ffffff;
 }
 
-.Cuadro .img {
-    overflow: hidden; 
+.img {
+    background-image: url(../img/Productos/hamburguesa.jpg);
+    background-color: #ffffff;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 50% !important; 
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
-
-.img {
+.img1 {
     background-image: url(../img/Icon/IMG-20240315-WA0011.jpg);
     background-color: #ffffff;
     background-size: cover;
@@ -95,9 +97,10 @@ p {
     background-color: white;
     border-radius: 10px;
     word-wrap: break-word;
-    width: calc(130% - 10px);
+    width: calc(65% - 10px);
     padding: 8px;
 }
+
 
 .Sabores {
     width: calc(100% - 10px);
@@ -217,6 +220,34 @@ h3 {
     width: calc(100% - 140px);
     position: sticky;
     bottom: 0;
+}
+
+.botones label {
+    margin-right: 10px;
+    /* Espacio entre el label y el input */
+}
+
+/* Estilos para el input de cantidad */
+.botones input[type="number"] {
+    width: 50px;
+    /* Ancho del input */
+    padding: 5px;
+    /* Espacio interno dentro del input */
+    border: 1px solid #ccc;
+    /* Borde del input */
+    border-radius: 5px;
+    /* Bordes redondeados del input */
+    box-sizing: border-box;
+    /* Incluye el padding y el borde en el ancho total */
+}
+
+
+.botones {
+    display: flex;
+    align-items: center;
+    width: calc(100% - 140px);
+    position: sticky;
+    bottom: 0;
     margin-top: 10px;
 }
 
@@ -246,6 +277,7 @@ button{
     margin-left: auto;
     margin-right: 10px;
     border: none;
+    margin-top: 5px;
 }
 
 button:hover{
