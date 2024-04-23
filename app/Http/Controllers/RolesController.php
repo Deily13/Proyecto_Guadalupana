@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AdministradorController extends Controller
+class RolesController extends Controller
 {
     //
     public function index()
     {
 
-        return view('/auth/administrador/admin');
+        return view('/auth/administrador/roles');
     }
 }

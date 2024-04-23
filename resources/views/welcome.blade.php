@@ -27,7 +27,7 @@
                 <div class="boton_toolbar1"></div>
                <!--  <input type="text" id="barraBusqueda" class="barraBusqueda" placeholder="Buscar..."> -->
             </a>
-            <a href="/admin">
+            <a href="/a">
                 <div class="boton_toolbar2"></div>
             </a>
             <a href="/bolsa">

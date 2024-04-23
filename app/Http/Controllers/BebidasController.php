@@ -10,7 +10,7 @@ class BebidasController extends Controller
     //
     public function index()
     {
-        $refrescos = Product::where('slug', '=', 'bebidas')->get();
+        $refrescos = Product::where('slug', '=', 'refrescos')->get();
         return view('/auth/bebidas', ['refrescos' => $refrescos]);
     }
 }
