@@ -11,7 +11,7 @@
 
 <body>
 
-<div class="toolbar">
+    <div class="toolbar">
         <div class="menu" onclick="toggleDropdown()">
             <div class="dropdown" id="dropdownMenu" style="display: none;">
                 <!-- Elementos del menú -->
@@ -47,6 +47,7 @@
     </div>
 
     <div class="ContainerProductos">
+     @foreach ($combos as $combo)
         <div class="Cuadro">
             <div class="img">
                 <div class="Calificador" id="calificacion1">
@@ -58,10 +59,8 @@
                 </div>
             </div>
             <div class="Detalle">
-                <h1>Hamburguesa Doble</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor turpis nec velit pretium, nec
-                    molestie mi
-                    sodales. Integer et magna quis arcu interdum malesuada.</p>
+                <h1>{{ $combo->nombre }}</h1>
+                <p>{{ $combo->Descripción }}</p>
 
                 <form action="/procesar_pedido" method="POST">
                     @csrf <!-- Agrega esto si estás utilizando Blade para evitar el error CSRF -->
@@ -90,7 +89,10 @@
                 </div>
             </div>
             <div class="Detalle">
-            <form action="/procesar_pedido" method="POST">
+                <h1>{{ $combo->nombre }}</h1>
+                <p>{{ $combo->Descripción }}</p>
+
+                <form action="/procesar_pedido" method="POST">
                     @csrf <!-- Agrega esto si estás utilizando Blade para evitar el error CSRF -->
                     <div class="botones">
                         <label for="cantidad">
@@ -117,8 +119,10 @@
                 </div>
             </div>
             <div class="Detalle">
-
-            <form action="/procesar_pedido" method="POST">
+                <h1>{{ $combo->nombre }}</h1>
+                <p>{{ $combo->Descripción }}</p>
+ 
+                <form action="/procesar_pedido" method="POST">
                     @csrf <!-- Agrega esto si estás utilizando Blade para evitar el error CSRF -->
                     <div class="botones">
                         <label for="cantidad">
@@ -144,7 +148,10 @@
                 </div>
             </div>
             <div class="Detalle">
-            <form action="/procesar_pedido" method="POST">
+                <h1>{{ $combo->nombre }}</h1>
+                <p>{{ $combo->Descripción }}</p>
+              
+                <form action="/procesar_pedido" method="POST">
                     @csrf <!-- Agrega esto si estás utilizando Blade para evitar el error CSRF -->
                     <div class="botones">
                         <label for="cantidad">
@@ -170,7 +177,10 @@
                 </div>
             </div>
             <div class="Detalle">
-            <form action="/procesar_pedido" method="POST">
+                <h1>{{ $combo->nombre }}</h1>
+                <p>{{ $combo->Descripción }}</p>
+          
+                <form action="/procesar_pedido" method="POST">
                     @csrf <!-- Agrega esto si estás utilizando Blade para evitar el error CSRF -->
                     <div class="botones">
                         <label for="cantidad">
@@ -196,7 +206,10 @@
                 </div>
             </div>
             <div class="Detalle">
-            <form action="/procesar_pedido" method="POST">
+                <h1>{{ $combo->nombre }}</h1>
+                <p>{{ $combo->Descripción }}</p>
+
+                <form action="/procesar_pedido" method="POST">
                     @csrf <!-- Agrega esto si estás utilizando Blade para evitar el error CSRF -->
                     <div class="botones">
                         <label for="cantidad">
@@ -208,6 +221,7 @@
                 </form>
             </div>
         </div>
+        @endforeach
     </div>
     </div>
 

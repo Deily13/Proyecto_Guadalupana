@@ -48,7 +48,7 @@
 
 <div class="ContainerProductos">
 
-    @foreach ($bebidas as $bebida)
+    @foreach ($refrescos as $refresco)
     <div class="Cuadro">
         <div class="img">
             <img src="{{ $bebida->image}}" alt="Descripción de la imagen">
@@ -61,12 +61,11 @@
             </div>
         </div>
         <div class="Detalle">
-            <h1>{{ $bebida->nombre }}</h1>
-            <p>{{ $bebida->Descripción }}</p>
-            <div class="botones">
-                <h5>{{ $bebida->Stock }}</</h5>
-                <div class="BotonPedir1">Pedir</div>
-            </div>
+        <h1>{{ $refresco->nombre }}</h1>
+                <p>{{ $refresco->Descripción }}</p>
+                <div class="botones">
+                        <div class="BotonPedir1">Pedir</div>
+                </div>
         </div>
     </div>
     @endforeach
