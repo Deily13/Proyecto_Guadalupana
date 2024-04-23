@@ -68,7 +68,6 @@ body {
 
 button{
   background-image: linear-gradient(to top, blue, #133ABF, #1882FF,  #7A96F9 );
-  border-radius: 5px;
   color: #ffffff;
   font-size: 25px;
   width: 190px;

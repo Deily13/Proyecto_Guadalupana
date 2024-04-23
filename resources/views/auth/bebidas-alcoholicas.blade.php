@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="{{ asset('asset/bebidas_alcoholicas.css') }}" rel="stylesheet">
+    <link href="{{ asset('asset/Productos.css') }}" rel="stylesheet">
     <title>Document</title>
 </head>
 
-<div class="ContainerBebidasAlcoholicas">
+<div class="ContainerProductos">
 
     @foreach ($bebidas as $bebida)
     <div class="Cuadro">
@@ -26,8 +27,8 @@
             <h1>{{ $bebida->nombre }}</h1>
             <p>{{ $bebida->Descripción }}</p>
             <div class="botones">
-                <h5>{{ $bebida->Stock }}</</h5>
-                <div class="BotonPedir">Pedir</div>
+                <h5>{{ $bebida->Stock }}</< /h5>
+                    <div class="BotonPedir">Pedir</div>
             </div>
         </div>
     </div>
@@ -37,4 +38,5 @@
 
 <script src="{{ asset('asset/js/bebidas-alcoholicas.js') }}"></script>
 </body>
+
 </html>
