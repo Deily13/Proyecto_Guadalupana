@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ComidasRapidasController extends Controller
@@ -9,6 +10,7 @@ class ComidasRapidasController extends Controller
     //
     public function index()
     {
-        return view('/auth/comidas-rapidas');
+        $comidas = Product::where('slug', '=', 'comidas-rapidas')->get();
+        return view('/auth/comidas-rapidas', ['comidas' => $comidas]);
     }
 }
