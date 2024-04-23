@@ -50,6 +50,7 @@
     @foreach ($hamburguesas as $hamburguesa)
         <div class="Cuadro">
             <div class="img">
+            <img src="{{ $hamburguesa->image}}" alt="Descripción de la imagen">
                 <div class="Calificador" id="calificacion1">
                     <span class="estrella" onclick="calificar(1, 1)">&#9734;</span>
                     <span class="estrella" onclick="calificar(1, 2)">&#9734;</span>
@@ -75,63 +76,6 @@
             </div>
         </div>
 
-
-
-
-        <div class="Cuadro">
-            <div class="img">
-                <div class="Calificador" id="calificacion2">
-                    <span class="estrella" onclick="calificar(2, 1)">&#9734</span>
-                    <span class="estrella" onclick="calificar(2, 2)">&#9734</span>
-                    <span class="estrella" onclick="calificar(2, 3)">&#9734</span>
-                    <span class="estrella" onclick="calificar(2, 4)">&#9734</span>
-                    <span class="estrella" onclick="calificar(2, 5)">&#9734</span>
-                </div>
-            </div>
-            <div class="Detalle">
-            <h1>{{ $hamburguesa->nombre }}</h1>
-                <p>{{ $hamburguesa->Descripción }}</p>
-                <form action="/procesar_pedido" method="POST">
-                    @csrf <!-- Agrega esto si estás utilizando Blade para evitar el error CSRF -->
-                    <div class="botones">
-                        <label for="cantidad">
-                            <h5>Cantidad</h5>
-                        </label>
-                        <input type="number" id="cantidad" name="cantidad" min="1" value="1">
-                    </div>
-                    <button type="submit" id="botonPedir2">Pedir</button>
-                </form>
-            </div>
-        </div>
-
-
-
-        <div class="Cuadro">
-            <div class="img">
-
-                <div class="Calificador" id="calificacion3">
-                    <span class="estrella" onclick="calificar(3, 1)">&#9734;</span>
-                    <span class="estrella" onclick="calificar(3, 2)">&#9734;</span>
-                    <span class="estrella" onclick="calificar(3, 3)">&#9734;</span>
-                    <span class="estrella" onclick="calificar(3, 4)">&#9734;</span>
-                    <span class="estrella" onclick="calificar(3, 5)">&#9734;</span>
-                </div>
-            </div>
-            <div class="Detalle">
-                <h1>{{ $hamburguesa->nombre }}</h1>
-                <p>{{ $hamburguesa->Descripción }}</p>
-                <form action="/procesar_pedido" method="POST">
-                    @csrf <!-- Agrega esto si estás utilizando Blade para evitar el error CSRF -->
-                    <div class="botones">
-                        <label for="cantidad">
-                            <h5>Cantidad</h5>
-                        </label>
-                        <input type="number" id="cantidad" name="cantidad" min="1" value="1">
-                    </div>
-                    <button type="submit" id="botonPedir3">Pedir</button>
-                </form>
-            </div>
-        </div>
         @endforeach
     </div>
 

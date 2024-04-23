@@ -51,7 +51,7 @@
     @foreach ($refrescos as $refresco)
     <div class="Cuadro">
         <div class="img">
-            <img src="{{ $bebida->image}}" alt="Descripción de la imagen">
+            <img src="{{ $refresco->image}}" alt="Descripción de la imagen">
             <div class="Calificador" id="calificacion1">
                 <span class="estrella" onclick="calificar(1, 1)">&#9734;</span>
                 <span class="estrella" onclick="calificar(1, 2)">&#9734;</span>
@@ -64,8 +64,12 @@
         <h1>{{ $refresco->nombre }}</h1>
                 <p>{{ $refresco->Descripción }}</p>
                 <div class="botones">
-                        <div class="BotonPedir1">Pedir</div>
-                </div>
+                        <label for="cantidad">
+                            <h5>Cantidad</h5>
+                        </label>
+                        <input type="number" id="cantidad" name="cantidad" min="1" value="1">
+                    </div>
+                    <button type="submit" id="botonPedir1">Pedir</button>
         </div>
     </div>
     @endforeach

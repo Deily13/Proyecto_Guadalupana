@@ -10,7 +10,7 @@ class HeladeriaController extends Controller
     //
     public function index()
     {
-        $helados = Product::where('slug', '=', 'heladeria')->get();
-        return view('/auth/heladeria', ['heladeria' => $helados]);
+        $helados = Product::where('slug', '=', 'helados')->get();
+        return view('/auth/heladeria', ['helados' => $helados]);
     }
 }

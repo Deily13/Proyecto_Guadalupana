@@ -19,7 +19,7 @@ class ProductoSeeeder extends Seeder
             [
                 'slug' => 'bebidas-alcoholicas',
                 'nombre' => 'TECATE LIGHT',
-                'image' => 'https://cdn.domestika.org/c_fill,dpr_auto,f_auto,q_auto/v1680866331/content-items/013/518/382/Zumzum_Macron_mixing_techno_a_lot_of_drugs_is_to_be_seen_on_a_t_a54bf669-6638-4571-9fff-56001a51e11c-original.png?1680866331',
+                'image' => 'https://i.pinimg.com/564x/a1/8a/ac/a18aac6501d336974523e4670202eece.jpg',
                 'precio' => '$23.500',
                 'Stock' => '50',
                 'Descripción' => 'lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.',
@@ -27,7 +27,7 @@ class ProductoSeeeder extends Seeder
             [
                 'slug' => 'bebidas-alcoholicas',
                 'nombre' => 'TECATE LIGHT',
-                'image' => 'https://cdn.domestika.org/c_fill,dpr_auto,f_auto,q_auto/v1680866331/content-items/013/518/382/Zumzum_Macron_mixing_techno_a_lot_of_drugs_is_to_be_seen_on_a_t_a54bf669-6638-4571-9fff-56001a51e11c-original.png?1680866331',
+                'image' => 'https://i.pinimg.com/564x/a1/8a/ac/a18aac6501d336974523e4670202eece.jpg',
                 'precio' => '$23.500',
                 'Stock' => '50',
                 'Descripción' => 'lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.',

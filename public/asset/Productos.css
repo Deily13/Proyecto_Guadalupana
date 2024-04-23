@@ -173,7 +173,6 @@ body {
 }
 
 .img {
-    background-image: url(../img/Productos/hamburguesa.jpg);
     background-color: #ffffff;
     background-size: cover;
     background-position: center;
@@ -188,7 +187,6 @@ body {
 }
 
 .img1 {
-    background-image: url(../img/Icon/IMG-20240315-WA0011.jpg);
     background-color: #ffffff;
     background-size: cover;
     background-position: center;
@@ -200,6 +198,11 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+}
+
+img{
+  width: 100% !important; 
+  height: 220px;
 }
 
 .Calificador {
