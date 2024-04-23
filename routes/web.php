@@ -9,6 +9,8 @@ use App\Http\Controllers\HamburguesasController;
 use App\Http\Controllers\HeladeriaController;
 use App\Http\Controllers\ListaPedidosController;
 use App\Http\Controllers\PedidosController;
+use App\Http\Controllers\AdministradorController;
+use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -53,7 +55,8 @@ Route::get('combos', [CombosController::class, 'index']);
 Route::get('pedidos', [PedidosController::class, 'index']);
 Route::get('bolsa', [BolsaController::class, 'index']);
 Route::get('lista-pedidos', [ListaPedidosController::class, 'index']);
-Route::get('pedidos', [PedidosController::class, 'index']);
+Route::get('admin', [AdministradorController::class, 'index']);
+Route::get('usuarios', [UsuariosController::class, 'index']);
 
 
 
