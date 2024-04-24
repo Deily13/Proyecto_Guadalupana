@@ -26,7 +26,7 @@
 
     <div class="container">
         <form id="product-form">
-            <h1 style="text-align: center;">Editar Productos</h1>
+            <h1 style="text-align: center;">Craer Producto</h1>
             <div class="form-group">
                 <label for="productImage">Seleccionar Imagen:</label>
                 <input type="file" class="form-control-file" id="productImage" accept="image/*" required>
@@ -51,46 +51,99 @@
                 <label for="productView">Vista de Destino:</label>
                 <select class="form-control" id="productView" required>
                     <option value="" disabled selected>Selecciona una vista</option>
-                    <option value="{{ url('/usuarios') }}">vinos</option>
-                    <option value="{{ url('/ofertas') }}">hamburguesas</option>
-                    <option value="{{ url('/destacados') }}">heladeria</option>
+                    <option value="{{ url('/bebidas') }}">Bebidas Alcoholicas</option>
+                    <option value="{{ url('/hamburguesas') }}">Hamburguesas</option>
+                    <option value="{{ url('/helados') }}">Heladeria</option>
+                    <option value="{{ url('/comidas') }}">Comidas Rapidas</option>
+                    <option value="{{ url('/refrescos') }}">Refrescos</option>
+                    <option value="{{ url('/combos') }}">Combos</option>
                     <!-- Agrega más opciones según sea necesario -->
                 </select>
             </div>
 
-            <button type="button" class="btn btn-primary" onclick="addProduct()">Agregar Producto</button>
+            <button type="button" class="btn btn-primary" id="add-product-button">Agregar Producto</button>
         </form>
 
         <div id="product-list" class="d-flex justify-content-center"></div>
     </div>
 
-    <div class="modal fade" id="featuresModal" tabindex="-1" role="dialog" aria-labelledby="featuresModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="featuresModalLabel">Añadir Características</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="featureInput">Características:</label>
-                        <textarea class="form-control" id="featureInput"></textarea>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" onclick="addFeatures()">Guardar</button>
-                </div>
-            </div>
-        </div>
+    <div class="modal fade" id="featuresModal" tabindex="-1" role="dialog" aria-labelledby="featuresModalLabel" aria-hidden="true">
+        <!-- Tarjeta de producto -->
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="{{ asset('asset/js/editar-productos.js') }}"></script>
+
+    <div class="ProductosBD">
+        <div class="container-product">
+            <h3>Bebidas Alcoholicas</h3>
+            <div class="cuadro">
+                <img src="" alt="Producto">
+                <p>Nombre: <span id="productName">Nombre del Producto</span></p>
+                <p>Precio: <span id="productPrice">$0.00</span></p>
+                <p>Características: <span id="productFeatures">Descripción del producto</span></p>
+                <button class="btn btn-danger delete-btn">Eliminar</button>
+                <button class="btn btn-info edit-btn">Editar</button>
+            </div>
+        </div>
+        <div class="container-product">
+            <h3>Hamburguesas</h3>
+            <div class="cuadro">
+                <img src="" alt="Producto">
+                <p>Nombre: <span id="productName">Nombre del Producto</span></p>
+                <p>Precio: <span id="productPrice">$0.00</span></p>
+                <p>Características: <span id="productFeatures">Descripción del producto</span></p>
+                <button class="btn btn-danger delete-btn">Eliminar</button>
+                <button class="btn btn-info edit-btn">Editar</button>
+            </div>
+        </div>
+        <div class="container-product">
+            <h3>Helados</h3>
+            <div class="cuadro">
+                <img src="" alt="Producto">
+                <p>Nombre: <span id="productName">Nombre del Producto</span></p>
+                <p>Precio: <span id="productPrice">$0.00</span></p>
+                <p>Características: <span id="productFeatures">Descripción del producto</span></p>
+                <button class="btn btn-danger delete-btn">Eliminar</button>
+                <button class="btn btn-info edit-btn">Editar</button>
+            </div>
+        </div>
+        <div class="container-product">
+            <h3>Comidas Rapidas</h3>
+            <div class="cuadro">
+                <img src="" alt="Producto">
+                <p>Nombre: <span id="productName">Nombre del Producto</span></p>
+                <p>Precio: <span id="productPrice">$0.00</span></p>
+                <p>Características: <span id="productFeatures">Descripción del producto</span></p>
+                <button class="btn btn-danger delete-btn">Eliminar</button>
+                <button class="btn btn-info edit-btn">Editar</button>
+            </div>
+        </div>
+        <div class="container-product">
+            <h3>Refrescos</h3>
+            <div class="cuadro">
+                <img src="" alt="Producto">
+                <p>Nombre: <span id="productName">Nombre del Producto</span></p>
+                <p>Precio: <span id="productPrice">$0.00</span></p>
+                <p>Características: <span id="productFeatures">Descripción del producto</span></p>
+                <button class="btn btn-danger delete-btn">Eliminar</button>
+                <button class="btn btn-info edit-btn">Editar</button>
+            </div>
+        </div>
+        <div class="container-product">
+            <h3>Combos</h3>
+            <div class="cuadro">
+                <img src="" alt="Producto">
+                <p>Nombre: <span id="productName">Nombre del Producto</span></p>
+                <p>Precio: <span id="productPrice">$0.00</span></p>
+                <p>Características: <span id="productFeatures">Descripción del producto</span></p>
+                <button class="btn btn-danger delete-btn">Eliminar</button>
+                <button class="btn btn-info edit-btn">Editar</button>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="{{ asset('asset/js/editar-productos.js') }}"></script>
 </body>
 
 </html>

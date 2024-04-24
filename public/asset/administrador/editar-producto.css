@@ -19,7 +19,8 @@ body {
 
 .sidebar {
   height: 100%;
-  width: 0; /* Modificado para pantallas pequeñas */
+  width: 0;
+  /* Modificado para pantallas pequeñas */
   position: fixed;
   z-index: 1;
   top: 0;
@@ -49,7 +50,8 @@ body {
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
-  display: none; /* Oculta el botón de cierre por defecto */
+  display: none;
+  /* Oculta el botón de cierre por defecto */
 }
 
 .openbtn {
@@ -83,12 +85,19 @@ body {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  float: left;
+  /* Hace que el formulario flote a la izquierda */
+  max-width: 400px;
+  /* Establece un ancho máximo para definir su espacio */
+  margin-right: 30px;
 }
 
 #product-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
+  /* Alinea los elementos al inicio del contenedor */
+  margin-left: 420px;
 }
 
 .product-card {
@@ -137,29 +146,88 @@ button:hover {
   margin: 20px auto;
 }
 
+.ProductosBD {
+  clear: both;
+  /* Limpia los flotantes anteriores */
+  padding: 20px;
+  margin-top: 20px;
+  margin-right: 8px;
+  margin-left: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-product {
+  margin-bottom: 5px;
+}
+
+.cuadro {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 20px;
+  max-width: 300px;
+  margin: 15px auto;
+  margin-top: 10px;
+  margin-left: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  float: left;
+}
+
+h3{
+  border: solid transparent; 
+  border-width: 0px; 
+  border-bottom: 2px solid #ffffff; 
+  color: white;
+}
+
+.cuadro p {
+  margin: 10px 0;
+}
+
+.btn-danger {
+  background-color: #d9534f;
+  color: white;
+}
+.btn-info {
+  background-color: #5bc0de;
+  color: white;
+}
+.btn-danger:hover {
+  background-color: #c9302c;
+}
+.btn-info:hover {
+  background-color: #31b0d5;
+}
+
 @media screen and (max-width: 2000px) {
   body {
-      background-position: top;
+    background-position: top;
   }
+
   .sidebar {
-      width: 0;
+    width: 0;
   }
+
   .openbtn {
-      display: block;
+    display: block;
   }
 }
 
 @media screen and (min-width: 2000px) {
   .sidebar {
-      width: 250px; /* Ancho fijo para pantallas grandes */
+    width: 250px;
+    /* Ancho fijo para pantallas grandes */
   }
+
   .openbtn {
-      display: none;
+    display: none;
   }
 }
 
 @media screen and (max-width: 2000px) {
   .sidebar .closebtn {
-      display: block; /* Muestra el botón de cierre en pantallas pequeñas */
+    display: block;
+    /* Muestra el botón de cierre en pantallas pequeñas */
   }
 }

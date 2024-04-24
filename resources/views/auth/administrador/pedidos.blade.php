@@ -31,34 +31,15 @@
             <div class="order-item">
                 <img>
                 <div class="info">
-                    <h4>Producto 1</h4>
+                    <h5>Producto 1</h5>
                     <p>Descripcion: helado sabor fssss , leche, kiwi<br>
                         Precio: $100<br>
                         Cantidad: 2</p>
                 </div>
             </div>
-            <div class="order-item">
-                <img>
-                <div class="info">
-                    <h4>Producto 1</h4>
-                    <p>Descripcion: mismosas sin alcohol<br>
-                        Precio: $100<br>
-                        Cantidad: 2</p>
-                </div>
-            </div>
-            <div class="order-item">
-                <img>
-                <div class="info">
-                    <h4>Producto 1</h4>
-                    <p>Descripcion: hamburguesa vegana<br>
-                        Precio: $100<br>
-                        Cantidad: 2</p>
-                </div>
-            </div>
-            <!-- Repite el bloque .order-item para cada producto -->
         </div>
         <div class="static-section">
-            <h2>Información del Cliente</h2>
+            <h3>Información del Cliente</h3>
             <p>Nombre: Morsa de verano con patas<br>
                 Dirección: Calle 123, Ciudad, País<br>
                 Teléfono: 1234567890<br>
