@@ -9,6 +9,7 @@ class ListaPedidosController extends Controller
     //
     public function index()
     {
-        return view('/auth/lista-pedidos');
+        return view('/auth/administrador/lista-pedidos');
+
     }
 }

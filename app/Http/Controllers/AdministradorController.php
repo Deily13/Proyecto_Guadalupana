@@ -10,6 +10,6 @@ class AdministradorController extends Controller
     public function index()
     {
 
-        return view('/auth/admin');
+        return view('/auth/administrador/admin');
     }
 }

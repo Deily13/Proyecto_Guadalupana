@@ -1,0 +1,166 @@
+body {
+  background-image: url(Fondo.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-y: hidden;
+}
+
+.login {
+  color: aliceblue;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0; 
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  display: none; /* Oculta el botón de cierre por defecto */
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  display: block; /* Asegura que el botón esté siempre visible */
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+.content h2, .content p {
+  text-align: center;
+  margin-top: 90px;
+}
+  
+.ContenedorPedidos {
+  max-width: 950px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.DescripcionBreve{
+background-color:#ffffff;
+width: 95%;
+height: 100px;
+margin-top: 10px;
+flex-wrap: wrap;
+display: flex;
+align-items: center;
+padding: 6px;
+margin-bottom: 8px;
+box-shadow: 0px 5px 20px #00070ac4;
+}
+
+.Numerador{
+background-color: #ffffffcb;
+width: 5%;
+height: 100%;
+color: black;
+font-size: 40px;
+display: flex;
+justify-content: center; 
+align-items: center; 
+box-shadow: 0px 10px 30px 5px  #00070ac4; 
+}
+
+.Datos{
+background-color: #ffffffcb;
+width: 75%;
+height: 100%;
+padding-left: 8px;
+}
+
+.BotonRevisar{
+background-color: blue;
+width: 90px;
+height: 40px;
+margin-left: 5%;
+border-radius: 5px;
+background-image: linear-gradient(to top, blue, #133ABF, #1882FF,  #7A96F9 );
+font-family: 'Times New Roman', Times, serif;
+font-size: 20px;
+display: flex; 
+justify-content: center; 
+align-items: center;
+color: white;
+}
+
+.BotonRevisar:hover{
+    box-shadow: 0px 5px 20px #039dda;
+}
+
+@media screen and (max-width: 2000px) {
+  body {
+      background-position: top;
+  }
+  .sidebar {
+      width: 0;
+  }
+  .openbtn {
+      display: block;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .sidebar {
+      width: 250px; /* Ancho fijo para pantallas grandes */
+  }
+  .openbtn {
+      display: none;
+  }
+}
+
+@media screen and (max-width: 2000px) {
+  .sidebar .closebtn {
+      display: block; /* Muestra el botón de cierre en pantallas pequeñas */
+  }
+}

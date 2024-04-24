@@ -41,25 +41,6 @@ html, body {
   background-size: cover;
 }
 
-<<<<<<< HEAD
-.menu{
-  background: url(../img/Icon/menu.png);
-  background-size: cover;
-}
-
-.menu-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.dropdown {
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1000;
-=======
 /* Se elimina la clase .menu-button ya que no es necesaria */
 
 .dropdown {
@@ -71,7 +52,6 @@ html, body {
   top: 100%; /* Asegura que el menú desplegable aparezca debajo del botón .menu */
   left: 0; /* Alinea el menú desplegable con el borde izquierdo del botón .menu */
   top: 0;
->>>>>>> c39d68f1287b61a8d01058ce949e4211f983e026
 }
 
 .dropdown a {

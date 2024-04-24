@@ -8,6 +8,6 @@ class PedidosController extends Controller
 {
     //
     public function index(){
-        return view('/auth/pedidos');
+        return view('/auth/administrador/pedidos');
 }
 }

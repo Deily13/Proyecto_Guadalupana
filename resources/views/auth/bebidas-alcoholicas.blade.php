@@ -1,26 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-=======
-
->>>>>>> c39d68f1287b61a8d01058ce949e4211f983e026
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<<<<<<< HEAD
-    <link href="{{ asset('asset/bebidas_alcoholicas.css') }}" rel="stylesheet">
-    <title>Document</title>
-</head>
-
-<div class="ContainerBebidasAlcoholicas">
-=======
     <link href="{{ asset('asset/Productos.css') }}" rel="stylesheet">
     <title>Document</title>
 </head>
 
+
+<body>
+
+<div class="toolbar">
+        <div class="menu" onclick="toggleDropdown()">
+            <div class="dropdown" id="dropdownMenu" style="display: none;">
+                <!-- Elementos del menú -->
+                <a href="/bebidas-alcoholicas">Bebidas Alcoholicas</a>
+                <a href="/hamburguesas">Hamburguesas</a>
+                <a href="/heladeria">Heladeria</a>
+                <a href="/comidas-rapidas">Comidas Rapidas</a>
+                <a href="/bebidas">Bebidas</a>
+                <a href="/combos">Combos</a>
+            </div>
+        </div>
+
+        <div class="botonera">
+            <a>
+                <div class="boton_toolbar1"></div>
+            </a>
+            <a href="/dashboard">
+                <div class="boton_toolbar2"></div>
+            </a>
+            <a href="/bolsa">
+                <div class="boton_toolbar3"></div>
+            </a>
+            <a href="/lista-pedidos">
+                <div class="boton_toolbar4"></div>
+            </a>
+
+            <!--nombre de usuario registrado (perfil)  -->
+            <a>
+                <div class="usuario">usuario</div>
+            </a>
+
+        </div>
+    </div>
+
 <div class="ContainerProductos">
->>>>>>> c39d68f1287b61a8d01058ce949e4211f983e026
 
     @foreach ($bebidas as $bebida)
     <div class="Cuadro">
@@ -38,13 +64,17 @@
             <h1>{{ $bebida->nombre }}</h1>
             <p>{{ $bebida->Descripción }}</p>
             <div class="botones">
-<<<<<<< HEAD
-                <h5>{{ $bebida->Stock }}</</h5>
-                <div class="BotonPedir">Pedir</div>
-=======
-                <h5>{{ $bebida->Stock }}</< /h5>
-                    <div class="BotonPedir">Pedir</div>
->>>>>>> c39d68f1287b61a8d01058ce949e4211f983e026
+                <h5>{{ $bebida->Stock }}</h5>
+                <form action="/procesar_pedido" method="POST">
+                    @csrf <!-- Agrega esto si estás utilizando Blade para evitar el error CSRF -->
+                    <div class="botones">
+                        <label for="cantidad">
+                            <h5>Cantidad</h5>
+                        </label>
+                        <input type="number" id="cantidad" name="cantidad" min="1" value="1">
+                    </div>
+                    <button type="submit" id="botonPedir1">Pedir</button>
+                </form>
             </div>
         </div>
     </div>
@@ -52,11 +82,7 @@
 
 </div>
 
-<script src="{{ asset('asset/js/bebidas-alcoholicas.js') }}"></script>
+<script src="{{ asset('asset/js/Productos.js') }}"></script>
 </body>
-<<<<<<< HEAD
-</html>
-=======
 
 </html>
->>>>>>> c39d68f1287b61a8d01058ce949e4211f983e026

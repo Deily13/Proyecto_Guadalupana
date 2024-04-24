@@ -3,11 +3,7 @@ body {
   font-family: Arial, sans-serif;
 }
 .formulario__register {
-<<<<<<< HEAD
-  width: 60%;
-=======
   width: 45%;
->>>>>>> c39d68f1287b61a8d01058ce949e4211f983e026
   margin: auto;
   padding: 15px;
   padding-left: 50px;
@@ -50,10 +46,7 @@ body {
   display: flex;
   align-items: center; /* Centra verticalmente el contenido */
   margin-top: 8px;
-<<<<<<< HEAD
-=======
   margin-left: 10px;
->>>>>>> c39d68f1287b61a8d01058ce949e4211f983e026
 }
 
 .formulario__register select {
@@ -63,11 +56,8 @@ body {
   border: 1px solid #ddd;
   border-radius: 4px;
   height: 10px;
-<<<<<<< HEAD
-=======
   width: 35%;
   height: 40px;
->>>>>>> c39d68f1287b61a8d01058ce949e4211f983e026
 }
 
 .Container-Boton{
@@ -76,15 +66,8 @@ body {
   align-items: center;
 }
 
-<<<<<<< HEAD
-
 button{
   background-image: linear-gradient(to top, blue, #133ABF, #1882FF,  #7A96F9 );
-  border-radius: 5px;
-=======
-button{
-  background-image: linear-gradient(to top, blue, #133ABF, #1882FF,  #7A96F9 );
->>>>>>> c39d68f1287b61a8d01058ce949e4211f983e026
   color: #ffffff;
   font-size: 25px;
   width: 190px;
@@ -97,8 +80,4 @@ button{
 
 button:hover{
   box-shadow: 0px 0px 20px #0228ff;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> c39d68f1287b61a8d01058ce949e4211f983e026

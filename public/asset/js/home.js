@@ -2,12 +2,6 @@ function toggleDropdown() {
     var dropdown = document.getElementById("dropdownMenu");
     if (dropdown.style.display === "none") {
         dropdown.style.display = "block";
-<<<<<<< HEAD
-    } else {
-        dropdown.style.display = "none";
-    }
-}
-=======
         // Agrega un controlador de eventos al documento para escuchar clics fuera del menú
         document.addEventListener('click', closeDropdownOnClickOutside);
     } else {
@@ -29,4 +23,3 @@ function closeDropdownOnClickOutside(event) {
 document.querySelector('.menu').addEventListener('click', function(event) {
     event.stopPropagation();
 });
->>>>>>> c39d68f1287b61a8d01058ce949e4211f983e026

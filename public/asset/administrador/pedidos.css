@@ -59,6 +59,7 @@ body {
     color: white;
     padding: 10px 15px;
     border: none;
+    display: block; /* Asegura que el botón esté siempre visible */
   }
   
   .openbtn:hover {
@@ -75,7 +76,7 @@ body {
     margin-top: 90px;
   }
   
-  @media screen and (max-width: 1080px) {
+  @media screen and (max-width: 2000px) {
     body {
         background-position: top;
     }
@@ -87,7 +88,7 @@ body {
     }
   }
   
-  @media screen and (min-width: 1081px) {
+  @media screen and (min-width: 2000px) {
     .sidebar {
         width: 250px; /* Ancho fijo para pantallas grandes */
     }
@@ -96,9 +97,97 @@ body {
     }
   }
   
-  @media screen and (max-width: 1080px) {
+  @media screen and (max-width: 2000px) {
     .sidebar .closebtn {
         display: block; /* Muestra el botón de cierre en pantallas pequeñas */
     }
   }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    height: 80%;
+    max-width: 80%; 
+    margin: 0 auto; 
+    margin-top: 80px;
+    padding: 70px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 3px;
+  }
+
+
+  .order-section {
+    background-color: #ffffff69;
+      flex: 4;
+      overflow-y: auto;
+      margin-bottom: 20px;
+      border-radius: 3px;
+      margin-left: 5px;
+      margin-right: 5px;
+  }
+   
+  .order-item {
+    background-color: #ffffff69; 
+      display: flex;
+      border: 1px solid #ccc;
+      margin-top: 5px;
+      margin-bottom: 3px;
+      margin-left: 15px;
+      margin-right: 15px;
+      padding: 4px;
+  }
   
+  .order-item img {
+      background: url(./IMG-20240315-WA0006.jpg);
+      background-position: center;
+      background-size: cover;
+      width: 100px;
+      height: 90px;
+  }
+  
+  h4{
+    margin-top: 0;
+    margin-bottom: 2px;
+  }
+  
+  p{
+    color: black;
+    margin-bottom: 2px;
+    margin-top: 1px;
+    font-size: 18px;
+  }
+  
+  .order-item .info {
+      flex: 1;
+      margin-left: 10px;
+  }
+  
+  .static-section {
+    background-color: #ffffffb4; 
+    border-radius: 3px;
+      flex: 1;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-left: 4%;
+      margin-right: 4%;
+  }
+  
+  .button-section{
+    background-color: beige;
+    width: 180px;
+    height: 50px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    margin: 10px  auto;
+    align-content: center;
+   text-align: center;
+   background-image: linear-gradient(to top, blue, #133ABF, #1882FF,  #7A96F9 );
+   color: white;
+   font-size: 25px;
+  }
+  
+  .button-section:hover{
+    box-shadow: 0px 5px 20px white;
+  }
