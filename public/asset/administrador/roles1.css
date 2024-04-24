@@ -7,11 +7,6 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   overflow-y: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
 }
 
 .login {
@@ -64,6 +59,7 @@ body {
   color: white;
   padding: 10px 15px;
   border: none;
+  display: block; /* Asegura que el botón esté siempre visible */
 }
 
 .openbtn:hover {
@@ -91,12 +87,13 @@ body {
 .form-horizontal {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center; /* Centra los elementos horizontalmente */
+  flex-wrap: wrap; /* Permite que los elementos se ajusten al cambiar el tamaño de la pantalla */
   padding: 20px;
-  margin-left: 260px;
-  margin-top: 50px;
-  order: 1;
+  margin: 0 auto; /* Centra el contenedor en la pantalla */
+  margin-top: 50px; /* Mantiene el margen superior */
   width: 75%;
+  max-width: 1000px; /* Establece un ancho máximo para evitar el desbordamiento */
   background-color: #111;
   color: #f1f1f1;
   box-sizing: border-box;
@@ -105,7 +102,8 @@ body {
 
 .form-horizontal div {
   margin: 10px;
-  flex: 1; 
+  flex: 1;
+  min-width: 150px; /* Establece un ancho mínimo para los elementos internos */
 }
 
 .form-horizontal input[type="button"] {
@@ -123,28 +121,30 @@ body {
 
 .info-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  order: 1;
-  width: 80%;
-  margin-left: 30%
+  justify-content: center; /* Centra los elementos horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente */
+  flex-wrap: wrap; /* Permite que los elementos se ajusten al cambiar el tamaño de la pantalla */
+  width: 80%; /* Ancho relativo al contenedor padre */
+  max-width: 1000px; /* Establece un ancho máximo para evitar el desbordamiento */
+  margin: 0 auto; /* Centra el contenedor en la pantalla */
+  margin-top: 20px; /* Mantiene el margen superior */
+  box-sizing: border-box;
+  border-radius: 9px;
 }
 
 #info {
-  min-height: 200px; 
-  width: 75%; 
+  min-height: 200px;
+  width: 100%; /* Ajusta el ancho al contenedor padre */
   margin-top: 20px;
   border: 1px solid #111;
   padding: 20px;
   background-color: #111;
   color: #f1f1f1;
-  box-sizing: border-box; 
   overflow: auto;
   border-radius: 9px;
 }
 
-
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 2000px) {
   body {
       background-position: top;
   }
@@ -154,12 +154,9 @@ body {
   .openbtn {
       display: block;
   }
-  .form-horizontal {
-      margin-left: 0; /* Modificado para pantallas pequeñas */
-  }
 }
 
-@media screen and (min-width: 1081px) {
+@media screen and (min-width: 2000px) {
   .sidebar {
       width: 250px; /* Ancho fijo para pantallas grandes */
   }
@@ -168,7 +165,7 @@ body {
   }
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 2000px) {
   .sidebar .closebtn {
       display: block; /* Muestra el botón de cierre en pantallas pequeñas */
   }

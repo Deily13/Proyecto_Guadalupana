@@ -19,7 +19,7 @@ body {
 
 .sidebar {
   height: 100%;
-  width: 0; /* Modificado para pantallas pequeñas */
+  width: 0; 
   position: fixed;
   z-index: 1;
   top: 0;
@@ -59,6 +59,7 @@ body {
   color: white;
   padding: 10px 15px;
   border: none;
+  display: block; /* Asegura que el botón esté siempre visible */
 }
 
 .openbtn:hover {
@@ -75,7 +76,7 @@ body {
   margin-top: 90px;
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 2000px) {
   body {
       background-position: top;
   }
@@ -87,7 +88,7 @@ body {
   }
 }
 
-@media screen and (min-width: 1081px) {
+@media screen and (min-width: 2000px) {
   .sidebar {
       width: 250px; /* Ancho fijo para pantallas grandes */
   }
@@ -96,7 +97,7 @@ body {
   }
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 2000px) {
   .sidebar .closebtn {
       display: block; /* Muestra el botón de cierre en pantallas pequeñas */
   }

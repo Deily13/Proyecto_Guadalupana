@@ -10,6 +10,6 @@ class NuevosUsuariosController extends Controller
     public function index()
     {
 
-        return view('/auth/administrador/nuevis-usuarios');
+        return view('/auth/administrador/nuevos-usuarios');
     }
 }
