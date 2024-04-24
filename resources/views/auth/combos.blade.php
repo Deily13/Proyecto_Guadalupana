@@ -50,7 +50,7 @@
      @foreach ($combos as $combo)
         <div class="Cuadro">
             <div class="img">
-            <img src="{{ $combos->image}}" alt="Descripción de la imagen">
+            <img src="{{ $combo->image}}" alt="Descripción de la imagen">
                 <div class="Calificador" id="calificacion1">
                     <span class="estrella" onclick="calificar(1, 1)">&#9734;</span>
                     <span class="estrella" onclick="calificar(1, 2)">&#9734;</span>

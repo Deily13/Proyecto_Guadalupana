@@ -37,7 +37,7 @@ class ProductoSeeeder extends Seeder
             [
                 'slug' => 'hamburguesas',
                 'nombre' => 'Hamburguesa Doble',
-                'image' => 'https://cdn.domestika.org/c_fill,dpr_auto,f_auto,q_auto/v1680866331/content-items/013/518/382/Zumzum_Macron_mixing_techno_a_lot_of_drugs_is_to_be_seen_on_a_t_a54bf669-6638-4571-9fff-56001a51e11c-original.png?1680866331',
+                'image' => 'https://i.pinimg.com/564x/8f/a7/2d/8fa72dbe252cdefa40865eb46feb0320.jpg',
                 'precio' => '$23.500',
                 'Stock' => '50',
                 'Descripción' => 'lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.',
@@ -45,7 +45,7 @@ class ProductoSeeeder extends Seeder
             [
                 'slug' => 'hamburguesas',
                 'nombre' => 'Hamburguesas Mini',
-                'image' => 'https://cdn.domestika.org/c_fill,dpr_auto,f_auto,q_auto/v1680866331/content-items/013/518/382/Zumzum_Macron_mixing_techno_a_lot_of_drugs_is_to_be_seen_on_a_t_a54bf669-6638-4571-9fff-56001a51e11c-original.png?1680866331',
+                'image' => 'https://i.pinimg.com/564x/8f/a7/2d/8fa72dbe252cdefa40865eb46feb0320.jpg',
                 'precio' => '$23.500',
                 'Stock' => '50',
                 'Descripción' => 'lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.',
@@ -55,7 +55,7 @@ class ProductoSeeeder extends Seeder
             [
                 'slug' => 'helados',
                 'nombre' => 'Ensalada De Frutas',
-                'image' => 'https://cdn.domestika.org/c_fill,dpr_auto,f_auto,q_auto/v1680866331/content-items/013/518/382/Zumzum_Macron_mixing_techno_a_lot_of_drugs_is_to_be_seen_on_a_t_a54bf669-6638-4571-9fff-56001a51e11c-original.png?1680866331',
+                'image' => 'https://i.pinimg.com/564x/4f/16/1a/4f161ab2899799fbfe5733ef27b2ff3f.jpg',
                 'precio' => '$23.500',
                 'Stock' => '50',
                 'Descripción' => 'lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.',
@@ -63,7 +63,7 @@ class ProductoSeeeder extends Seeder
             [
                 'slug' => 'helados',
                 'nombre' => 'Browni Con Helado',
-                'image' => 'https://cdn.domestika.org/c_fill,dpr_auto,f_auto,q_auto/v1680866331/content-items/013/518/382/Zumzum_Macron_mixing_techno_a_lot_of_drugs_is_to_be_seen_on_a_t_a54bf669-6638-4571-9fff-56001a51e11c-original.png?1680866331',
+                'image' => 'https://i.pinimg.com/564x/4f/16/1a/4f161ab2899799fbfe5733ef27b2ff3f.jpg',
                 'precio' => '$23.500',
                 'Stock' => '50',
                 'Descripción' => 'lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.',
@@ -73,7 +73,7 @@ class ProductoSeeeder extends Seeder
             [
                 'slug' => 'comidas-rapidas',
                 'nombre' => 'Sandwich',
-                'image' => 'https://cdn.domestika.org/c_fill,dpr_auto,f_auto,q_auto/v1680866331/content-items/013/518/382/Zumzum_Macron_mixing_techno_a_lot_of_drugs_is_to_be_seen_on_a_t_a54bf669-6638-4571-9fff-56001a51e11c-original.png?1680866331',
+                'image' => 'https://i.pinimg.com/564x/6e/e5/ea/6ee5eaf3596cb81a9cbb1d47a7ac5c7c.jpg',
                 'precio' => '$23.500',
                 'Stock' => '50',
                 'Descripción' => 'lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.',
@@ -81,7 +81,7 @@ class ProductoSeeeder extends Seeder
             [
                 'slug' => 'comidas-rapidas',
                 'nombre' => 'Perro Americano',
-                'image' => 'https://cdn.domestika.org/c_fill,dpr_auto,f_auto,q_auto/v1680866331/content-items/013/518/382/Zumzum_Macron_mixing_techno_a_lot_of_drugs_is_to_be_seen_on_a_t_a54bf669-6638-4571-9fff-56001a51e11c-original.png?1680866331',
+                'image' => 'https://i.pinimg.com/564x/6e/e5/ea/6ee5eaf3596cb81a9cbb1d47a7ac5c7c.jpg',
                 'precio' => '$23.500',
                 'Stock' => '50',
                 'Descripción' => 'lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.',
@@ -91,7 +91,7 @@ class ProductoSeeeder extends Seeder
             [
                 'slug' => 'refrescos',
                 'nombre' => 'Malteada Vainilla',
-                'image' => 'https://cdn.domestika.org/c_fill,dpr_auto,f_auto,q_auto/v1680866331/content-items/013/518/382/Zumzum_Macron_mixing_techno_a_lot_of_drugs_is_to_be_seen_on_a_t_a54bf669-6638-4571-9fff-56001a51e11c-original.png?1680866331',
+                'image' => 'https://i.pinimg.com/564x/8f/6c/2b/8f6c2b576190794da5a945328e4be346.jpg',
                 'precio' => '$23.500',
                 'Stock' => '50',
                 'Descripción' => 'lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.',
@@ -99,7 +99,7 @@ class ProductoSeeeder extends Seeder
             [
                 'slug' => 'refrescos',
                 'nombre' => 'limonada de coco',
-                'image' => 'https://cdn.domestika.org/c_fill,dpr_auto,f_auto,q_auto/v1680866331/content-items/013/518/382/Zumzum_Macron_mixing_techno_a_lot_of_drugs_is_to_be_seen_on_a_t_a54bf669-6638-4571-9fff-56001a51e11c-original.png?1680866331',
+                'image' => 'https://i.pinimg.com/564x/8f/6c/2b/8f6c2b576190794da5a945328e4be346.jpg',
                 'precio' => '$23.500',
                 'Stock' => '50',
                 'Descripción' => 'lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.',
@@ -109,7 +109,7 @@ class ProductoSeeeder extends Seeder
             [
                 'slug' => 'combos',
                 'nombre' => 'Combo Especial',
-                'image' => 'https://cdn.domestika.org/c_fill,dpr_auto,f_auto,q_auto/v1680866331/content-items/013/518/382/Zumzum_Macron_mixing_techno_a_lot_of_drugs_is_to_be_seen_on_a_t_a54bf669-6638-4571-9fff-56001a51e11c-original.png?1680866331',
+                'image' => 'https://i.pinimg.com/564x/0e/12/9d/0e129db8b9bbe1d18bbeae104756cd91.jpg',
                 'precio' => '$23.500',
                 'Stock' => '50',
                 'Descripción' => 'lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.',
@@ -117,7 +117,7 @@ class ProductoSeeeder extends Seeder
             [
                 'slug' => 'combos',
                 'nombre' => 'Combo Mini',
-                'image' => 'https://cdn.domestika.org/c_fill,dpr_auto,f_auto,q_auto/v1680866331/content-items/013/518/382/Zumzum_Macron_mixing_techno_a_lot_of_drugs_is_to_be_seen_on_a_t_a54bf669-6638-4571-9fff-56001a51e11c-original.png?1680866331',
+                'image' => 'https://i.pinimg.com/564x/0e/12/9d/0e129db8b9bbe1d18bbeae104756cd91.jpg',
                 'precio' => '$23.500',
                 'Stock' => '50',
                 'Descripción' => 'lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.',

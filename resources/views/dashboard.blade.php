@@ -105,7 +105,7 @@
         </div>
     </div>
 
-    <script src="{{ asset('asset/js/home-registre.js') }}"></script>
+    <script src="{{ asset('asset/js/home.js') }}"></script>
 </body>
 
 </html>

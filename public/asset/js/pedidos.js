@@ -37,16 +37,3 @@ window.onload = function() {
       closeNav();
     }
   });
-
-// Asegúrate de que este script se ejecute después de que el DOM esté completamente cargado
-document.addEventListener('DOMContentLoaded', (event) => {
-    // Selecciona todos los elementos con la clase 'BotonRevisar'
-    var botonesRevisar = document.querySelectorAll('.BotonRevisar');
-
-    // Agrega un evento de clic a cada botón
-    botonesRevisar.forEach(function(boton) {
-        boton.addEventListener('click', function() {
-            window.location.href='/pedidos';
-        });
-    });
-});

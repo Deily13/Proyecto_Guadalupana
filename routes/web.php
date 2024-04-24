@@ -58,7 +58,7 @@ Route::get('bolsa', [BolsaController::class, 'index']);
 Route::get('lista-pedidos', [ListaPedidosController::class, 'index']);
 Route::get('pedidos', [PedidosController::class, 'index']);
 Route::get('editar-productos', [EditarProductoController::class, 'index']);
-Route::get('nuevos_usuarios', [NuevosUsuariosController::class, 'index']);
+Route::get('nuevos-usuarios', [NuevosUsuariosController::class, 'index']);
 Route::get('roles', [RolesController::class, 'index']);
 Route::get('admin', [AdministradorController::class, 'index']);
 
