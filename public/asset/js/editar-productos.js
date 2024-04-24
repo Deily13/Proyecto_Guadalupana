@@ -188,7 +188,7 @@ function transformToEditForm(productCard) {
 }
 
 // Función para guardar los cambios editados
-function saveEditedProduct(productCard) {
+function saveEditedProduct(productCard, form, currentImageSrc) {
     var newImageFile = form.querySelector('input[name="productImage"]').files[0];
     var newImageSrc = newImageFile ? URL.createObjectURL(newImageFile) : currentImageSrc;
     var newName = productCard.querySelector('input[name="productName"]').value;
@@ -200,7 +200,7 @@ function saveEditedProduct(productCard) {
     ).value;
 
     productCard.innerHTML = `
-    <img src="${newImageElement.src}" alt="Product Image">
+    <img src="${newImageSrc}" alt="Product Image">
         <p>Nombre: ${newName}</p>
         <p>Precio: $${newPrice}</p>
         ${newFeatures ? `<p>Características: ${newFeatures}</p>` : ""}
