@@ -6,7 +6,7 @@ body {
     background-attachment: fixed;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    overflow-y: hidden;
+
   }
   
   .login {
@@ -110,7 +110,7 @@ body {
     height: 80%;
     max-width: 80%; 
     margin: 0 auto; 
-    margin-top: 80px;
+    margin-top: 10px;
     padding: 70px;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -119,7 +119,7 @@ body {
 
 
   .order-section {
-    background-color: #ffffff69;
+    background-color: #ffffff;
       flex: 4;
       overflow-y: auto;
       margin-bottom: 20px;
@@ -147,7 +147,7 @@ body {
       height: 90px;
   }
   
-  h4{
+  h5{
     margin-top: 0;
     margin-bottom: 2px;
   }
@@ -156,7 +156,7 @@ body {
     color: black;
     margin-bottom: 2px;
     margin-top: 1px;
-    font-size: 18px;
+    font-size: 16px;
   }
   
   .order-item .info {
@@ -165,7 +165,7 @@ body {
   }
   
   .static-section {
-    background-color: #ffffffb4; 
+    background-color: #ffffff; 
     border-radius: 3px;
       flex: 1;
       border: 1px solid #ccc;
