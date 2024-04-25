@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,7 @@
 
 <body>
 
-<div class="toolbar">
+    <div class="toolbar">
         <div class="menu" onclick="toggleDropdown()">
             <div class="dropdown" id="dropdownMenu" style="display: none;">
                 <!-- Elementos del menú -->
@@ -46,43 +47,44 @@
         </div>
     </div>
 
-<div class="ContainerProductos">
+    <div class="ContainerProductos">
 
-    @foreach ($bebidas as $bebida)
-    <div class="Cuadro">
-        <div class="img">
-            <img src="{{ $bebida->image}}" alt="Descripción de la imagen">
-            <div class="Calificador" id="calificacion1">
-                <span class="estrella" onclick="calificar(1, 1)">&#9734;</span>
-                <span class="estrella" onclick="calificar(1, 2)">&#9734;</span>
-                <span class="estrella" onclick="calificar(1, 3)">&#9734;</span>
-                <span class="estrella" onclick="calificar(1, 4)">&#9734;</span>
-                <span class="estrella" onclick="calificar(1, 5)">&#9734;</span>
+        @foreach ($bebidas as $bebida)
+        <div class="Cuadro">
+            <div class="img">
+                <img src="{{ $bebida->image}}" alt="Descripción de la imagen">
+                <div class="Calificador" id="calificacion1">
+                    <span class="estrella" onclick="calificar(1, 1)">&#9734;</span>
+                    <span class="estrella" onclick="calificar(1, 2)">&#9734;</span>
+                    <span class="estrella" onclick="calificar(1, 3)">&#9734;</span>
+                    <span class="estrella" onclick="calificar(1, 4)">&#9734;</span>
+                    <span class="estrella" onclick="calificar(1, 5)">&#9734;</span>
+                </div>
+            </div>
+            <div class="Detalle">
+                <h1>{{ $bebida->nombre }}</h1>
+                <p>{{ $bebida->Descripción }}</p>
+                <p>Precio: {{ $bebida->precio }}</p>
+                <p>Disponibles: {{ $bebida->Stock }}</p>
+                <div class="botones">
+                    <form action="/procesar_pedido" method="POST">
+                        @csrf <!-- Agrega esto si estás utilizando Blade para evitar el error CSRF -->
+                        <div class="botones">
+                            <label for="cantidad">
+                                <h5>Cantidad</h5>
+                            </label>
+                            <input type="number" id="cantidad" name="cantidad" min="1" value="1">
+                        </div>
+                        <button type="submit" id="botonPedir1">Pedir</button>
+                    </form>
+                </div>
             </div>
         </div>
-        <div class="Detalle">
-            <h1>{{ $bebida->nombre }}</h1>
-            <p>{{ $bebida->Descripción }}</p>
-            <div class="botones">
-                <h5>{{ $bebida->Stock }}</h5>
-                <form action="/procesar_pedido" method="POST">
-                    @csrf <!-- Agrega esto si estás utilizando Blade para evitar el error CSRF -->
-                    <div class="botones">
-                        <label for="cantidad">
-                            <h5>Cantidad</h5>
-                        </label>
-                        <input type="number" id="cantidad" name="cantidad" min="1" value="1">
-                    </div>
-                    <button type="submit" id="botonPedir1">Pedir</button>
-                </form>
-            </div>
-        </div>
+        @endforeach
+
     </div>
-    @endforeach
 
-</div>
-
-<script src="{{ asset('asset/js/Productos.js') }}"></script>
+    <script src="{{ asset('asset/js/Productos.js') }}"></script>
 </body>
 
 </html>

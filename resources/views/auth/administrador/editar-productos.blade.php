@@ -73,71 +73,87 @@
 
 
     <div class="ProductosBD">
+
         <div class="container-product">
             <h3>Bebidas Alcoholicas</h3>
+            @foreach ($bebidas as $bebida)
             <div class="cuadro">
-                <img src="" alt="Producto">
-                <p>Nombre: <span id="productName">Nombre del Producto</span></p>
-                <p>Precio: <span id="productPrice">$0.00</span></p>
-                <p>Características: <span id="productFeatures">Descripción del producto</span></p>
+                <img src="{{ $bebida->image }}" alt="Producto">
+                <p>Nombre: <span>{{ $bebida->nombre }}</span></p>
+                <p>Precio: <span>{{ $bebida->precio }}</span></p>
+                <p>Características: <span>{{ $bebida->Descripción }}</span></p>
+                <p>Disponible: <span>{{ $bebida->Stock }}</span></p>
                 <button class="btn btn-danger delete-btn">Eliminar</button>
                 <button class="btn btn-info edit-btn">Editar</button>
             </div>
+            @endforeach
         </div>
+
+
         <div class="container-product">
             <h3>Hamburguesas</h3>
+            @foreach ($hamburguesas as $hamburguesa)
             <div class="cuadro">
-                <img src="" alt="Producto">
-                <p>Nombre: <span id="productName">Nombre del Producto</span></p>
-                <p>Precio: <span id="productPrice">$0.00</span></p>
-                <p>Características: <span id="productFeatures">Descripción del producto</span></p>
+                <img src="{{ $hamburguesa->image }}" alt="Producto">
+                <p>Nombre: <span id="productName">{{ $hamburguesa->nombre }}</span></p>
+                <p>Precio: <span id="productPrice">{{ $hamburguesa->precio }}</span></p>
+                <p>Características: <span id="productFeatures">{{ $hamburguesa->Descripción }}</span></p>
                 <button class="btn btn-danger delete-btn">Eliminar</button>
                 <button class="btn btn-info edit-btn">Editar</button>
             </div>
+            @endforeach
         </div>
         <div class="container-product">
             <h3>Helados</h3>
+            @foreach ($helados as $helado)
             <div class="cuadro">
-                <img src="" alt="Producto">
-                <p>Nombre: <span id="productName">Nombre del Producto</span></p>
-                <p>Precio: <span id="productPrice">$0.00</span></p>
-                <p>Características: <span id="productFeatures">Descripción del producto</span></p>
+                <img src="{{ $helado->image }}" alt="Producto">
+                <p>Nombre: <span id="productName">{{ $helado->nombre }}</span></p>
+                <p>Precio: <span id="productPrice">{{ $helado->precio }}</span></p>
+                <p>Características: <span id="productFeatures">{{ $helado->Descripción }}</span></p>
                 <button class="btn btn-danger delete-btn">Eliminar</button>
                 <button class="btn btn-info edit-btn">Editar</button>
             </div>
+            @endforeach
         </div>
         <div class="container-product">
             <h3>Comidas Rapidas</h3>
+            @foreach ($comidas as $comida)
             <div class="cuadro">
-                <img src="" alt="Producto">
-                <p>Nombre: <span id="productName">Nombre del Producto</span></p>
-                <p>Precio: <span id="productPrice">$0.00</span></p>
-                <p>Características: <span id="productFeatures">Descripción del producto</span></p>
+                <img src="{{ $comida->image }}" alt="Producto">
+                <p>Nombre: <span id="productName">{{ $comida->nombre }}</span></p>
+                <p>Precio: <span id="productPrice">{{ $comida->precio }}</span></p>
+                <p>Características: <span id="productFeatures">{{ $comida->Descripción }}</span></p>
                 <button class="btn btn-danger delete-btn">Eliminar</button>
                 <button class="btn btn-info edit-btn">Editar</button>
             </div>
+            @endforeach
         </div>
         <div class="container-product">
             <h3>Refrescos</h3>
+            @foreach ($refrescos as $refresco)
             <div class="cuadro">
-                <img src="" alt="Producto">
-                <p>Nombre: <span id="productName">Nombre del Producto</span></p>
-                <p>Precio: <span id="productPrice">$0.00</span></p>
-                <p>Características: <span id="productFeatures">Descripción del producto</span></p>
+                <img src="{{ $refresco->image }}" alt="Producto">
+                <p>Nombre: <span id="productName">{{ $refresco->nombre }}</span></p>
+                <p>Precio: <span id="productPrice">{{ $refresco->precio }}</span></p>
+                <p>Características: <span id="productFeatures">{{ $refresco->Descripción }}</span></p>
                 <button class="btn btn-danger delete-btn">Eliminar</button>
                 <button class="btn btn-info edit-btn">Editar</button>
             </div>
+            @endforeach
         </div>
         <div class="container-product">
             <h3>Combos</h3>
+            @foreach ($combos as $combo)
             <div class="cuadro">
-                <img src="" alt="Producto">
-                <p>Nombre: <span id="productName">Nombre del Producto</span></p>
-                <p>Precio: <span id="productPrice">$0.00</span></p>
-                <p>Características: <span id="productFeatures">Descripción del producto</span></p>
+                <img src="{{ $combo->image }}" alt="Producto">
+                <p>Nombre: <span id="productName">{{ $combo->nombre }}</span></p>
+                <p>Precio: <span id="productPrice">{{ $combo->Precio }}</span></p>
+                <p>Características: <span id="productFeatures">{{ $combo->Descripción }}</span></p>
                 <button class="btn btn-danger delete-btn">Eliminar</button>
                 <button class="btn btn-info edit-btn">Editar</button>
             </div>
+            @endforeach
         </div>
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

@@ -76,6 +76,31 @@
 
             <div class="botones">
                 <input type="button" id="addButton" value="Agregar">
+            </div>
+        </form>
+
+
+        <form class="form-horizontal" id="form-buscar">
+            <div>
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="nombre" name="nombre">
+            </div>
+            <div>
+                <label for="apellido">Apellido:</label><br>
+                <input type="text" id="apellido" name="apellido">
+            </div>
+            <div>
+                <label for="correo">Correo:</label><br>
+                <input type="text" id="correo" name="correo">
+            </div>
+            <div>
+                <label for="rol">Rol:</label><br>
+                <select id="rol" name="rol">
+                    <option value="invitado">Invitado</option>
+                    <option value="admin">Administrador</option>
+                </select>
+            </div>
+            <div class="botones">
                 <input type="button" value="Buscar" id="searchButton">
             </div>
         </form>

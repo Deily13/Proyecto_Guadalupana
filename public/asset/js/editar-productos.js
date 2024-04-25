@@ -55,18 +55,20 @@ function createButton(text, className, onClick) {
 function addProduct() {
     var productName = document.getElementById("productName").value.trim();
     var productPrice = document.getElementById("productPrice").value.trim();
+    var productDisponible = document.getElementById("productDisponible").value.trim();
     var productImage = document.getElementById("productImage").files[0];
     var productFeatures = document
         .getElementById("productFeatures")
         .value.trim();
 
     // Verifica que los campos no estén vacíos antes de crear la tarjeta del producto
-    if (productName && productPrice && productImage && productFeatures) {
+    if (productName && productPrice && productImage && productDisponible && productFeatures) {
         var productCard = createProductCard(
             productName,
             productPrice,
             productImage,
-            productFeatures
+            productFeatures,
+            productDisponible
         );
         document.getElementById("product-list").appendChild(productCard);
 
@@ -79,17 +81,16 @@ function addProduct() {
         );
     }
 }
-function createProductCard(name, price, image, features) {
+function createProductCard(name, price, image, disponible, features) {
     var productCard = document.createElement("div");
     productCard.className = "product-card";
 
     productCard.appendChild(createImageElement(image));
     productCard.appendChild(createTextElement("p", `Nombre: ${name}`));
     productCard.appendChild(createTextElement("p", `Precio: $${price}`));
+    productCard.appendChild(createTextElement("p", `Disponible: $${price}`))
     if (features) {
-        productCard.appendChild(
-            createTextElement("p", `Características: ${features}`)
-        );
+        productCard.appendChild(createTextElement("p", `Características: ${features}`));
     }
     productCard.appendChild(
         createButton("Eliminar", "btn btn-danger delete-btn", function () {
@@ -110,6 +111,7 @@ function clearFormFields() {
     document.getElementById("productName").value = "";
     document.getElementById("productFeatures").value = "";
     document.getElementById("productPrice").value = "";
+    document.getElementById("productDisponible").value = "";
     document.getElementById("productImage").value = "";
 }
 
@@ -145,6 +147,9 @@ function transformToEditForm(productCard) {
     var currentFeatures = productCard
         .querySelectorAll("p")[2]
         ?.textContent.replace("Características: ", "");
+        var currentDisponible = productCard
+        .querySelectorAll("p")[3]
+        ?.textContent.replace("Disponible: ", "");
     var originalContent = productCard.innerHTML;
 
     var form = document.createElement("form");
@@ -164,6 +169,10 @@ function transformToEditForm(productCard) {
         <div class="form-group">
           <label>Características:</label>
           <textarea class="form-control" name="productFeatures">${currentFeatures}</textarea>
+        </div>
+        <div class="form-group">
+          <label>Disponible:</label>
+          <input type="number" class="form-control" name="productDisponible" value="${currentDisponible}">
         </div>
         <div class="button-container">
         <button type="button" class="btn btn-success save-btn">Guardar</button>
@@ -189,9 +198,8 @@ function saveEditedProduct(productCard, form, currentImageSrc) {
     var newImageFile = form.querySelector('input[name="productImage"]').files[0];
     var newImageSrc = newImageFile ? URL.createObjectURL(newImageFile) : currentImageSrc;
     var newName = productCard.querySelector('input[name="productName"]').value;
-    var newPrice = productCard.querySelector(
-        'input[name="productPrice"]'
-    ).value;
+    var newPrice = productCard.querySelector('input[name="productPrice"]').value;
+    var newDiponible = productCard.querySelector('input[name="productDisponible"]').value;
     var newFeatures = productCard.querySelector(
         'textarea[name="productFeatures"]'
     ).value;
@@ -200,6 +208,7 @@ function saveEditedProduct(productCard, form, currentImageSrc) {
     <img src="${newImageSrc}" alt="Product Image">
         <p>Nombre: ${newName}</p>
         <p>Precio: $${newPrice}</p>
+        <p>Disponible: $${newDiponible}</p>
         ${newFeatures ? `<p>Características: ${newFeatures}</p>` : ""}
         <button class="btn btn-danger delete-btn">Eliminar</button>
         <button class="btn btn-info edit-btn">Editar</button>
