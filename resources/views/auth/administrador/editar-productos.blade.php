@@ -89,7 +89,6 @@
             @endforeach
         </div>
 
-
         <div class="container-product">
             <h3>Hamburguesas</h3>
             @foreach ($hamburguesas as $hamburguesa)
@@ -103,6 +102,7 @@
             </div>
             @endforeach
         </div>
+
         <div class="container-product">
             <h3>Helados</h3>
             @foreach ($helados as $helado)
@@ -116,6 +116,7 @@
             </div>
             @endforeach
         </div>
+
         <div class="container-product">
             <h3>Comidas Rapidas</h3>
             @foreach ($comidas as $comida)
@@ -129,6 +130,7 @@
             </div>
             @endforeach
         </div>
+
         <div class="container-product">
             <h3>Refrescos</h3>
             @foreach ($refrescos as $refresco)
@@ -142,6 +144,7 @@
             </div>
             @endforeach
         </div>
+        
         <div class="container-product">
             <h3>Combos</h3>
             @foreach ($combos as $combo)
