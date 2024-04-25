@@ -24,10 +24,10 @@
     <button class="openbtn" onclick="openNav()">☰ Menú</button>
 
     <div class="parent-container">
-        <form class="form-horizontal" id="myForm">
+        <form class="form-horizontal" id="Form-user-dat">
             <div>
-                <label for="name">Nombre:</label><br>
-                <input type="text" id="name" name="name">
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="nombre" name="nombre">
             </div>
             <div>
                 <label for="apellido">Apellido:</label><br>
@@ -48,10 +48,10 @@
                     <option value="cc">Cédula de Ciudadanía</option>
                     <option value="ce">Cédula de Extranjería</option>
                     <option value="ti">Tarjeta de Identidad</option>
-                  </select>
+                </select>
             </div>
             <div>
-                <label for="nuemeroId">N ID:</label><br>
+                <label for="numeroId">N ID:</label><br>
                 <input type="number" id="numeroId" name="numeroId">
             </div>
             <div>
@@ -74,8 +74,8 @@
                 <input type="password" id="clave" name="clave">
             </div>
 
-            <div>
-                <input type="button" value="Agregar" onclick="addInfo()">
+            <div class="botones">
+                <input type="button" id="addButton" value="Agregar">
                 <input type="button" value="Buscar" id="searchButton">
             </div>
         </form>
@@ -83,7 +83,7 @@
 
 
         <div class="info-container">
-            <div id="info">
+            <div class="info">
                 <table>
                     <tr>
                         <th>Nombre</th>
@@ -95,8 +95,22 @@
                         <th>N Id</th>
                         <th>Cell</th>
                         <th>Dirección</th>
-                        <th>Clave</th>
-                      </tr>
+                        <th class="celda-especial"></th>
+                    </tr>
+                    <tr>
+                        <td>Nombre</td>
+                        <td>Apellido</td>
+                        <td>User</td>
+                        <td>Rol</td>
+                        <td>Correo</td>
+                        <td>Tipo Id</td>
+                        <td>N Id</td>
+                        <td>Cell</td>
+                        <td>Dirección</td>
+                        <td>
+                            <button>Quitar Permisos</button>
+                        </td>
+                    </tr>
                 </table>
             </div>
         </div>
