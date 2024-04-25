@@ -1,32 +1,27 @@
 // Función para abrir el menú lateral
 function openNav() {
     document.getElementById("mySidebar").style.width = "250px";
-    // Ajusta el margen izquierdo y la anchura del contenido principal para centrarlo
     document.getElementById("main").style.marginLeft = "250px";
     document.getElementById("main").style.width = "calc(100% - 250px)";
     document.getElementById("main").style.transition = "margin-left 0.5s";
-    // Muestra el botón de cierre siempre que el menú esté abierto
-    document.getElementById("closebtn").style.display = "block"; // Modificado
+    document.getElementById("closebtn").style.display = "block"; 
 }
 
 // Función para cerrar el menú lateral
 function closeNav() {
     document.getElementById("mySidebar").style.width = "0";
-    // Restablece el margen y la anchura del contenido principal
     document.getElementById("main").style.marginLeft = "0";
     document.getElementById("main").style.width = "100%";
     document.getElementById("main").style.transition = "margin-left 0.5s";
-    // Oculta el botón de cierre cuando el menú está cerrado
-    document.getElementById("closebtn").style.display = "none"; // Modificado
+    document.getElementById("closebtn").style.display = "none";
 }
 
 // Añade un detector de eventos de cambio de tamaño de ventana
 window.addEventListener("resize", function (event) {
     if (window.innerWidth > 1080) {
-        // Si la ventana es más ancha que 1080px y el menú está abierto, muestra el botón de cierre
         var sidebarWidth = document.getElementById("mySidebar").style.width;
         if (sidebarWidth === "250px") {
-            document.getElementById("closebtn").style.display = "block"; // Modificado
+            document.getElementById("closebtn").style.display = "block";
         }
     } else {
         closeNav();
@@ -60,18 +55,20 @@ function createButton(text, className, onClick) {
 function addProduct() {
     var productName = document.getElementById("productName").value.trim();
     var productPrice = document.getElementById("productPrice").value.trim();
+    var productDisponible = document.getElementById("productDisponible").value.trim();
     var productImage = document.getElementById("productImage").files[0];
     var productFeatures = document
         .getElementById("productFeatures")
         .value.trim();
 
     // Verifica que los campos no estén vacíos antes de crear la tarjeta del producto
-    if (productName && productPrice && productImage && productFeatures) {
+    if (productName && productPrice && productImage && productDisponible && productFeatures) {
         var productCard = createProductCard(
             productName,
             productPrice,
             productImage,
-            productFeatures
+            productFeatures,
+            productDisponible
         );
         document.getElementById("product-list").appendChild(productCard);
 
@@ -84,17 +81,16 @@ function addProduct() {
         );
     }
 }
-function createProductCard(name, price, image, features) {
+function createProductCard(name, price, image, disponible, features) {
     var productCard = document.createElement("div");
     productCard.className = "product-card";
 
     productCard.appendChild(createImageElement(image));
     productCard.appendChild(createTextElement("p", `Nombre: ${name}`));
     productCard.appendChild(createTextElement("p", `Precio: $${price}`));
+    productCard.appendChild(createTextElement("p", `Disponible: $${price}`))
     if (features) {
-        productCard.appendChild(
-            createTextElement("p", `Características: ${features}`)
-        );
+        productCard.appendChild(createTextElement("p", `Características: ${features}`));
     }
     productCard.appendChild(
         createButton("Eliminar", "btn btn-danger delete-btn", function () {
@@ -115,6 +111,7 @@ function clearFormFields() {
     document.getElementById("productName").value = "";
     document.getElementById("productFeatures").value = "";
     document.getElementById("productPrice").value = "";
+    document.getElementById("productDisponible").value = "";
     document.getElementById("productImage").value = "";
 }
 
@@ -150,6 +147,9 @@ function transformToEditForm(productCard) {
     var currentFeatures = productCard
         .querySelectorAll("p")[2]
         ?.textContent.replace("Características: ", "");
+        var currentDisponible = productCard
+        .querySelectorAll("p")[3]
+        ?.textContent.replace("Disponible: ", "");
     var originalContent = productCard.innerHTML;
 
     var form = document.createElement("form");
@@ -170,8 +170,14 @@ function transformToEditForm(productCard) {
           <label>Características:</label>
           <textarea class="form-control" name="productFeatures">${currentFeatures}</textarea>
         </div>
+        <div class="form-group">
+          <label>Disponible:</label>
+          <input type="number" class="form-control" name="productDisponible" value="${currentDisponible}">
+        </div>
+        <div class="button-container">
         <button type="button" class="btn btn-success save-btn">Guardar</button>
         <button type="button" class="btn btn-secondary cancel-btn">Cancelar</button>
+        </div>
       `;
 
     productCard.innerHTML = "";
@@ -192,9 +198,8 @@ function saveEditedProduct(productCard, form, currentImageSrc) {
     var newImageFile = form.querySelector('input[name="productImage"]').files[0];
     var newImageSrc = newImageFile ? URL.createObjectURL(newImageFile) : currentImageSrc;
     var newName = productCard.querySelector('input[name="productName"]').value;
-    var newPrice = productCard.querySelector(
-        'input[name="productPrice"]'
-    ).value;
+    var newPrice = productCard.querySelector('input[name="productPrice"]').value;
+    var newDiponible = productCard.querySelector('input[name="productDisponible"]').value;
     var newFeatures = productCard.querySelector(
         'textarea[name="productFeatures"]'
     ).value;
@@ -203,6 +208,7 @@ function saveEditedProduct(productCard, form, currentImageSrc) {
     <img src="${newImageSrc}" alt="Product Image">
         <p>Nombre: ${newName}</p>
         <p>Precio: $${newPrice}</p>
+        <p>Disponible: $${newDiponible}</p>
         ${newFeatures ? `<p>Características: ${newFeatures}</p>` : ""}
         <button class="btn btn-danger delete-btn">Eliminar</button>
         <button class="btn btn-info edit-btn">Editar</button>
@@ -215,7 +221,7 @@ function saveEditedProduct(productCard, form, currentImageSrc) {
 // Asigna eventos a los botones existentes al cargar la página
 assignButtonEvents();
 
-// ... (el resto de tu código)
+
 
 document.addEventListener("DOMContentLoaded", function () {
     assignButtonEvents();

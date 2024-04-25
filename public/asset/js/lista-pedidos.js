@@ -1,8 +1,4 @@
-window.onload = function() {
-    var adminName = "Nombre del Admin";
-    document.getElementById("welcome").innerHTML = "Bienvenido " + adminName;
-  }
-  
+
   // Función para abrir el menú lateral
   function openNav() {
     document.getElementById("mySidebar").style.width = "250px";

@@ -6,7 +6,7 @@ body {
   background-attachment: fixed;
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 
 .login {
@@ -106,12 +106,18 @@ body {
   min-width: 150px; /* Establece un ancho mínimo para los elementos internos */
 }
 
+.botones{
+display: flex;
+justify-content: center;
+}
+
 .form-horizontal input[type="button"] {
   background-color: #444;
   color: white;
   border: none;
   padding: 10px 15px;
   cursor: pointer;
+  margin-left: 20px;
 }
 
 .form-horizontal input[type="button"]:hover {
@@ -119,29 +125,79 @@ body {
   color: #111;
 }
 
+select{
+  width: 177px;
+  height: 20px;
+}
+
 .info-container {
   display: flex;
   justify-content: center; /* Centra los elementos horizontalmente */
   align-items: center; /* Centra los elementos verticalmente */
   flex-wrap: wrap; /* Permite que los elementos se ajusten al cambiar el tamaño de la pantalla */
-  width: 80%; /* Ancho relativo al contenedor padre */
-  max-width: 1000px; /* Establece un ancho máximo para evitar el desbordamiento */
+  width: 95%; /* Ancho relativo al contenedor padre */
+  max-width: 2000px; /* Establece un ancho máximo para evitar el desbordamiento */
   margin: 0 auto; /* Centra el contenedor en la pantalla */
   margin-top: 20px; /* Mantiene el margen superior */
   box-sizing: border-box;
   border-radius: 9px;
 }
 
-#info {
+.info {
   min-height: 200px;
   width: 100%; /* Ajusta el ancho al contenedor padre */
   margin-top: 20px;
   border: 1px solid #111;
   padding: 20px;
-  background-color: #111;
+  background-color: #161616;
   color: #f1f1f1;
   overflow: auto;
   border-radius: 9px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+/* Estilos para los encabezados de la tabla */
+th {
+  background-color: #ffffff;
+  color: black;
+  padding: 10px;
+  text-align: center;
+}
+
+.celda-especial {
+  background-color: transparent; 
+  width: 90px;
+}
+
+
+/* Estilos para las celdas de la tabla */
+td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+
+button{
+  background-color: #000000;
+  height: 35px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e61d1d;
+}
+
+/* Estilos para las filas al pasar el mouse */
+tr:hover {
+  background-color: #ddd;
 }
 
 @media screen and (max-width: 2000px) {
