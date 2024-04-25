@@ -30,83 +30,79 @@
                 <input type="text" id="name" name="name">
             </div>
             <div>
-                <label for="email">Correo:</label><br>
-                <input type="email" id="email" name="email">
+                <label for="apellido">Apellido:</label><br>
+                <input type="text" id="apellido" name="apellido">
             </div>
             <div>
-                <label for="operator">Operador:</label><br>
-                <select id="operator" name="operator">
-                    <option value="operator1">Operador 1</option>
-                    <option value="operator2">Operador 2</option>
-                    <!-- Agrega más opciones de operadores aquí -->
-                </select>
+                <label for="user">User:</label><br>
+                <input type="text" id="user" name="user">
             </div>
             <div>
-                <label for="role">Rol:</label><br>
-                <select id="role" name="role">
+                <label for="correo">Correo:</label><br>
+                <input type="text" id="correo" name="correo">
+            </div>
+            <div>
+                <label for="tipoId">Tipo ID:</label><br>
+                <select id="tipoId" name="tipoId">
+                    <option value="">Tipo de Identificación*</option>
+                    <option value="cc">Cédula de Ciudadanía</option>
+                    <option value="ce">Cédula de Extranjería</option>
+                    <option value="ti">Tarjeta de Identidad</option>
+                  </select>
+            </div>
+            <div>
+                <label for="nuemeroId">N ID:</label><br>
+                <input type="number" id="numeroId" name="numeroId">
+            </div>
+            <div>
+                <label for="movil">Movil:</label><br>
+                <input type="tel" id="movil" name="movil">
+            </div>
+            <div>
+                <label for="direccion">Dirección:</label><br>
+                <input type="text" id="direccion" name="direccion">
+            </div>
+            <div>
+                <label for="rol">Rol:</label><br>
+                <select id="rol" name="rol">
                     <option value="invitado">Invitado</option>
                     <option value="admin">Administrador</option>
                 </select>
             </div>
             <div>
+                <label for="clave">Clave:</label><br>
+                <input type="password" id="clave" name="clave">
+            </div>
+
+            <div>
                 <input type="button" value="Agregar" onclick="addInfo()">
+                <input type="button" value="Buscar" id="searchButton">
             </div>
         </form>
+
+
+
         <div class="info-container">
-            <div id="info"></div>
+            <div id="info">
+                <table>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>User</th>
+                        <th>Rol</th>
+                        <th>Correo</th>
+                        <th>Tipo Id</th>
+                        <th>N Id</th>
+                        <th>Cell</th>
+                        <th>Dirección</th>
+                        <th>Clave</th>
+                      </tr>
+                </table>
+            </div>
         </div>
     </div>
 
-    <div class="center-div">
-        <button id="createUserButton" class="create-user-button">Crear Usuario</button>
-    </div>
 
-    <div id="createForm" style="display: none;">
-        <h2>Crear Usuario</h2>
-        <label for="createName">Nombre:</label><br>
-        <input type="text" id="createName"><br>
-        <label for="createPosition">Posición:</label><br>
-        <input type="text" id="createPosition"><br>
-        <label for="createEmail">Email:</label><br>
-        <input type="text" id="createEmail"><br>
-        <button onclick="addUser()">Guardar</button>
-    </div>
-
-    <table id="userTable">
-        <!-- Tu código HTML existente -->
-    </table>
-
-    <script>
-        var userCount = 0;
-
-        document.getElementById('createUserButton').addEventListener('click', showForm);
-
-        function showForm() {
-            document.getElementById('createForm').style.display = 'block';
-        }
-
-        function addUser() {
-            userCount++;
-            var table = document.getElementById("userTable");
-            var row = table.insertRow(-1);
-            var cell1 = row.insertCell(0);
-            var cell2 = row.insertCell(1);
-            var cell3 = row.insertCell(2);
-            var cell4 = row.insertCell(3);
-            var cell5 = row.insertCell(4);
-            cell1.innerHTML = userCount;
-            cell2.innerHTML = document.getElementById('createName').value;
-            cell3.innerHTML = document.getElementById('createPosition').value;
-            cell4.innerHTML = document.getElementById('createEmail').value;
-            cell5.innerHTML = '<button class="button button2" onclick="deleteUser(event)">Eliminar</button>';
-            document.getElementById('createForm').style.display = 'none';
-        }
-
-        function deleteUser(event) {
-            var row = event.target.parentNode.parentNode; // Obtener la fila actual
-            row.parentNode.removeChild(row); // Eliminar la fila de la tabla
-        }
-    </script>
 
     <script src="{{ asset('asset/js/roles.js') }}"></script>
 </body>
