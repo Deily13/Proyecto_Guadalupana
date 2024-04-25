@@ -115,6 +115,10 @@ body {
   transform: scale(1.05);
 }
 
+.product-card p{
+  margin-bottom: 5px;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -130,15 +134,7 @@ button {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-.delete-btn {
-  background-color: #dc3545;
-  margin-top: 10px;
+  margin-left: 8px;
 }
 
 .features-modal {
