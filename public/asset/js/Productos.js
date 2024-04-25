@@ -92,3 +92,16 @@ function makeResponsive() {
 
 window.addEventListener('resize', makeResponsive);
 makeResponsive();
+
+function toggleSearchBar() {
+    var searchBar = document.getElementById("searchBar");
+    if (searchBar.style.display === "none") {
+      searchBar.style.display = "block"; // Muestra la barra de búsqueda
+      searchBar.style.animation = "1s ease-out 0s 1 slideInFromLeft"; // Aplica la animación
+      searchBar.addEventListener("animationend", function() {
+        this.style.animation = "none"; // Elimina la animación una vez que se haya completado
+      });
+    } else {
+      searchBar.style.display = "none"; // Oculta la barra de búsqueda
+    }
+  }
