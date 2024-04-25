@@ -23,11 +23,11 @@
         </div>
 
         <div class="botonera">
-            <a href="/">
-                <div class="boton_toolbar1"></div>
-               <!--  <input type="text" id="barraBusqueda" class="barraBusqueda" placeholder="Buscar..."> -->
+            <a>
+                <div class="boton_toolbar1" onclick="toggleSearchBar()"></div>
+                <input type="text" id="searchBar" class="barraBusqueda" placeholder="Buscar..." style="display: none;">
             </a>
-            <a href="/a">
+            <a href="/">
                 <div class="boton_toolbar2"></div>
             </a>
             <a href="/bolsa">
