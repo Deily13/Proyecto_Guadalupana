@@ -19,7 +19,6 @@
     <a href="{{ url('/lista-pedidos') }}">Pedidos Pendientes</a>
     <a href="{{ url('/editar-productos') }}">Agregar Productos</a>
     <a href="{{ url('/roles') }}">Roles</a>
-    <a href="{{ url('/nuevos-usuarios') }}">Usuarios registrados</a>
 </div>
 
 <button class="openbtn" onclick="openNav()">☰ Menú</button>

@@ -59,7 +59,7 @@ body {
   color: white;
   padding: 10px 15px;
   border: none;
-  display: block; /* Asegura que el botón esté siempre visible */
+  display: block;
 }
 
 .openbtn:hover {
@@ -87,11 +87,11 @@ body {
 .form-horizontal {
   display: flex;
   align-items: center;
-  justify-content: center; /* Centra los elementos horizontalmente */
-  flex-wrap: wrap; /* Permite que los elementos se ajusten al cambiar el tamaño de la pantalla */
+  justify-content: center; 
+  flex-wrap: wrap;
   padding: 20px;
-  margin: 0 auto; /* Centra el contenedor en la pantalla */
-  margin-top: 50px; /* Mantiene el margen superior */
+  margin: 0 auto; 
+  margin-top: 50px; 
   width: 75%;
   max-width: 1000px; /* Establece un ancho máximo para evitar el desbordamiento */
   background-color: #111;
@@ -103,7 +103,7 @@ body {
 .form-horizontal div {
   margin: 10px;
   flex: 1;
-  min-width: 150px; /* Establece un ancho mínimo para los elementos internos */
+  min-width: 150px; 
 }
 
 .botones{
@@ -132,20 +132,20 @@ select{
 
 .info-container {
   display: flex;
-  justify-content: center; /* Centra los elementos horizontalmente */
-  align-items: center; /* Centra los elementos verticalmente */
-  flex-wrap: wrap; /* Permite que los elementos se ajusten al cambiar el tamaño de la pantalla */
-  width: 95%; /* Ancho relativo al contenedor padre */
-  max-width: 2000px; /* Establece un ancho máximo para evitar el desbordamiento */
-  margin: 0 auto; /* Centra el contenedor en la pantalla */
-  margin-top: 20px; /* Mantiene el margen superior */
+  justify-content: center; 
+  align-items: center; 
+  flex-wrap: wrap; 
+  width: 95%; 
+  max-width: 2000px; 
+  margin: 0 auto;
+  margin-top: 20px; 
   box-sizing: border-box;
   border-radius: 9px;
 }
 
 .info {
   min-height: 200px;
-  width: 100%; /* Ajusta el ancho al contenedor padre */
+  width: 100%;
   margin-top: 20px;
   border: 1px solid #111;
   padding: 20px;
@@ -174,7 +174,6 @@ th {
   width: 90px;
 }
 
-
 /* Estilos para las celdas de la tabla */
 td {
   padding: 10px;
@@ -198,6 +197,7 @@ button:hover {
 /* Estilos para las filas al pasar el mouse */
 tr:hover {
   background-color: #ddd;
+  color: #000000;
 }
 
 @media screen and (max-width: 2000px) {

@@ -85,10 +85,22 @@ document.addEventListener("DOMContentLoaded", function () {
             nuevaFila.insertCell(7).textContent = movil;
             nuevaFila.insertCell(8).textContent = direccion;
     
+            if (rol === 'admin') {
+                var quitarButton = document.createElement('button');
+                quitarButton.textContent = 'Quitar Permisos';
+                // Define la función que se ejecutará cuando se haga clic en el botón
+                quitarButton.onclick = function() {
+                    // Cambia el rol del usuario a 'invitado'
+                    rolElement.value = 'invitado';
+                    // Actualiza el texto de la celda del rol en la tabla
+                    nuevaFila.cells[3].textContent = 'invitado';
+                    // Elimina el botón de la fila
+                    this.parentElement.removeChild(this);
+                };
+                nuevaFila.insertCell(9).appendChild(quitarButton);
+            }
         } else {
-            console.error(
-                "Uno o más elementos del formulario no se encontraron en el DOM."
-            );
+            console.error("Uno o más elementos del formulario no se encontraron en el DOM.");
         }
     }
 

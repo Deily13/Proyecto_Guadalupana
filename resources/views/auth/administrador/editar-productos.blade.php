@@ -19,7 +19,6 @@
         <a href="{{ url('/lista-pedidos') }}">Pedidos Pendientes</a>
         <a href="{{ url('/editar-productos') }}">Agregar Productos</a>
         <a href="{{ url('/roles') }}">Roles</a>
-        <a href="{{ url('/nuevos-usuarios') }}">Usuarios registrados</a>
     </div>
 
     <button class="openbtn" onclick="openNav()">☰ Menú</button>
@@ -45,6 +44,11 @@
             <div class="form-group">
                 <label for="productPrice">Precio:</label>
                 <input type="number" class="form-control" id="productPrice" required>
+            </div>
+
+            <div class="form-group">
+                <label for="productDisponible">Disponible:</label>
+                <input type="number" class="form-control" id="productDisponible">
             </div>
 
             <div class="form-group">
@@ -89,7 +93,6 @@
             @endforeach
         </div>
 
-
         <div class="container-product">
             <h3>Hamburguesas</h3>
             @foreach ($hamburguesas as $hamburguesa)
@@ -103,6 +106,7 @@
             </div>
             @endforeach
         </div>
+
         <div class="container-product">
             <h3>Helados</h3>
             @foreach ($helados as $helado)
@@ -116,6 +120,7 @@
             </div>
             @endforeach
         </div>
+
         <div class="container-product">
             <h3>Comidas Rapidas</h3>
             @foreach ($comidas as $comida)
@@ -129,6 +134,7 @@
             </div>
             @endforeach
         </div>
+
         <div class="container-product">
             <h3>Refrescos</h3>
             @foreach ($refrescos as $refresco)
@@ -142,6 +148,7 @@
             </div>
             @endforeach
         </div>
+        
         <div class="container-product">
             <h3>Combos</h3>
             @foreach ($combos as $combo)
