@@ -12,7 +12,6 @@
     <div class="toolbar">
         <div class="menu" onclick="toggleDropdown()">
             <div class="dropdown" id="dropdownMenu" style="display: none;">
-                <!-- Elementos del menú -->
                 <a href="/bebidas-alcoholicas">Bebidas Alcoholicas</a>
                 <a href="/hamburguesas">Hamburguesas</a>
                 <a href="/heladeria">Heladeria</a>
@@ -33,7 +32,7 @@
             <a href="/bolsa">
                 <div class="boton_toolbar3"></div>
             </a>
-            <a href="/lista-pedidos">
+            <a>
                 <div class="boton_toolbar4"></div>
             </a>
 
