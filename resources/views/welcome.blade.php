@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ asset('asset/home.css') }}" rel="stylesheet">
+    <link rel="icon" href="{{ asset('img/Icon/logo.png') }}" type="image/x-icon">
     <title>Document</title>
 </head>
 
