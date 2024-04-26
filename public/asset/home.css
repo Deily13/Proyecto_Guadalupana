@@ -105,6 +105,7 @@ body {
     background: url(../img/Icon/buscar.png);
     background-size: cover;
     background-color: white;
+    cursor: pointer;
 }
 
 
@@ -112,29 +113,33 @@ body {
     background: url(../img/icon/inicio.png);
     background-size: cover;
     background-color: white;
+    cursor: pointer;
 }
 
 .boton_toolbar3 {
     background: url(../img/icon/bolsa.png);
     background-size: cover;
     background-color: white;
+    cursor: pointer;
 }
 
 .boton_toolbar4 {
     background: url(../img/icon/busqueda.png);
     background-size: cover;
     background-color: white;
+    cursor: pointer;
 }
 
 .usuario {
     align-items: center;
     font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
 }
 
 .boton_iniciar {
     align-items: center;
     font-family: 'Times New Roman', Times, serif;
-
+    cursor: pointer;
 }
 
 
@@ -302,7 +307,7 @@ img {
 .barraBusqueda {
     position: absolute;
     top: 0px;
-    right: 83%;
+    right: 90%;
     /* Ajusta según sea necesario para alinear con la imagen */
     width: 200px;
     height: 40px;
