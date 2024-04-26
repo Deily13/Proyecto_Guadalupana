@@ -47,6 +47,8 @@
         </div>
     </div>
 
+    <div class="Titulo">Combos</div>
+
     <div class="ContainerProductos">
      @foreach ($combos as $combo)
         <div class="Cuadro">

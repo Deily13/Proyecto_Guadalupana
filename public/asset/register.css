@@ -1,6 +1,10 @@
 body {
-  background: linear-gradient(to bottom right, pink, lightblue);
-  font-family: Arial, sans-serif;
+  background-image: url(../img/Icon/fondo.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
 }
 .formulario__register {
   width: 45%;

@@ -48,6 +48,9 @@
         </div>
     </div>
 
+   
+    <div class="Titulo">Bebidas Alcoholicas</div>
+
     <div class="ContainerProductos">
 
         @foreach ($bebidas as $bebida)

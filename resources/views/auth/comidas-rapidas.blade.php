@@ -47,6 +47,8 @@
         </div>
     </div>
 
+    <div class="Titulo">Comidas Rapidas</div>
+
     <div class="ContainerProductos">
         @foreach ($comidas as $comida)
         <div class="Cuadro">
