@@ -11,7 +11,6 @@ use App\Http\Controllers\ListaPedidosController;
 use App\Http\Controllers\PedidosController;
 use App\Http\Controllers\AdministradorController;
 use App\Http\Controllers\EditarProductoController;
-use App\Http\Controllers\NuevosUsuariosController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RolesController;
 use Illuminate\Support\Facades\Route;
@@ -58,7 +57,6 @@ Route::get('bolsa', [BolsaController::class, 'index']);
 Route::get('lista-pedidos', [ListaPedidosController::class, 'index']);
 Route::get('pedidos', [PedidosController::class, 'index']);
 Route::get('editar-productos', [EditarProductoController::class, 'index']);
-Route::get('nuevos-usuarios', [NuevosUsuariosController::class, 'index']);
 Route::get('roles', [RolesController::class, 'index']);
 Route::get('admin', [AdministradorController::class, 'index']);
 
