@@ -55,20 +55,12 @@
         <div class="Cuadro">
             <div class="img">
             <img src="{{ $hamburguesa->image}}" alt="Descripción de la imagen">
-                <div class="Calificador" id="calificacion1">
-                    <span class="estrella" onclick="calificar(1, 1)">&#9734;</span>
-                    <span class="estrella" onclick="calificar(1, 2)">&#9734;</span>
-                    <span class="estrella" onclick="calificar(1, 3)">&#9734;</span>
-                    <span class="estrella" onclick="calificar(1, 4)">&#9734;</span>
-                    <span class="estrella" onclick="calificar(1, 5)">&#9734;</span>
-                </div>
             </div>
             <div class="Detalle">
                 <h1>{{ $hamburguesa->nombre }}</h1>
                 <p>{{ $hamburguesa->Descripción }}</p>
-
+                <p>Precio:{{ $hamburguesa->precio }}</p>
                 <form action="/procesar_pedido" method="POST">
-                    @csrf <!-- Agrega esto si estás utilizando Blade para evitar el error CSRF -->
                     <div class="botones">
                         <label for="cantidad">
                             <h5>Cantidad</h5>

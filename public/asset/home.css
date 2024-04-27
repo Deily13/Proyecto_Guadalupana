@@ -270,25 +270,25 @@ img {
     margin-left: 6px;
 }
 
-.Red:nth-child(1) {
+.Red-whatsaap {
     background: url(../img/Icon/whatsapp.png);
     background-color: white;
     background-size: cover;
 }
 
-.Red:nth-child(2) {
+.Red-instagram {
     background: url(../img/Icon/instagram.png);
     background-color: white;
     background-size: cover;
 }
 
-.Red:nth-child(3) {
+.Red-facebook {
     background: url(../img/Icon/facebook.png);
     background-color: white;
     background-size: cover;
 }
 
-.Red:nth-child(4) {
+.Red-email {
     background: url(../img/Icon/email.png);
     background-color: white;
     background-size: cover;

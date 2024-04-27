@@ -200,7 +200,7 @@ html, body {
 }
 
 .Descripcion{
-    background-color: rgb(255, 255, 255);
+    background-color: #ffffff;
     height: 95%;
     width: 79%;
     border-radius: 3px;
@@ -236,7 +236,7 @@ html, body {
 .Total{
     background-color: #ffffff;
     height: 40px;
-    width: 75%;
+    width: 55%;
     color: black;
     font-size: 20px;
     display: flex;
