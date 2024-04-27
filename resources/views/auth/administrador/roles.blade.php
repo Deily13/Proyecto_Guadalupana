@@ -72,12 +72,12 @@
             </div>
 
             <div class="botones">
-                <input type="button" id="addButton" value="Agregar">
+                <input type="submit" id="addButton" value="Agregar">
             </div>
         </form>
 
 
-        <form class="form-horizontal" id="form-buscar">
+        <form class="form-horizontal" id="form-buscar" action="{{ route('roles.store') }}" method="POST">
             <div>
                 <label for="nombre">Nombre:</label><br>
                 <input type="text" id="nombre" name="nombre">

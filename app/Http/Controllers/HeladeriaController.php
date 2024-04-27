@@ -14,3 +14,10 @@ class HeladeriaController extends Controller
         return view('/auth/heladeria', ['helados' => $helados]);
     }
 }
+
+
+//*campos de formulario
+
+//producto
+//sabores 
+//cantidad

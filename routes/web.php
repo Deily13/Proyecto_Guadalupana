@@ -62,5 +62,8 @@ Route::get('admin', [AdministradorController::class, 'index']);
 
 
 
+Route::post('roles', [RolesController::class, 'store'])->name('roles.store');
+Route::post('editar-productos', [EditarProductoController::class, 'store']) ->name('editar-productos.store');
+    
 
 

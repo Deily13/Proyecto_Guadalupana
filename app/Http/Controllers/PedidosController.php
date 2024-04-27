@@ -11,3 +11,6 @@ class PedidosController extends Controller
         return view('/auth/administrador/pedidos');
 }
 }
+
+
+//no hay formularios solo boton de finalizar pedido

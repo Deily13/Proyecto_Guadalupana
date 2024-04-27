@@ -14,3 +14,9 @@ class ComidasRapidasController extends Controller
         return view('/auth/comidas-rapidas', ['comidas' => $comidas]);
     }
 }
+
+
+//*campos de formulario
+
+//producto 
+//cantidad

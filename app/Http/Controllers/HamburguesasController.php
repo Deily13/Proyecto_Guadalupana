@@ -14,3 +14,9 @@ class HamburguesasController extends Controller
         return view('/auth/hamburguesas', ['hamburguesas' => $hamburguesas]);
     }
 }
+
+
+//*campos de formulario
+
+//producto 
+//cantidad

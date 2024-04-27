@@ -15,3 +15,8 @@ class CombosController extends Controller
         return view('/auth/combos', ['combos' => $combos]);
     }
 }
+
+//*campos de formulario
+
+//producto 
+//cantidad

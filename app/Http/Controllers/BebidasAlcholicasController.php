@@ -14,3 +14,8 @@ class BebidasAlcholicasController extends Controller
         return view('/auth/bebidas-alcoholicas', ['bebidas' => $bebidas]);
     }
 }
+
+//*campos de formulario
+
+//producto 
+//cantidad
