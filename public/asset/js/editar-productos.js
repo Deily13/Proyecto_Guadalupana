@@ -96,13 +96,10 @@ function createProductCard(name, price, image, disponible, features) {
     productCard.appendChild(createImageElement(image));
     productCard.appendChild(createTextElement("p", `Nombre: ${name}`));
     productCard.appendChild(createTextElement("p", `Precio: $${price}`));
-    productCard.appendChild(
-        createTextElement("p", `Disponible: ${disponible}`)
-    );
+    productCard.appendChild(createTextElement("p", `Características: ${disponible}`));
     if (features) {
-        productCard.appendChild(
-            createTextElement("p", `Características: ${features}`)
-        );
+        productCard.appendChild(createTextElement("p", `Disponible: ${features}`));
+    
     }
     productCard.appendChild(
         createButton("Eliminar", "btn btn-danger delete-btn", function () {

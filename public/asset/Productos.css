@@ -6,7 +6,7 @@
 
 html,
 body {
-    background-image: url(../img/Icon/IMG-20240315-WA0006.jpg);
+    background-image: url(../img/Icon/fondo.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -23,10 +23,10 @@ body {
     padding-left: 2px;
     padding-right: 5px;
     border-radius: 5px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    box-shadow: 0 8px 32px 0 #1f26875e;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: 1px solid #ffffff2e;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -141,10 +141,12 @@ body {
   }
 
   .Titulo{
-    color: #46a2fd;
+    color: #ffffff00;
     text-align: center;
-    font-size: 60px;
+    font-size: 80px;
+    font-family: 'time new roman';
     font-weight: bold;
+    text-shadow: -1px -1px 0 #ffffff, 1px -5px 0 #000000, -1px 2px 0 #84c0f8, 1px 5px 0 #130c70;
 }
 
 .ContainerProductos {
@@ -153,7 +155,6 @@ body {
     align-items: start;
     justify-content: center;
     margin: 40px 1%;
-    background-color: #12054183;
     min-height: 100vh;
 }
 
@@ -186,48 +187,15 @@ body {
     justify-content: flex-end;
 }
 
-.img1 {
-    background-color: #ffffff;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
-    width: 80% !important;
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-
 img{
   width: 100% !important;
-  height: 220px;
-}
-
-.Calificador {
-    background-color: #000000;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    text-align: center;
-    font-size: 1.5rem;
-    color: #ffffff;
-    margin-top: calc(70% -30px);
-    bottom: 0;
+  height: 245px;
 }
 
 p {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
-.estrella {
-    cursor: pointer;
-}
-
-.estrella:hover,
-.estrella.activa {
-    color: gold;
-}
 
 .Detalle {
     background-color: white;
@@ -240,7 +208,7 @@ p {
 
 .Sabores {
     width: calc(100% - 10px);
-    height: 60px;
+    height: 50px;
     display: inline-flex;
     align-items:center;
 }
@@ -277,22 +245,21 @@ h3 {
 }
 
 .SaborCheckbox-button {
-    /* Estilos personalizados aquí */
-    appearance: none; /* Elimina el estilo predeterminado del botón de radio */
-    width: 20px; /* Ancho del botón de radio */
-    height: 20px; /* Altura del botón de radio */
-    border: none; /* Elimina el borde */
-    cursor: pointer; /* Cambia el cursor a una mano cuando se pasa por encima */
+    appearance: none; 
+    width: 20px; 
+    height: 20px; 
+    border: none; 
+    cursor: pointer; 
     border-radius: 50px;
   }
 
   .SaborCheckbox-button + .SaborImagen {
-    width: 100%; /* Ajusta el ancho al del botón de radio */
-    height: 100%; /* Ajusta la altura al del botón de radio */
-    border-radius: 50%; /* Hace que la imagen sea completamente redonda */
-    position: absolute; /* Posiciona la imagen sobre el botón de radio */
-    top: 0; /* Alinea la parte superior de la imagen con la parte superior del botón de radio */
-    left: 0; /* Alinea el lado izquierdo de la imagen con el lado izquierdo del botón de radio */
+    width: 100%; 
+    height: 100%;
+    border-radius: 50%;
+    position: absolute; 
+    top: 0; 
+    left: 0;
 }
 
 .Sabor input[type="checkbox"]:checked + .SaborImagen:before {
@@ -300,8 +267,8 @@ h3 {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #02033ba2; /* Color de superposición cuando está seleccionado */
-    border-radius: 50px; /* Añadido para que la imagen tenga bordes redondeados */
+    background-color: #02033ba2; 
+    border-radius: 50px; 
 }
 
 .SaborCheckbox-button[value="Chocolate"] + .SaborImagen {
@@ -328,16 +295,16 @@ h3 {
     background-position: center;
   }
 
-/* Efecto hover para los sabores */
+
 .Sabor:hover {
     box-shadow: 0px 0px 20px #040029;
 }
 
 
-/* Estilos para el texto descriptivo */
+
 .texto-descriptivo {
     position: absolute;
-    bottom: -15px; /* Ajusta la distancia del texto descriptivo desde el borde inferior */
+    bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
     color: black;
@@ -353,21 +320,15 @@ h3 {
 
 .botones label {
     margin-right: 10px;
-    /* Espacio entre el label y el input */
+   
 }
 
-/* Estilos para el input de cantidad */
 .botones input[type="number"] {
     width: 50px;
-    /* Ancho del input */
     padding: 5px;
-    /* Espacio interno dentro del input */
     border: 1px solid #ccc;
-    /* Borde del input */
     border-radius: 5px;
-    /* Bordes redondeados del input */
     box-sizing: border-box;
-    /* Incluye el padding y el borde en el ancho total */
 }
 
 
@@ -377,19 +338,15 @@ h3 {
     width: calc(100% - 140px);
     position: sticky;
     bottom: 0;
-    margin-top: 10px;
 }
 
-.botones label {
-    margin-right: 10px; /* Espacio entre el label y el input */
-}
 
 .botones input[type="number"] {
-    width: 50px; /* Ancho del input */
-    padding: 5px; /* Espacio interno dentro del input */
-    border: 1px solid #ccc; /* Borde del input */
-    border-radius: 5px; /* Bordes redondeados del input */
-    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+    width: 50px; 
+    padding: 5px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    box-sizing: border-box; 
 }
 
 
@@ -414,18 +371,18 @@ button:hover{
 
 @media only screen and (max-width: 1080px) {
     body {
-        overflow-x: hidden; /* Evita el desbordamiento horizontal */
+        overflow-x: hidden;
     }
     .toolbar {
         flex-direction: column;
         align-items: center;
-        padding: 0; /* Elimina el relleno */
+        padding: 0; 
     }
 
     .menu {
         margin-bottom: 10px;
-        width: 40px; /* Reduce el tamaño del menú */
-        height: 40px; /* Reduce el tamaño del menú */
+        width: 40px;
+        height: 40px; 
     }
 
     .botonera {
@@ -440,29 +397,29 @@ button:hover{
     }
 
     .Cuadro {
-        width: 55%; /* Reduce el ancho de los cuadros */
-        max-width: 600px; /* Asegura que los cuadros no sean demasiado grandes */
+        width: 55%; 
+        max-width: 600px;
         margin: 10px auto;
     }
 }
 
 @media only screen and (max-width: 768px) {
     .boton_toolbar1, .boton_toolbar2, .boton_toolbar3, .boton_toolbar4, .usuario {
-        width: 35px; /* Reduce aún más el tamaño de los botones */
-        height: 35px; /* Reduce aún más el tamaño de los botones */
+        width: 35px;
+        height: 35px;
     }
     .usuario {
-        font-size: 12px; /* Reduce el tamaño de fuente para mejorar la legibilidad */
+        font-size: 12px; 
         text-align: center;
-        line-height: 35px; /* Ajusta la altura de línea al nuevo tamaño de los botones */
+        line-height: 35px; 
     }
     img {
         width: 100%;
         height: auto;
     }
     button {
-        width: 100%; /* Aumenta el ancho del botón para facilitar su uso en pantallas táctiles */
-        font-size: 18px; /* Reduce un poco el tamaño de fuente */
+        width: 100%;
+        font-size: 18px; 
     }
 }
 
@@ -480,7 +437,6 @@ button:hover{
     position: absolute;
     top: 0px;
     right: 88%;
-    /* Ajusta según sea necesario para alinear con la imagen */
     width: 200px;
     height: 54px;
     border-radius: 5px;
@@ -488,6 +444,5 @@ button:hover{
     padding: 5px;
     display: none;
     animation: 1s ease-out 0s 1 slideInFromLeft;
-    /* Aplica la animación */
 }
 

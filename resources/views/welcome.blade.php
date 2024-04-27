@@ -11,16 +11,16 @@
 
 <body>
     <div class="toolbar">
-    <div class="menu"  onclick="toggleDropdown()">
-    <div class="dropdown" id="dropdownMenu" style="display: none;">
-        <!-- Elementos del menú -->
-        <a href="/bebidas-alcoholicas">Bebidas Alcoholicas</a>
-        <a href="/hamburguesas">Hamburguesas</a>
-        <a href="/heladeria">Heladeria</a>
-        <a href="/comidas-rapidas">Comidas Rapidas</a>
-        <a href="/bebidas">Bebidas</a>
-        <a href="/combos">Combos</a>
-    </div>
+        <div class="menu" onclick="toggleDropdown()">
+            <div class="dropdown" id="dropdownMenu" style="display: none;">
+                <!-- Elementos del menú -->
+                <a href="/bebidas-alcoholicas">Bebidas Alcoholicas</a>
+                <a href="/hamburguesas">Hamburguesas</a>
+                <a href="/heladeria">Heladeria</a>
+                <a href="/comidas-rapidas">Comidas Rapidas</a>
+                <a href="/bebidas">Bebidas</a>
+                <a href="/combos">Combos</a>
+            </div>
         </div>
 
         <div class="botonera">
@@ -87,10 +87,12 @@
     <div class="footer">
         <div class="Titulo_f"> Redes Sociales</div>
         <div class="Social">
-            <div class="Red"></div>
-            <div class="Red"></div>
-            <div class="Red"></div>
-            <div class="Red"></div>
+            <a href="https://api.whatsapp.com/send?phone=3134774134" target="_blank" rel="noopener noreferrer"><div class="Red Red-whatsaap"></div></a>
+            <a href="https://www.instagram.com/laguadalupana.ulloa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
+                <div class="Red Red-instagram"></div>
+            </a>
+            <a href="https://web.facebook.com/people/La-Guadalupana-Ulloa/100088166905257/?_rdc=1&_rdr"><div class="Red Red-facebook"></div><a>
+            <div class="Red Red-email"></div>
         </div>
         <div class="Info">
             <p>Ubicación: Av. Ejemplo, Ciudad Ejemplo</p>

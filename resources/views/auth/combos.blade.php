@@ -48,22 +48,18 @@
         </div>
     </div>
 
+    <div class="Titulo">Combos</div>
+
     <div class="ContainerProductos">
      @foreach ($combos as $combo)
         <div class="Cuadro">
             <div class="img">
             <img src="{{ $combo->image}}" alt="Descripción de la imagen">
-                <div class="Calificador" id="calificacion1">
-                    <span class="estrella" onclick="calificar(1, 1)">&#9734;</span>
-                    <span class="estrella" onclick="calificar(1, 2)">&#9734;</span>
-                    <span class="estrella" onclick="calificar(1, 3)">&#9734;</span>
-                    <span class="estrella" onclick="calificar(1, 4)">&#9734;</span>
-                    <span class="estrella" onclick="calificar(1, 5)">&#9734;</span>
-                </div>
             </div>
             <div class="Detalle">
                 <h1>{{ $combo->nombre }}</h1>
                 <p>{{ $combo->Descripción }}</p>
+                <p>Precio:{{ $combo->precio }}</p>
 
                 <form action="/procesar_pedido" method="POST">
                     @csrf <!-- Agrega esto si estás utilizando Blade para evitar el error CSRF -->

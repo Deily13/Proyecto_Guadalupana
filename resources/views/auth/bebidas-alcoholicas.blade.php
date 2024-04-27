@@ -49,19 +49,15 @@
         </div>
     </div>
 
+   
+    <div class="Titulo">Bebidas Alcoholicas</div>
+
     <div class="ContainerProductos">
 
         @foreach ($bebidas as $bebida)
         <div class="Cuadro">
             <div class="img">
                 <img src="{{ $bebida->image}}" alt="Descripción de la imagen">
-                <div class="Calificador" id="calificacion1">
-                    <span class="estrella" onclick="calificar(1, 1)">&#9734;</span>
-                    <span class="estrella" onclick="calificar(1, 2)">&#9734;</span>
-                    <span class="estrella" onclick="calificar(1, 3)">&#9734;</span>
-                    <span class="estrella" onclick="calificar(1, 4)">&#9734;</span>
-                    <span class="estrella" onclick="calificar(1, 5)">&#9734;</span>
-                </div>
             </div>
             <div class="Detalle">
                 <h1>{{ $bebida->nombre }}</h1>

@@ -5,7 +5,7 @@
 }
 
 html, body {
-    background-image: url(../img/Icon/IMG-20240315-WA0006.jpg);
+    background-image: url(../img/Icon/fondo.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -144,10 +144,12 @@ html, body {
 }
 
 .Titulo{
-    color: #ffffff;
+    color: #00000000;
     text-align: center;
-    font-size: 60px;
+    font-size: 80px;
+    font-family: 'time new roman';
     font-weight: bold;
+    text-shadow: -1px -1px 0 #000000, 1px -5px 0 #78adf3, -1px 1px 0 #ffffff, 1px 3px 0 #ffffff;
 }
 
 .ContainerBolsa{
@@ -167,7 +169,6 @@ html, body {
     background-color: #ffffff94;
     padding: 20px;
     margin: 0 auto;
-    margin-top: 50px;
     width: 75%;
     max-width: 1000px;
     box-sizing: border-box;
@@ -199,7 +200,7 @@ html, body {
 }
 
 .Descripcion{
-    background-color: rgb(255, 255, 255);
+    background-color: #ffffff;
     height: 95%;
     width: 79%;
     border-radius: 3px;
@@ -235,7 +236,7 @@ html, body {
 .Total{
     background-color: #ffffff;
     height: 40px;
-    width: 75%;
+    width: 55%;
     color: black;
     font-size: 20px;
     display: flex;
