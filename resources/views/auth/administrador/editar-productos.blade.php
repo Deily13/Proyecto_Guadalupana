@@ -22,36 +22,36 @@
     <button class="openbtn" onclick="openNav()">☰ Menú</button>
 
     <div class="container">
-        <form id="product-form">
+        <form id="product-form"  method="POST">
             <h1 style="text-align: center;">Craer Producto</h1>
             <div class="form-group">
                 <label for="productImage">Seleccionar Imagen:</label>
-                <input type="file" class="form-control-file" id="productImage" accept="image/*" required>
+                <input type="file" class="form-control-file" id="productImage" name="image" accept="image/*" required>
             </div>
 
             <div class="form-group">
                 <label for="productName">Nombre del Producto:</label>
-                <input type="text" class="form-control" id="productName" required>
+                <input type="text" class="form-control" id="productName" name="nombreProdut" required>
             </div>
 
             <div class="form-group">
                 <label for="productFeatures">Características:</label>
-                <textarea class="form-control" id="productFeatures"></textarea>
+                <textarea class="form-control" id="productFeatures" name="descripcion"></textarea>
             </div>
 
             <div class="form-group">
                 <label for="productPrice">Precio:</label>
-                <input type="number" class="form-control" id="productPrice" required>
+                <input type="number" class="form-control" id="productPrice" name="precio" required>
             </div>
 
             <div class="form-group">
                 <label for="productDisponible">Disponible:</label>
-                <input type="number" class="form-control" id="productDisponible">
+                <input type="number" class="form-control" id="productDisponible" name="disponible">
             </div>
 
             <div class="form-group">
                 <label for="productView">Vista de Destino:</label>
-                <select class="form-control" id="productView" required>
+                <select class="form-control" id="productView" name="vista" required>
                     <option value="" disabled selected>Selecciona una vista</option>
                     <option value="{{ url('/bebidas') }}">Bebidas Alcoholicas</option>
                     <option value="{{ url('/hamburguesas') }}">Hamburguesas</option>

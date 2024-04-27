@@ -124,24 +124,33 @@ function clearFormFields() {
     document.getElementById("productImage").value = "";
 }
 
-// Función para asignar eventos a los botones de eliminar y editar
 function assignButtonEvents() {
-    var deleteButtons = document.querySelectorAll(".delete-btn");
-    var editButtons = document.querySelectorAll(".edit-btn");
+    // Selecciona todos los botones de eliminar y editar dentro de .container-product
+    var deleteButtons = document.querySelectorAll('.container-product .delete-btn');
+    var editButtons = document.querySelectorAll('.container-product .edit-btn');
 
-    deleteButtons.forEach(function (button) {
-        button.addEventListener("click", function () {
-            var productCard = button.closest(".product-card");
-            productCard.remove();
+    // Asigna el evento de eliminar a cada botón de eliminar
+    deleteButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            var productCard = button.closest('.cuadro');
+            productCard.remove(); // Elimina la tarjeta del producto
         });
     });
 
-    editButtons.forEach(function (button) {
-        button.addEventListener("click", function () {
-            var productCard = button.closest(".product-card");
-            transformToEditForm(productCard);
+    // Asigna el evento de editar a cada botón de editar
+    editButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            var productCard = button.closest('.cuadro');
+            transformToEditForm(productCard); // Transforma la tarjeta en un formulario de edición
         });
     });
+
+
+        var productCards = document.querySelectorAll('.cuadro');
+        productCards.forEach(function(productCard) {
+            assignButtonEventsToCard(productCard);
+        });
+
 }
 
 // Función para transformar la tarjeta en un formulario de edición
@@ -232,7 +241,23 @@ function saveEditedProduct(productCard, form, currentImageSrc) {
         <button class="btn btn-info edit-btn">Editar</button>
       `;
 
-      assignButtonEvents();
+      assignButtonEventsToCard(productCard);
+
+      function assignButtonEventsToCard(productCard) {
+        var deleteButton = productCard.querySelector('.delete-btn');
+        var editButton = productCard.querySelector('.edit-btn');
+    
+        // Asigna el evento de eliminar
+        deleteButton.addEventListener('click', function() {
+            productCard.remove();
+        });
+    
+        // Asigna el evento de editar
+        editButton.addEventListener('click', function() {
+            transformToEditForm(productCard);
+        });
+    }
+
 }
 
 document.addEventListener("DOMContentLoaded", function () {

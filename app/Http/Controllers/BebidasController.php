@@ -14,3 +14,8 @@ class BebidasController extends Controller
         return view('/auth/bebidas', ['refrescos' => $refrescos]);
     }
 }
+
+//*campos de formulario
+
+//producto 
+//cantidad

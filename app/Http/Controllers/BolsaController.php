@@ -12,3 +12,9 @@ class BolsaController extends Controller
         return view('/auth/bolsa');
     }
 }
+
+
+//*campos de formulario
+
+//producto 
+//momento

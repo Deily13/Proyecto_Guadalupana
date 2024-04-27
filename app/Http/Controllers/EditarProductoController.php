@@ -28,4 +28,32 @@ class EditarProductoController extends Controller
             'combos' => $combos
         ]);
     }
+
+    //*campos de formulario
+
+//imagen 
+//nombre producto
+//descripcion
+//precio
+//disponible
+//vista de destino
+
+/*
+public function store(Request $request)
+{
+    // Validar los datos del formulario
+    $validatedData = $request->validate([
+       'image' => 'required',
+       'nombreProduct' => 'required',
+       'descripcion' => 'required',
+       'precio' => 'required',
+       'disponible' => 'required',
+       'vista' => 'required',
+    ]);
+
+   // $editar-productos = EditarProducto::create($validatedData);
 }
+*/
+}
+
+
