@@ -22,7 +22,7 @@ class ProductoSeeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/a1/8a/ac/a18aac6501d336974523e4670202eece.jpg',
                 'precio' => '$23.500',
                 'Stock' => '50',
-                'Descripción' => 'lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.',
+                'Descripción' => 'lorem ipsum dolor sit amet, consectetur adipiscing elit.',
             ],
             [
                 'slug' => 'bebidas-alcoholicas',
@@ -30,7 +30,7 @@ class ProductoSeeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/a1/8a/ac/a18aac6501d336974523e4670202eece.jpg',
                 'precio' => '$23.500',
                 'Stock' => '50',
-                'Descripción' => 'lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.',
+                'Descripción' => 'lorem ipsum dolor sit amet, consectetur adipiscing elit.',
             ],
 
             /* hamburguesas */
@@ -48,7 +48,7 @@ class ProductoSeeeder extends Seeder
                 'image' => 'https://i.pinimg.com/564x/8f/a7/2d/8fa72dbe252cdefa40865eb46feb0320.jpg',
                 'precio' => '$23.500',
                 'Stock' => '50',
-                'Descripción' => 'lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.',
+                'Descripción' => 'l,orem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.',
             ],
 
             /* helados */
