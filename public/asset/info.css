@@ -1,0 +1,275 @@
+body {
+    background-image: url('/fondo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.toolbar {
+    width: 96%;
+    height: 80px;
+    position: relative;
+    margin: 2%;
+    margin-top: 5px;
+    padding-left: 2px;
+    padding-right: 5px;
+    border-radius: 5px;
+    box-shadow: 0 8px 32px 0 #1f26875e;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid #ffffff2e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.menu {
+    width: 55px;
+    height: 55px;
+    margin: 1%;
+    border-radius: 5px;
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    background: url(../img/Icon/menu.png);
+    background-size: cover;
+}
+
+
+.dropdown {
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    left: 0;
+    /* Alinea el menú desplegable con el borde izquierdo del botón .menu */
+    top: 0;
+}
+
+.dropdown a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+    background-color: #f1f1f1;
+}
+
+
+.botonera {
+    width: 30%;
+    height: 70px;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.boton_toolbar1,
+.boton_toolbar2,
+.boton_toolbar3,
+.boton_toolbar4,
+.boton_iniciar,
+.usuario {
+    height: 80%;
+    margin: 3px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.705);
+    display: flex;
+    align-items: center;
+}
+
+.boton_toolbar1,
+.boton_toolbar2,
+.boton_toolbar3,
+.boton_toolbar4 {
+    width: 60px;
+}
+
+.boton_toolbar1 {
+    background: url(../img/Icon/buscar.png);
+    background-size: cover;
+    background-color: white;
+}
+
+
+.boton_toolbar2 {
+    background: url(../img/icon/inicio.png);
+    background-size: cover;
+    background-color: white;
+}
+
+.boton_toolbar3 {
+    background: url(../img/icon/bolsa.png);
+    background-size: cover;
+    background-color: white;
+}
+
+.boton_toolbar4 {
+    background: url(../img/icon/busqueda.png);
+    background-size: cover;
+    background-color: white;
+}
+
+.usuario {
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.boton_iniciar {
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+h1 {
+    text-align: center;
+}
+
+.glass {
+    width: 80%;
+    max-width: 760px;
+    margin: auto;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+}
+
+footer {
+    background-color: #ccc;
+    bottom: 0;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    margin-top: 2%;
+}
+
+.sub_titulo {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.sub_titulo2 {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 10%;
+}
+
+.sub_titulo3 {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 10%;
+}
+
+p {
+    font-family: 'Arial', sans-serif;
+    font-size: 17px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.footer {
+    height: 20%;
+    position: relative;
+    left: 0;
+    margin-top: 10%;
+    margin-bottom: 0%;
+    padding: 30px;
+    background-color: #f5fafab9;
+    color: #0f0f0f;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.Titulo_f {
+    text-align: center;
+    color: #0f0f0f;
+    font-weight: bold;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.Social {
+    width: 300px;
+    height: 70px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 3px;
+
+}
+
+.Red {
+    width: 60px;
+    height: 60px;
+    background-position: center;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.705);
+    border-radius: 40px;
+    margin-left: 6px;
+}
+
+.Red-whatsaap {
+    background: url(../img/Icon/whatsapp.png);
+    background-color: white;
+    background-size: cover;
+}
+
+.Red-instagram {
+    background: url(../img/Icon/instagram.png);
+    background-color: white;
+    background-size: cover;
+}
+
+.Red-facebook {
+    background: url(../img/Icon/facebook.png);
+    background-color: white;
+    background-size: cover;
+}
+
+.Red-email {
+    background: url(../img/Icon/email.png);
+    background-color: white;
+    background-size: cover;
+}
+
+.Info {
+    margin-top: 10px;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    10% {
+        transform: translateX(-10%);
+    }
+}
+
+.barraBusqueda {
+    position: absolute;
+    top: 0px;
+    right: 90%;
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    display: none;
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+}
