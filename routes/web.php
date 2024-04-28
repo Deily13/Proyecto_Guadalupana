@@ -56,13 +56,19 @@ Route::get('combos', [CombosController::class, 'index']);
 Route::get('bolsa', [BolsaController::class, 'index']);
 Route::get('lista-pedidos', [ListaPedidosController::class, 'index']);
 Route::get('pedidos', [PedidosController::class, 'index']);
-Route::get('editar-productos', [EditarProductoController::class, 'index']);
+Route::get('editar-productos', [EditarProductoController::class, 'index'])->name('editar-productos');
 Route::get('roles', [RolesController::class, 'index']);
 Route::get('admin', [AdministradorController::class, 'index']);
 
 
-Route::post('roles', [RolesController::class, 'store'])->name('roles.store');
-Route::post('editar-productos', [EditarProductoController::class, 'store']) ->name('editar-productos.store');
+
+Route::post('user-guardar', [RolesController::class, 'store'])->name('user.store');
+
+Route::post('guardar', [EditarProductoController::class, 'store']) ->name('guardar.producto');
+
+
+Route::post('eliminar/{id}', [EditarProductoController::class, 'delete'])->name('eliminar.producto');
+Route::post('quitar-permisos/{user_id}', [RolesController::class, ]) ->name('quitar-permisos.');
 
 
 

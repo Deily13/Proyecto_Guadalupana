@@ -7,10 +7,9 @@ use Illuminate\Http\Request;
 
 class EditarProductoController extends Controller
 {
-    //
+
     public function index()
     {
-
         $bebidas = Product::where('slug', 'bebidas-alcoholicas')->get();
         $hamburguesas = Product::where('slug', 'hamburguesas')->get();
         $helados = Product::where('slug', 'helados')->get();
@@ -18,8 +17,8 @@ class EditarProductoController extends Controller
         $refrescos = Product::where('slug', 'refrescos')->get();
         $combos = Product::where('slug', 'combos')->get();
 
-        
-        return view('/auth/administrador/editar-productos', [
+        // Redirigir a la vista y pasar las variables
+        return view('auth.administrador.editar-productos', [
             'bebidas' => $bebidas,
             'hamburguesas' => $hamburguesas,
             'helados' => $helados,
@@ -29,31 +28,34 @@ class EditarProductoController extends Controller
         ]);
     }
 
-    //*campos de formulario
 
-//imagen 
-//nombre producto
-//descripcion
-//precio
-//disponible
-//vista de destino
+    public function store(Request $request)
+    {
+        $product = new Product;
+        $product->image = $request->input('image');
+        $product->nombre = $request->input('nombre');
+        $product->Descripción = $request->input('Descripción');
+        $product->precio = $request->input('precio');
+        $product->stock = $request->input('Stock');
+        $product->slug = $request->input('slug');
+        $product->save();
 
-/*
-public function store(Request $request)
-{
-    // Validar los datos del formulario
-    $validatedData = $request->validate([
-       'image' => 'required',
-       'nombreProduct' => 'required',
-       'descripcion' => 'required',
-       'precio' => 'required',
-       'disponible' => 'required',
-       'vista' => 'required',
-    ]);
+        // Almacenar el mensaje en la sesión
+        session()->flash('message', 'Producto guardado con éxito');
 
-   // $editar-productos = EditarProducto::create($validatedData);
+        return redirect()->route('editar-productos');
+    }
+
+    public function delete($id)
+    {
+        $product = Product::find($id);
+        $product->delete();
+
+        // Almacenar el mensaje en la sesión
+        session()->flash('message', 'Producto eliminado con éxito');
+
+        return redirect()->route('editar-productos');
+    }
+
+   
 }
-*/
-}
-
-

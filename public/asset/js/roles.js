@@ -35,43 +35,24 @@ window.addEventListener("resize", function (event) {
 
 document.addEventListener("DOMContentLoaded", function () {
     // Define la función addInfo aquí
-    function addInfo() {
+    function addInfo(event) {
+        event.preventDefault(); // Evita que el formulario se envíe y la página se recargue
+
         // Obtiene los valores del formulario
-        var nombreElement = document.getElementById('nombre');
-        var apellidoElement = document.getElementById('apellido');
-        var usuarioElement = document.getElementById('user');
-        var correoElement = document.getElementById('correo');
-        var tipoIdElement = document.getElementById('tipoId');
-        var numeroIdElement = document.getElementById('numeroId');
-        var movilElement = document.getElementById('movil');
-        var direccionElement = document.getElementById('direccion');
-        var rolElement = document.getElementById('rol');
+        var nombre = document.getElementById('nombre').value.trim();
+        var apellido = document.getElementById('apellido').value.trim();
+        var usuario = document.getElementById('user').value.trim();
+        var correo = document.getElementById('correo').value.trim();
+        var tipoId = document.getElementById('tipoId').value;
+        var numeroId = document.getElementById('numeroId').value.trim();
+        var movil = document.getElementById('movil').value.trim();
+        var direccion = document.getElementById('direccion').value.trim();
+        var rol = document.getElementById('rol').value;
 
-        if (
-            nombreElement &&
-            apellidoElement &&
-            usuarioElement &&
-            correoElement &&
-            tipoIdElement &&
-            numeroIdElement &&
-            movilElement &&
-            direccionElement &&
-            rolElement 
-        ) {
-
-          var nombre = nombreElement.value;
-          var apellido = apellidoElement.value;
-          var usuario = usuarioElement.value;
-          var correo = correoElement.value;
-          var tipoId = tipoIdElement.value;
-          var numeroId = numeroIdElement.value;
-          var movil = movilElement.value;
-          var direccion = direccionElement.value;
-          var rol = rolElement.value;
-          
-
+        // Verifica si todos los campos del formulario están completos
+        if (nombre !== '' && apellido !== '' && usuario !== '' && correo !== '' && tipoId !== '' && numeroId !== '' && movil !== '' && direccion !== '' && rol !== '') {
             // Crea una nueva fila en la tabla
-            var tabla = document.querySelector(".info table");
+            var tabla = document.querySelector(".info table tbody");
             var nuevaFila = tabla.insertRow(-1);
 
             // Inserta celdas en la fila
@@ -84,14 +65,14 @@ document.addEventListener("DOMContentLoaded", function () {
             nuevaFila.insertCell(6).textContent = numeroId;
             nuevaFila.insertCell(7).textContent = movil;
             nuevaFila.insertCell(8).textContent = direccion;
-    
+
             if (rol === 'admin') {
                 var quitarButton = document.createElement('button');
                 quitarButton.textContent = 'Quitar Permisos';
                 // Define la función que se ejecutará cuando se haga clic en el botón
                 quitarButton.onclick = function() {
                     // Cambia el rol del usuario a 'invitado'
-                    rolElement.value = 'invitado';
+                    document.getElementById('rol').value = 'invitado';
                     // Actualiza el texto de la celda del rol en la tabla
                     nuevaFila.cells[3].textContent = 'invitado';
                     // Elimina el botón de la fila
@@ -100,15 +81,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 nuevaFila.insertCell(9).appendChild(quitarButton);
             }
         } else {
-            console.error("Uno o más elementos del formulario no se encontraron en el DOM.");
+            console.error("Por favor, complete todos los campos del formulario.");
         }
     }
 
-    // Agrega el evento 'click' al botón "Agregar" y vincula la función addInfo
-    var addButton = document.getElementById("addButton");
-    if (addButton) {
-        addButton.addEventListener("click", addInfo);
+    // Agrega el evento 'submit' al formulario y vincula la función addInfo
+    var form = document.getElementById("Form-user-dat");
+    if (form) {
+        form.addEventListener("submit", addInfo);
     } else {
-        console.error('El botón con ID "addButton" no se encontró en el DOM.');
+        console.error('El formulario con ID "Form-user-dat" no se encontró en el DOM.');
     }
 });

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class RolesController extends Controller
 {
@@ -13,47 +15,24 @@ class RolesController extends Controller
         return view('/auth/administrador/roles');
     }
 
+public function store(Request $request)
+{
+    $user = new User();
+    $user->first_name = $request->first_name;
+    $user->last_name = $request->last_name;
+    $user->name = $request->name;
+    $user->email = $request->email;
+    $user->identification_type = $request->identification_type;
+    $user->identification_number = $request->identification_number;
+    $user->phone_number = $request->phone_number;
+    $user->address = $request->address;
+    $user->rol = $request->rol;
+    $user->password = Hash::make($request->password);
 
-    /*
-Formulario de agregar un usuario
-nombre = nombre
-apelllido =apellido
-usuario = user
-correo = correo
-tipo id = tipoId
-n id = numeroId
-movil = movil
-dirrecion = direccion
-rol = rol
-clave = clave
-*/
+    $user->save();
 
-    public function store(Request $request)
-    {
-        // Validar los datos del formulario
-        $validatedData = $request->validate([
-            'nombre' => 'required',
-            'apellido' => 'required',
-            'user' => 'required',
-            'correo' => 'required',
-            'tipoId' => 'required',
-            'numeroId' => 'required',
-            'movil' => 'required',
-            'direccion' => 'required',
-            'rol' => 'required',
-            'clave' => 'required',
-        ]);
+    return redirect()->back()->with('success', 'Usuario creado exitosamente');
+}
 
-       // $roles = Roles::create($validatedData);
-    }
-
-
-    /*
-Formulario de buscar 
-nombre = nombre
-apellido = apellido
-correo = correo
-rol = rol
-*/
 
 }
