@@ -28,18 +28,17 @@ window.addEventListener("resize", function (event) {
     }
 });
 
-
 // Función para transformar la tarjeta en un formulario de edición
 
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.edit-btn').forEach(function(button) {
-        button.addEventListener('click', function() {
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".edit-btn").forEach(function (button) {
+        button.addEventListener("click", function () {
             transformToEditForm(this);
         });
     });
 
-    document.querySelectorAll('.delete-btn').forEach(function(button) {
-        button.addEventListener('click', function(e) {
+    document.querySelectorAll(".delete-btn").forEach(function (button) {
+        button.addEventListener("click", function (e) {
             e.preventDefault();
             deleteProduct(this);
         });
@@ -47,13 +46,19 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function transformToEditForm(button) {
-    var productCard = button.closest('.cuadro');
-    var productNameElement = productCard.querySelector('.product-name');
-    var productPriceElement = productCard.querySelector('.product-price');
-    var productFeaturesElement = productCard.querySelector('.product-features');
+    var productCard = button.closest(".cuadro");
+    var productNameElement = productCard.querySelector(".product-name");
+    var productPriceElement = productCard.querySelector(".product-price");
+    var productFeaturesElement = productCard.querySelector(".product-features");
 
-    if (!productNameElement || !productPriceElement || !productFeaturesElement) {
-        console.error('No se pudo encontrar uno o más elementos necesarios para la edición.');
+    if (
+        !productNameElement ||
+        !productPriceElement ||
+        !productFeaturesElement
+    ) {
+        console.error(
+            "No se pudo encontrar uno o más elementos necesarios para la edición."
+        );
         return; // Salir de la función si no se encuentran los elementos
     }
 
@@ -64,17 +69,43 @@ function transformToEditForm(button) {
     var editForm = productCard.nextElementSibling;
     var productImageInput = editForm.querySelector('input[name="productImage"]');
     var productNameInput = editForm.querySelector('input[name="productName"]');
-    var productPriceInput = editForm.querySelector('input[name="productPrice"]');
-    var productFeaturesTextarea = editForm.querySelector('textarea[name="productFeatures"]');
-    var productDisponibleInput = editForm.querySelector('input[name="productDisponible"]');
+    var productPriceInput = editForm.querySelector(
+        'input[name="productPrice"]'
+    );
+    var productFeaturesTextarea = editForm.querySelector(
+        'textarea[name="productFeatures"]'
+    );
+    var productDisponibleInput = editForm.querySelector(
+        'input[name="productDisponible"]'
+    );
 
     // Llena los campos del formulario de edición con los datos obtenidos
-    productImageInput.value = productCard.querySelector('img').src;
+    productImageInput.value = productCard.querySelector("img").src;
     productNameInput.value = productName;
     productPriceInput.value = productPrice;
     productFeaturesTextarea.value = productFeatures;
-    productDisponibleInput.value = productCard.dataset.id; // Asumiendo que quieres usar el data-id como valor disponible
+    productDisponibleInput.value = productCard.dataset.id;
 
     // Muestra el formulario de edición
-    editForm.style.display = 'block';
+    editForm.style.display = "block";
 }
+
+function hideEditForm(button) {
+    var editForm = button.closest(".formEdit");
+    editForm.style.display = "none";
+}
+
+// Agregar eventos a los botones de edición y cancelar
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".edit-btn").forEach(function (button) {
+        button.addEventListener("click", function () {
+            transformToEditForm(this);
+        });
+    });
+
+    document.querySelectorAll(".cancel-btn").forEach(function (button) {
+        button.addEventListener("click", function () {
+            hideEditForm(this);
+        });
+    });
+});
