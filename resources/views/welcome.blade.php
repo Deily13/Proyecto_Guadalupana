@@ -31,7 +31,7 @@
             <a href="/">
                 <div class="boton_toolbar2"></div>
             </a>
-            <a>
+            <a href="/informacion">
                 <div class="boton_toolbar4"></div>
             </a>
             <div class="boton_iniciar">

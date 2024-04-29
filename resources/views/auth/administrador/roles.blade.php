@@ -1,6 +1,5 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-   
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nombre = trim($_POST['nombre']);
     $apellido = trim($_POST['apellido']);
     $usuario = trim($_POST['user']);
@@ -11,41 +10,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $direccion = trim($_POST['direccion']);
     $rol = $_POST['rol'];
 
-    
-    if (!empty($nombre) && 
-    !empty($apellido) &&
-    !empty($usuario) && 
-    !empty($correo) && 
-    !empty($tipoId) && 
-    !empty($numeroId) && 
-    !empty($movil) && 
-    !empty($direccion) && 
-    !empty($rol)) {
+    if (!empty($nombre) && !empty($apellido) && !empty($usuario) && !empty($correo) && !empty($tipoId) && !empty($numeroId) && !empty($movil) && !empty($direccion) && !empty($rol)) {
         // Crea una conexión a la base de datos (debes reemplazar los valores)
-        $servername = "localhost";
-        $username = "username";
-        $password = "password";
-        $dbname = "nombre_base_de_datos";
+        $servername = 'localhost';
+        $username = 'username';
+        $password = 'password';
+        $dbname = 'nombre_base_de_datos';
 
         $conn = new mysqli($servername, $username, $password, $dbname);
 
         // Verifica la conexión
         if ($conn->connect_error) {
-            die("Conexión fallida: " . $conn->connect_error);
+            die('Conexión fallida: ' . $conn->connect_error);
         }
 
         // Inserta los datos en la base de datos
         $sql = "INSERT INTO usuarios (nombre, apellido, usuario, correo, tipo_id, numero_id, movil, direccion, rol) VALUES ('$nombre', '$apellido', '$usuario', '$correo', '$tipoId', '$numeroId', '$movil', '$direccion', '$rol')";
 
-        if ($conn->query($sql) === TRUE) {
-            echo "Registro insertado correctamente";
+        if ($conn->query($sql) === true) {
+            echo 'Registro insertado correctamente';
         } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            echo 'Error: ' . $sql . '<br>' . $conn->error;
         }
 
         $conn->close();
     } else {
-        echo "Por favor, complete todos los campos del formulario.";
+        echo 'Por favor, complete todos los campos del formulario.';
     }
 }
 ?>
@@ -73,26 +63,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <button class="openbtn" onclick="openNav()">☰ Menú</button>
 
     <div class="parent-container">
-        <form class="form-horizontal" id="Form-user-dat">
+        <form class="form-horizontal" id="form-buscar" action="{{ route('user.store') }}" method="POST">
+            @csrf
             <div>
-                <label for="nombre">Nombre:</label><br>
-                <input type="text" id="nombre" name="nombre">
+                <label for="first_name">Nombre:</label><br>
+                <input type="text" id="first_name" name="first_name">
             </div>
             <div>
-                <label for="apellido">Apellido:</label><br>
-                <input type="text" id="apellido" name="apellido">
+                <label for="last_name">Apellido:</label><br>
+                <input type="text" id="last_name" name="last_name">
             </div>
             <div>
-                <label for="user">User:</label><br>
-                <input type="text" id="user" name="user">
+                <label for="name">Usuario:</label><br>
+                <input type="text" id="name" name="name">
             </div>
             <div>
-                <label for="correo">Correo:</label><br>
-                <input type="text" id="correo" name="correo">
+                <label for="email">Correo:</label><br>
+                <input type="text" id="email" name="email">
             </div>
             <div>
-                <label for="tipoId">Tipo ID:</label><br>
-                <select id="tipoId" name="tipoId">
+                <label for="identification_type">Tipo ID:</label><br>
+                <select id="identification_type" name="identification_type">
                     <option value="">Tipo de Identificación*</option>
                     <option value="cc">Cédula de Ciudadanía</option>
                     <option value="ce">Cédula de Extranjería</option>
@@ -100,16 +91,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </select>
             </div>
             <div>
-                <label for="numeroId">N ID:</label><br>
-                <input type="number" id="numeroId" name="numeroId">
+                <label for="identification_number">N ID:</label><br>
+                <input type="number" id="identification_number" name="identification_number">
             </div>
             <div>
-                <label for="movil">Movil:</label><br>
-                <input type="tel" id="movil" name="movil">
+                <label for="phone_number">Móvil:</label><br>
+                <input type="tel" id="phone_number" name="phone_number">
             </div>
             <div>
-                <label for="direccion">Dirección:</label><br>
-                <input type="text" id="direccion" name="direccion">
+                <label for="address">Dirección:</label><br>
+                <input type="text" id="address" name="address">
             </div>
             <div>
                 <label for="rol">Rol:</label><br>
@@ -119,17 +110,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </select>
             </div>
             <div>
-                <label for="clave">Clave:</label><br>
-                <input type="password" id="clave" name="clave">
+                <label for="password">Clave:</label><br>
+                <input type="password" id="password" name="password">
             </div>
 
             <div class="botones">
-                <input type="submit" id="addButton" value="Agregar">
+                <input type="submit" value="Agregar" id="addButton">
             </div>
         </form>
 
 
-        <form class="form-horizontal" id="form-buscar" action="{{ route('user.store') }}" method="POST">
+        <form class="form-horizontal" id="form-buscar">
+            @csrf
             <div>
                 <label for="nombre">Nombre:</label><br>
                 <input type="text" id="nombre" name="nombre">
@@ -150,9 +142,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </select>
             </div>
             <div class="botones">
-                <input type="button" value="Buscar" id="searchButton">
+                <input type="submit" value="Agregar" id="addButton">
             </div>
         </form>
+
 
 
 
@@ -171,28 +164,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <th>Dirección</th>
                         <th class="celda-especial"></th>
                     </tr>
-                    <tr>
-                        <td>Nombre</td>
-                        <td>Apellido</td>
-                        <td>User</td>
-                        <td>Rol</td>
-                        <td>Correo</td>
-                        <td>Tipo Id</td>
-                        <td>N Id</td>
-                        <td>Cell</td>
-                        <td>Dirección</td>
-                        <td>
-                            <button>Quitar Permisos</button>
-                        </td>
-                    </tr>
+                    @foreach ($users as $user)
+                        <tr>
+                            <td>{{ $user->first_name }}</td>
+                            <td>{{ $user->last_name }}</td>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->rol }}</td>
+                            <td>{{ $user->email }}</td>
+                            <td>{{ $user->identification_type }}</td>
+                            <td>{{ $user->identification_number }}</td>
+                            <td>{{ $user->phone_number }}</td>
+                            <td>{{ $user->address }}</td>
+                            <td>
+                                <form id="removePermissionsForm{{ $user->id }}" action="{{ route('user.change-role', ['id' => $user->id]) }}" method="POST">
+                                    @csrf
+                                    @if ($user->rol)
+                                    <button type="submit" class="remove-permissions-btn" onclick="changeRoleAndHideButton(this, '{{ $user->id }}')">Quitar Permisos</button>
+                                    @endif
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
                 </table>
             </div>
         </div>
-    </div>
 
-
-
-    <script src="{{ asset('asset/js/roles.js') }}"></script>
+        <script src="{{ asset('asset/js/roles.js') }}"></script>
 </body>
 
 </html>

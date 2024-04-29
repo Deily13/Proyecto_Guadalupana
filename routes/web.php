@@ -59,6 +59,8 @@ Route::get('pedidos', [PedidosController::class, 'index']);
 Route::get('editar-productos', [EditarProductoController::class, 'index'])->name('editar-productos');
 Route::get('roles', [RolesController::class, 'index']);
 Route::get('admin', [AdministradorController::class, 'index']);
+Route::post('/roles/store', [RolesController::class, 'store'])->name('user.store');
+Route::post('/roles/change-role/{id}', [RolesController::class, 'changeRole'])->name('user.change-role');
 
 
 
