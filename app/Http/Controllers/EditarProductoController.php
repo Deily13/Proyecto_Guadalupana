@@ -57,10 +57,31 @@ class EditarProductoController extends Controller
         return redirect()->route('editar-productos');
     }
 
-    public function showProducts()
-    {
-        $bebidas = Product::all(); // Obtener todos los productos
-        
-        return view('editar-productos', ['bebidas' => $bebidas]);
+    
+    public function update(Request $request, $id) {
+        // Valida los datos enviados desde el formulario
+        $request->validate([
+            'productName' => 'required|string|max:255',
+            'productPrice' => 'required|numeric',
+            'productFeatures' => 'required|string',
+            // Agrega más reglas de validación según sea necesario para otros campos del formulario
+        ]);
+    
+        // Busca el producto en la base de datos
+        $product = Product::find($id);
+    
+        // Actualiza los campos del producto con los nuevos valores enviados desde el formulario
+        $product->nombre = $request->input('productName');
+        $product->precio = $request->input('productPrice');
+        $product->Descripción = $request->input('productFeatures');
+        $product->stock = $request->input('productDisponible');
+        // Actualiza más campos según sea necesario
+    
+        // Guarda los cambios en la base de datos
+        $product->save();
+    
+        // Redirige a la página anterior o a donde desees después de la actualización
+
+        return redirect()->route('editar-productos')->with('success', 'Producto actualizado correctamente');
     }
 }
