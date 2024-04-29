@@ -92,43 +92,26 @@ body {
   margin-right: 30px;
 }
 
-#product-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  /* Alinea los elementos al inicio del contenedor */
-  margin-left: 420px;
+.formEdit {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 20px;
+  max-width: 300px;
+  margin: 15px auto;
+  margin-top: 10px;
+  margin-left: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  float: left;
 }
 
-.product-card {
-  border: 1px solid #dee2e6;
-  border-radius: 8px;
-  margin: 10px;
-  width: 200px;
-  background-color: #ffffff;
-  padding: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
+.formEdit p {
+  margin: 10px 0;
 }
 
-.product-card:hover {
-  transform: scale(1.05);
-}
-
-.product-card p{
-  margin-bottom: 5px;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-button {
-  background-color: #007bff;
-  color: #ffffff;
+.formEdit button {
+  background-color: #5bc0de;
+  color: white;
   border: none;
   padding: 8px 12px;
   border-radius: 4px;
@@ -137,9 +120,31 @@ button {
   margin-left: 8px;
 }
 
-.features-modal {
-  max-width: 400px;
-  margin: 20px auto;
+.formEdit button:hover {
+  background-color: #31b0d5;
+}
+
+.formEdit textarea,
+.formEdit input[type="text"],
+.formEdit input[type="number"],
+.formEdit input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.formEdit textarea {
+  height: 100px;
+}
+
+.formEdit img {
+  max-width: 10%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
 .ProductosBD {
@@ -168,6 +173,12 @@ button {
   margin-left: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   float: left;
+ 
+}
+
+.product-image{
+  width: 98%;
+  height: 30%;
 }
 
 h3{
