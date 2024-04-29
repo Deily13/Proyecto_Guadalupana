@@ -57,5 +57,10 @@ class EditarProductoController extends Controller
         return redirect()->route('editar-productos');
     }
 
-   
+    public function showProducts()
+    {
+        $bebidas = Product::all(); // Obtener todos los productos
+        
+        return view('editar-productos', ['bebidas' => $bebidas]);
+    }
 }

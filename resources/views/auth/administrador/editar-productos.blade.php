@@ -100,7 +100,7 @@
         <div class="container-product">
             <h3>Bebidas Alcoholicas</h3>
             @foreach ($bebidas as $bebida)
-            <div class="cuadro">
+            <div class="cuadro" data-id="{{ $bebida->id }}">
                 <img src="{{ $bebida->image }}" alt="Producto">
                 <p>Nombre: <span id="productName">{{ $bebida->nombre }}</span></p>
                 <p>Precio: <span id="productPrice">{{ $bebida->precio }}</span></p>
@@ -109,132 +109,169 @@
                     @csrf
                     <button type="submit" class="btn btn-danger delete-btn">Eliminar</button>
                 </form>
-                <button class="btn btn-info edit-btn" id="editBtn{{$producto->id}}">Editar</button>
-                <div class="edit-form-container" style="display: none;">
+                <button class="btn btn-info edit-btn" onclick="transformToEditForm('{{ $bebida->id }}')">Editar</button>
+            </div>
+            <div id="editForm_{{ $bebida->id }}" class="formEdit" style="display: none;">
+                <form class="formEdit">
 
                     <div class="form-group">
-                        <label>Imagen:</label>
-                        <input type="file" class="form-control-file" name="productImage">
+                        <label for="productImage">Imagen:</label>
+                        <input type="text" class="form-control-file" id="productImage" name="productImage">
                     </div>
                     <div class="form-group">
                         <label>Nombre del Producto:</label>
-                        <input type="text" class="form-control" name="productName" value="${currentName}">
+                        <input type="text" class="form-control" id="" name="productName">
                     </div>
                     <div class="form-group">
                         <label>Precio:</label>
-                        <input type="number" class="form-control" name="productPrice" value="${currentPrice}">
+                        <input type="number" class="form-control" id="" name="productPrice">
                     </div>
                     <div class="form-group">
                         <label>Características:</label>
-                        <textarea class="form-control" name="productFeatures" value="${currentFeatures}"></textarea>
+                        <textarea class="form-control" id="" name="productFeatures"></textarea>
                     </div>
                     <div class="form-group">
                         <label>Disponible:</label>
-                        <input type="number" class="form-control" name="productDisponible" value="${currentDisponible}">
+                        <input type="number" class="form-control" name="productDisponible">
                     </div>
-                    <div class="button-container">
-                        <button type="button" class="btn btn-success save-btn">Guardar</button>
+                    
+                    <form class="formEdit" action="{{ route('actualizar.producto', $bebida->id) }}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn btn-success save-btn">Guardar</button>
                         <button type="button" class="btn btn-secondary cancel-btn">Cancelar</button>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-
-
-            <div class="container-product">
-                <h3>Hamburguesas</h3>
-                @foreach ($hamburguesas as $hamburguesa)
-                <div class="cuadro">
-                    <img src="{{ $hamburguesa->image }}" alt="Producto">
-                    <p>Nombre: <span id="productName">{{ $hamburguesa->nombre }}</span></p>
-                    <p>Precio: <span id="productPrice">{{ $hamburguesa->precio }}</span></p>
-                    <p>Características: <span id="productFeatures">{{ $hamburguesa->Descripción }}</span></p>
-                    <!-- Formulario para eliminar el producto -->
-                    <form action="{{ route('eliminar.producto', $hamburguesa->id) }}" method="POST">
-                        @csrf
-                        <button type="submit" class="btn btn-danger delete-btn">Eliminar</button>
                     </form>
-                    <button class="btn btn-info edit-btn">Editar</button>
-                </div>
-                @endforeach
-            </div>
 
-            <div class="container-product">
-                <h3>Helados</h3>
-                @foreach ($helados as $helado)
-                <div class="cuadro">
-                    <img src="{{ $helado->image }}" alt="Producto">
-                    <p>Nombre: <span id="productName">{{ $helado->nombre }}</span></p>
-                    <p>Precio: <span id="productPrice">{{ $helado->precio }}</span></p>
-                    <p>Características: <span id="productFeatures">{{ $helado->Descripción }}</span></p>
-                    <!-- Formulario para eliminar el producto -->
-                    <form action="{{ route('eliminar.producto', $helado->id) }}" method="POST">
-                        @csrf
-                        <button type="submit" class="btn btn-danger delete-btn">Eliminar</button>
-                    </form>
-                    <button class="btn btn-info edit-btn">Editar</button>
-                </div>
-                @endforeach
+                </form>
             </div>
+        </div>
+        @endforeach
 
-            <div class="container-product">
-                <h3>Comidas Rapidas</h3>
-                @foreach ($comidas as $comida)
-                <div class="cuadro">
-                    <img src="{{ $comida->image }}" alt="Producto">
-                    <p>Nombre: <span id="productName">{{ $comida->nombre }}</span></p>
-                    <p>Precio: <span id="productPrice">{{ $comida->precio }}</span></p>
-                    <p>Características: <span id="productFeatures">{{ $comida->Descripción }}</span></p>
-                    <!-- Formulario para eliminar el producto -->
-                    <form action="{{ route('eliminar.producto', $comida->id) }}" method="POST">
-                        @csrf
-                        <button type="submit" class="btn btn-danger delete-btn">Eliminar</button>
-                    </form>
-                    <button class="btn btn-info edit-btn">Editar</button>
-                </div>
-                @endforeach
+        <script>
+            function transformToEditForm(id) {
+                var productCard = document.querySelector('.cuadro[data-id="' + id + '"]');
+                var productName = productCard.querySelector('#productName').textContent;
+                var productPrice = productCard.querySelector('#productPrice').textContent;
+                var productFeatures = productCard.querySelector('#productFeatures').textContent;
+
+                var editForm = document.getElementById('editForm_' + id);
+                var formFields = editForm.querySelectorAll('input, textarea');
+
+                // Llena los campos del formulario con los datos obtenidos
+                formFields.forEach(function(field) {
+                    var fieldName = field.getAttribute('name');
+                    switch (fieldName) {
+                        case 'productName':
+                            field.value = productName;
+                            break;
+                        case 'productPrice':
+                            field.value = productPrice;
+                            break;
+                        case 'productFeatures':
+                            field.value = productFeatures;
+                            break;
+                            // Agrega más casos según sea necesario para otros campos del formulario
+                    }
+                });
+
+                // Muestra el formulario de edición
+                editForm.style.display = 'block';
+            }
+        </script>
+
+        <div class="container-product">
+            <h3>Hamburguesas</h3>
+            @foreach ($hamburguesas as $hamburguesa)
+            <div class="cuadro">
+                <img src="{{ $hamburguesa->image }}" alt="Producto">
+                <p>Nombre: <span id="productName">{{ $hamburguesa->nombre }}</span></p>
+                <p>Precio: <span id="productPrice">{{ $hamburguesa->precio }}</span></p>
+                <p>Características: <span id="productFeatures">{{ $hamburguesa->Descripción }}</span></p>
+                <!-- Formulario para eliminar el producto -->
+                <form action="{{ route('eliminar.producto', $hamburguesa->id) }}" method="POST">
+                    @csrf
+                    <button type="submit" class="btn btn-danger delete-btn">Eliminar</button>
+                </form>
+                <button class="btn btn-info edit-btn">Editar</button>
             </div>
+            @endforeach
+        </div>
 
-            <div class="container-product">
-                <h3>Refrescos</h3>
-                @foreach ($refrescos as $refresco)
-                <div class="cuadro">
-                    <img src="{{ $refresco->image }}" alt="Producto">
-                    <p>Nombre: <span id="productName">{{ $refresco->nombre }}</span></p>
-                    <p>Precio: <span id="productPrice">{{ $refresco->precio }}</span></p>
-                    <p>Características: <span id="productFeatures">{{ $refresco->Descripción }}</span></p>
-                    <!-- Formulario para eliminar el producto -->
-                    <form action="{{ route('eliminar.producto', $refresco->id) }}" method="POST">
-                        @csrf
-                        <button type="submit" class="btn btn-danger delete-btn">Eliminar</button>
-                    </form>
-                    <button class="btn btn-info edit-btn">Editar</button>
-                </div>
-                @endforeach
+        <div class="container-product">
+            <h3>Helados</h3>
+            @foreach ($helados as $helado)
+            <div class="cuadro">
+                <img src="{{ $helado->image }}" alt="Producto">
+                <p>Nombre: <span id="productName">{{ $helado->nombre }}</span></p>
+                <p>Precio: <span id="productPrice">{{ $helado->precio }}</span></p>
+                <p>Características: <span id="productFeatures">{{ $helado->Descripción }}</span></p>
+                <!-- Formulario para eliminar el producto -->
+                <form action="{{ route('eliminar.producto', $helado->id) }}" method="POST">
+                    @csrf
+                    <button type="submit" class="btn btn-danger delete-btn">Eliminar</button>
+                </form>
+                <button class="btn btn-info edit-btn">Editar</button>
             </div>
+            @endforeach
+        </div>
 
-            <div class="container-product">
-                <h3>Combos</h3>
-                @foreach ($combos as $combo)
-                <div class="cuadro">
-                    <img src="{{ $combo->image }}" alt="Producto">
-                    <p>Nombre: <span id="productName">{{ $combo->nombre }}</span></p>
-                    <p>Precio: <span id="productPrice">{{ $combo->Precio }}</span></p>
-                    <p>Características: <span id="productFeatures">{{ $combo->Descripción }}</span></p>
-                    <!-- Formulario para eliminar el producto -->
-                    <form action="{{ route('eliminar.producto', $combo->id) }}" method="POST">
-                        @csrf
-                        <button type="submit" class="btn btn-danger delete-btn">Eliminar</button>
-                    </form>
-                    <button class="btn btn-info edit-btn">Editar</button>
-                </div>
-                @endforeach
+        <div class="container-product">
+            <h3>Comidas Rapidas</h3>
+            @foreach ($comidas as $comida)
+            <div class="cuadro">
+                <img src="{{ $comida->image }}" alt="Producto">
+                <p>Nombre: <span id="productName">{{ $comida->nombre }}</span></p>
+                <p>Precio: <span id="productPrice">{{ $comida->precio }}</span></p>
+                <p>Características: <span id="productFeatures">{{ $comida->Descripción }}</span></p>
+                <!-- Formulario para eliminar el producto -->
+                <form action="{{ route('eliminar.producto', $comida->id) }}" method="POST">
+                    @csrf
+                    <button type="submit" class="btn btn-danger delete-btn">Eliminar</button>
+                </form>
+                <button class="btn btn-info edit-btn">Editar</button>
             </div>
+            @endforeach
+        </div>
 
-            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-            <script src="{{ asset('asset/js/editar-productos.js') }}"></script>
+        <div class="container-product">
+            <h3>Refrescos</h3>
+            @foreach ($refrescos as $refresco)
+            <div class="cuadro">
+                <img src="{{ $refresco->image }}" alt="Producto">
+                <p>Nombre: <span id="productName">{{ $refresco->nombre }}</span></p>
+                <p>Precio: <span id="productPrice">{{ $refresco->precio }}</span></p>
+                <p>Características: <span id="productFeatures">{{ $refresco->Descripción }}</span></p>
+                <!-- Formulario para eliminar el producto -->
+                <form action="{{ route('eliminar.producto', $refresco->id) }}" method="POST">
+                    @csrf
+                    <button type="submit" class="btn btn-danger delete-btn">Eliminar</button>
+                </form>
+                <button class="btn btn-info edit-btn">Editar</button>
+            </div>
+            @endforeach
+        </div>
+
+        <div class="container-product">
+            <h3>Combos</h3>
+            @foreach ($combos as $combo)
+            <div class="cuadro">
+                <img src="{{ $combo->image }}" alt="Producto">
+                <p>Nombre: <span id="productName">{{ $combo->nombre }}</span></p>
+                <p>Precio: <span id="productPrice">{{ $combo->Precio }}</span></p>
+                <p>Características: <span id="productFeatures">{{ $combo->Descripción }}</span></p>
+                <!-- Formulario para eliminar el producto -->
+                <form action="{{ route('eliminar.producto', $combo->id) }}" method="POST">
+                    @csrf
+                    <button type="submit" class="btn btn-danger delete-btn">Eliminar</button>
+                </form>
+                <button class="btn btn-info edit-btn">Editar</button>
+            </div>
+            @endforeach
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="{{ asset('asset/js/editar-productos.js') }}"></script>
 </body>
 <script>
     window.setTimeout(function() {

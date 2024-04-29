@@ -28,17 +28,4 @@ window.addEventListener("resize", function (event) {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    var editButtons = document.querySelectorAll(".edit-btn");
-
-    editButtons.forEach(function (button) {
-        button.addEventListener("click", function () {
-            var productId = button.id.replace("editBtn", "");
-            var editFormContainer = document.querySelector(
-                ".edit-form-container#editFormContainer" + productId
-            );
-            editFormContainer.style.display = "block";
-            // Aquí podrías ocultar otros formularios de edición si es necesario
-        });
-    });
-});
+// Función para transformar la tarjeta en un formulario de edición
