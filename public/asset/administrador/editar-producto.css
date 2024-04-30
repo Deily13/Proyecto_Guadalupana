@@ -192,17 +192,26 @@ h3{
   margin: 10px 0;
 }
 
+.btn-action{
+  display: flex; 
+  justify-content: center;
+}
+
 .btn-danger {
   background-color: #d9534f;
   color: white;
+margin-right: 10px;
 }
+
 .btn-info {
   background-color: #5bc0de;
   color: white;
 }
+
 .btn-danger:hover {
   background-color: #c9302c;
 }
+
 .btn-info:hover {
   background-color: #31b0d5;
 }
