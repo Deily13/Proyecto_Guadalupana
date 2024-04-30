@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use GuzzleHttp\Psr7\Message;
 use Illuminate\Http\Request;
 
 class EditarProductoController extends Controller
@@ -61,6 +62,7 @@ class EditarProductoController extends Controller
     public function update(Request $request, $id) {
         // Valida los datos enviados desde el formulario
         $request->validate([
+            'productImage' => 'required|url',
             'productName' => 'required|string|max:255',
             'productPrice' => 'required|numeric',
             'productFeatures' => 'required|string',
@@ -71,6 +73,7 @@ class EditarProductoController extends Controller
         $product = Product::find($id);
     
         // Actualiza los campos del producto con los nuevos valores enviados desde el formulario
+        $product->image = $request->input('productImage');
         $product->nombre = $request->input('productName');
         $product->precio = $request->input('productPrice');
         $product->Descripción = $request->input('productFeatures');
@@ -82,6 +85,9 @@ class EditarProductoController extends Controller
     
         // Redirige a la página anterior o a donde desees después de la actualización
 
-        return redirect()->route('editar-productos')->with('success', 'Producto actualizado correctamente');
+        session()->flash('message', 'Producto actualizado correctamente');
+
+        return redirect()->route('editar-productos');
+
     }
 }

@@ -100,16 +100,18 @@
         <div class="container-product">
             <h3>Bebidas Alcoholicas</h3>
             @foreach ($bebidas as $bebida)
-            <div class="cuadro" data-id="{{ $bebida->id }}" >
+            <div class="cuadro" data-id="{{ $bebida->id }}">
                 <img src="{{ $bebida->image }}" alt="Producto" class="product-image">
                 <p>Nombre: <span class="product-name">{{ $bebida->nombre }}</span></p>
                 <p>Precio: <span class="product-price">{{ $bebida->precio }}</span></p>
                 <p>Características: <span class="product-features">{{ $bebida->Descripción }}</span></p>
-                <form action="{{ route('eliminar.producto', $bebida->id) }}" method="POST">
-                    @csrf
-                    <button type="submit" class="btn btn-danger delete-btn">Eliminar</button>
-                </form>
-                <button class="btn btn-info edit-btn" onclick="transformToEditForm(this)">Editar</button>
+                <div class="btn-action">
+                    <form action="{{ route('eliminar.producto', $bebida->id) }}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn btn-danger delete-btn">Eliminar</button>
+                    </form>
+                    <button class="btn btn-info edit-btn" onclick="transformToEditForm(this)">Editar</button>
+                </div>
             </div>
             <div id="editForm_{{ $bebida->id }}" class="formEdit" style="display: none;">
                 <form action="{{ route('actualizar.producto', $bebida->id) }}" method="POST">
@@ -135,75 +137,86 @@
                         <input type="number" class="form-control" name="productDisponible" value="{{ $bebida->Stock }}">
                     </div>
 
-                        @csrf
-                        <button type="submit" class="btn btn-success save-btn">Guardar</button>
-                        <button type="button" class="btn btn-secondary cancel-btn" onclick="hideEditForm(this)">Cancelar</button>
+                    @csrf
+                    <button type="submit" class="btn btn-success save-btn">Guardar</button>
+                    <button type="button" class="btn btn-secondary cancel-btn" onclick="hideEditForm(this)">Cancelar</button>
 
                 </form>
             </div>
             @endforeach
         </div>
-      
+
 
 
         <div class="container-product">
             <h3>Hamburguesas</h3>
             @foreach ($hamburguesas as $hamburguesa)
-            <div class="cuadro">
-                <img src="{{ $hamburguesa->image }}" alt="Producto" class="product-image">
-                <p>Nombre: <span class="productName">{{ $hamburguesa->nombre }}</span></p>
-                <p>Precio: <span class="productPrice">{{ $hamburguesa->precio }}</span></p>
-                <p>Características: <span class="productFeatures">{{ $hamburguesa->Descripción }}</span></p>
-                <form action="{{ route('eliminar.producto', $hamburguesa->id) }}" method="POST">
-                    @csrf
-                    <button type="submit" class="btn btn-danger delete-btn">Eliminar</button>
-                </form>
-                <button class="btn btn-info edit-btn" onclick="transformToEditForm(this)">Editar</button>
-            </div>
-            <div id="editForm_{{ $hamburguesa->id }}" class="formEdit" style="display: none;">
-                <form action="{{ route('actualizar.producto', $hamburguesa->id) }}" method="POST">
+                <div class="cuadro" data-id="{{ $hamburguesa->id }}">
+                    <img src="{{ $hamburguesa->image }}" alt="Producto" class="product-image">
+                    <p>Nombre: <span class="product-name">{{ $hamburguesa->nombre }}</span></p>
+                    <p>Precio: <span class="product-price">{{ $hamburguesa->precio }}</span></p>
+                    <p>Características: <span class="product-features">{{ $hamburguesa->Descripción }}</span></p>
+                    <div class="btn-action">
+                    <form action="{{ route('eliminar.producto', $hamburguesa->id) }}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn btn-danger delete-btn">Eliminar</button>
+                    </form>
+                    <button class="btn btn-info edit-btn" onclick="transformToEditForm(this)">Editar</button>
+                </div>
+                </div>
+                <div id="editForm_{{ $hamburguesa->id }}" class="formEdit" style="display: none;">
+                    <form action="{{ route('actualizar.producto', $hamburguesa->id) }}" method="POST">
 
-                    <div class="form-group">
-                        <label>Imagen:</label>
-                        <input type="text" class="form-control" name="productImage" value="{{ $hamburguesa->image }}">
-                    </div>
-                    <div class="form-group">
-                        <label>Nombre del Producto:</label>
-                        <input type="text" class="form-control" name="productName" value="{{ $hamburguesa->nombre }}">
-                    </div>
-                    <div class="form-group">
-                        <label>Precio:</label>
-                        <input type="number" class="form-control" name="productPrice" value="{{ $hamburguesa->precio }}">
-                    </div>
-                    <div class="form-group">
-                        <label>Características:</label>
-                        <textarea class="form-control" name="productFeatures">{{ $hamburguesa->Descripción }}</textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Disponible:</label>
-                        <input type="number" class="form-control" name="productDisponible" value="{{ $hamburguesa->Stock }}">
-                    </div>
+                        <div class="form-group">
+                            <label>Imagen:</label>
+                            <input type="text" class="form-control" name="productImage"
+                                value="{{ $hamburguesa->image }}">
+                        </div>
+                        <div class="form-group">
+                            <label>Nombre del Producto:</label>
+                            <input type="text" class="form-control" name="productName"
+                                value="{{ $hamburguesa->nombre }}">
+                        </div>
+                        <div class="form-group">
+                            <label>Precio:</label>
+                            <input type="number" class="form-control" name="productPrice"
+                                value="{{ $hamburguesa->precio }}">
+                        </div>
+                        <div class="form-group">
+                            <label>Características:</label>
+                            <textarea class="form-control" name="productFeatures">{{ $hamburguesa->Descripción }}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Disponible:</label>
+                            <input type="number" class="form-control" name="productDisponible"
+                                value="{{ $hamburguesa->Stock }}">
+                        </div>
+
                         @csrf
                         <button type="submit" class="btn btn-success save-btn">Guardar</button>
-                        <button type="button" class="btn btn-secondary cancel-btn" onclick="hideEditForm(this)">Cancelar</button>
-                </form>
-            </div>
+                        <button type="button" class="btn btn-secondary cancel-btn"
+                            onclick="hideEditForm(this)">Cancelar</button>
+
+                    </form>
+                </div>
             @endforeach
         </div>
 
         <div class="container-product">
             <h3>Helados</h3>
             @foreach ($helados as $helado)
-            <div class="cuadro">
+            <div class="cuadro" data-id="{{ $helado->id }}">
                 <img src="{{ $helado->image }}" alt="Producto" class="product-image">
-                <p>Nombre: <span class="productName">{{ $helado->nombre }}</span></p>
-                <p>Precio: <span class="productPrice">{{ $helado->precio }}</span></p>
-                <p>Características: <span class="productFeatures">{{ $helado->Descripción }}</span></p>
-                <form action="{{ route('eliminar.producto', $helado->id) }}" method="POST">
-                    @csrf
-                    <button type="submit" class="btn btn-danger delete-btn">Eliminar</button>
-                </form>
-                <button class="btn btn-info edit-btn" onclick="transformToEditForm(this)">Editar</button>
+                <p>Nombre: <span class="product-name">{{ $helado->nombre }}</span></p>
+                <p>Precio: <span class="product-price">{{ $helado->precio }}</span></p>
+                <p>Características: <span class="product-features">{{ $helado->Descripción }}</span></p>
+                <div class="btn-action">
+                    <form action="{{ route('eliminar.producto', $helado->id) }}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn btn-danger delete-btn">Eliminar</button>
+                    </form>
+                    <button class="btn btn-info edit-btn" onclick="transformToEditForm(this)">Editar</button>
+                </div>
             </div>
             <div id="editForm_{{ $helado->id }}" class="formEdit" style="display: none;">
                 <form action="{{ route('actualizar.producto', $helado->id) }}" method="POST">
@@ -229,27 +242,31 @@
                         <input type="number" class="form-control" name="productDisponible" value="{{ $helado->Stock }}">
                     </div>
 
-                        @csrf
-                        <button type="submit" class="btn btn-success save-btn">Guardar</button>
-                        <button type="button" class="btn btn-secondary cancel-btn" onclick="hideEditForm(this)">Cancelar</button>
+                    @csrf
+                    <button type="submit" class="btn btn-success save-btn">Guardar</button>
+                    <button type="button" class="btn btn-secondary cancel-btn" onclick="hideEditForm(this)">Cancelar</button>
+
                 </form>
             </div>
             @endforeach
         </div>
 
+
         <div class="container-product">
-            <h3>Comidas Rapidas</h3>
+            <h3>Comidas Rápidas</h3>
             @foreach ($comidas as $comida)
-            <div class="cuadro">
+            <div class="cuadro" data-id="{{ $comida->id }}">
                 <img src="{{ $comida->image }}" alt="Producto" class="product-image">
-                <p>Nombre: <span class="productName">{{ $comida->nombre }}</span></p>
-                <p>Precio: <span class="productPrice">{{ $comida->precio }}</span></p>
-                <p>Características: <span class="productFeatures">{{ $comida->Descripción }}</span></p>
-                <form action="{{ route('eliminar.producto', $comida->id) }}" method="POST">
-                    @csrf
-                    <button type="submit" class="btn btn-danger delete-btn">Eliminar</button>
-                </form>
-                <button class="btn btn-info edit-btn" onclick="transformToEditForm(this)">Editar</button>
+                <p>Nombre: <span class="product-name">{{ $comida->nombre }}</span></p>
+                <p>Precio: <span class="product-price">{{ $comida->precio }}</span></p>
+                <p>Características: <span class="product-features">{{ $comida->Descripción }}</span></p>
+                <div class="btn-action">
+                    <form action="{{ route('eliminar.producto', $comida->id) }}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn btn-danger delete-btn">Eliminar</button>
+                    </form>
+                    <button class="btn btn-info edit-btn" onclick="transformToEditForm(this)">Editar</button>
+                </div>
             </div>
             <div id="editForm_{{ $comida->id }}" class="formEdit" style="display: none;">
                 <form action="{{ route('actualizar.producto', $comida->id) }}" method="POST">
@@ -275,27 +292,31 @@
                         <input type="number" class="form-control" name="productDisponible" value="{{ $comida->Stock }}">
                     </div>
 
-                        @csrf
-                        <button type="submit" class="btn btn-success save-btn">Guardar</button>
-                        <button type="button" class="btn btn-secondary cancel-btn" onclick="hideEditForm(this)">Cancelar</button>
+                    @csrf
+                    <button type="submit" class="btn btn-success save-btn">Guardar</button>
+                    <button type="button" class="btn btn-secondary cancel-btn" onclick="hideEditForm(this)">Cancelar</button>
+
                 </form>
             </div>
             @endforeach
         </div>
 
+
         <div class="container-product">
             <h3>Refrescos</h3>
             @foreach ($refrescos as $refresco)
-            <div class="cuadro">
+            <div class="cuadro" data-id="{{ $refresco->id }}">
                 <img src="{{ $refresco->image }}" alt="Producto" class="product-image">
-                <p>Nombre: <span class="productName">{{ $refresco->nombre }}</span></p>
-                <p>Precio: <span class="productPrice">{{ $refresco->precio }}</span></p>
-                <p>Características: <span class="productFeatures">{{ $refresco->Descripción }}</span></p>
-                <form action="{{ route('eliminar.producto', $refresco->id) }}" method="POST">
-                    @csrf
-                    <button type="submit" class="btn btn-danger delete-btn">Eliminar</button>
-                </form>
-                <button class="btn btn-info edit-btn" onclick="transformToEditForm(this)">Editar</button>
+                <p>Nombre: <span class="product-name">{{ $refresco->nombre }}</span></p>
+                <p>Precio: <span class="product-price">{{ $refresco->precio }}</span></p>
+                <p>Características: <span class="product-features">{{ $refresco->Descripción }}</span></p>
+                <div class="btn-action">
+                    <form action="{{ route('eliminar.producto', $refresco->id) }}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn btn-danger delete-btn">Eliminar</button>
+                    </form>
+                    <button class="btn btn-info edit-btn" onclick="transformToEditForm(this)">Editar</button>
+                </div>
             </div>
             <div id="editForm_{{ $refresco->id }}" class="formEdit" style="display: none;">
                 <form action="{{ route('actualizar.producto', $refresco->id) }}" method="POST">
@@ -306,11 +327,11 @@
                     </div>
                     <div class="form-group">
                         <label>Nombre del Producto:</label>
-                        <input type="text" class="form-control"  name="productName" value="{{ $refresco->nombre }}">
+                        <input type="text" class="form-control" name="productName" value="{{ $refresco->nombre }}">
                     </div>
                     <div class="form-group">
                         <label>Precio:</label>
-                        <input type="number" class="form-control"  name="productPrice" value="{{ $refresco->precio }}">
+                        <input type="number" class="form-control" name="productPrice" value="{{ $refresco->precio }}">
                     </div>
                     <div class="form-group">
                         <label>Características:</label>
@@ -321,61 +342,63 @@
                         <input type="number" class="form-control" name="productDisponible" value="{{ $refresco->Stock }}">
                     </div>
 
-                        @csrf
-                        <button type="submit" class="btn btn-success save-btn">Guardar</button>
-                        <button type="button" class="btn btn-secondary cancel-btn" onclick="hideEditForm(this)">Cancelar</button>
+                    @csrf
+                    <button type="submit" class="btn btn-success save-btn">Guardar</button>
+                    <button type="button" class="btn btn-secondary cancel-btn" onclick="hideEditForm(this)">Cancelar</button>
                 </form>
             </div>
             @endforeach
         </div>
 
+
         <div class="container-product">
             <h3>Combos</h3>
             @foreach ($combos as $combo)
-            <div class="cuadro">
+            <div class="cuadro" data-id="{{ $combo->id }}">
                 <img src="{{ $combo->image }}" alt="Producto" class="product-image">
-                <p>Nombre: <span class="productName">{{ $combo->nombre }}</span></p>
-                <p>Precio: <span class="productPrice">{{ $combo->Precio }}</span></p>
-                <p>Características: <span class="productFeatures">{{ $combo->Descripción }}</span></p>
-                <form action="{{ route('eliminar.producto', $combo->id) }}" method="POST">
-                    @csrf
-                    <button type="submit" class="btn btn-danger delete-btn">Eliminar</button>
-                </form>
-                <button class="btn btn-info edit-btn" onclick="transformToEditForm(this)">Editar</button>
+                <p>Nombre: <span class="product-name">{{ $combo->nombre }}</span></p>
+                <p>Precio: <span class="product-price">{{ $combo->Precio }}</span></p>
+                <p>Características: <span class="product-features">{{ $combo->Descripción }}</span></p>
+                <div class="btn-action">
+                    <form action="{{ route('eliminar.producto', $refresco->id) }}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn btn-danger delete-btn">Eliminar</button>
+                    </form>
+                    <button class="btn btn-info edit-btn" onclick="transformToEditForm(this)">Editar</button>
+                </div>
             </div>
             <div id="editForm_{{ $combo->id }}" class="formEdit" style="display: none;">
                 <form action="{{ route('actualizar.producto', $combo->id) }}" method="POST">
 
                     <div class="form-group">
                         <label for="productImage">Imagen:</label>
-                        <input type="text" class="form-control-file"  name="productImage" value="{{ $combo->image }}">
+                        <input type="text" class="form-control-file" name="productImage" value="{{ $combo->image }}">
                     </div>
                     <div class="form-group">
                         <label>Nombre del Producto:</label>
-                        <input type="text" class="form-control"  name="productName" value="{{ $combo->nombre }}">
+                        <input type="text" class="form-control" name="productName" value="{{ $combo->nombre }}">
                     </div>
                     <div class="form-group">
                         <label>Precio:</label>
-                        <input type="number" class="form-control"  name="productPrice" value="{{ $combo->precio }}">
+                        <input type="number" class="form-control" name="productPrice" value="{{ $combo->precio }}">
                     </div>
                     <div class="form-group">
                         <label>Características:</label>
-                        <textarea class="form-control"  name="productFeatures">{{ $combo->Descripción }}</textarea>
+                        <textarea class="form-control" name="productFeatures">{{ $combo->Descripción }}</textarea>
                     </div>
                     <div class="form-group">
                         <label>Disponible:</label>
                         <input type="number" class="form-control" name="productDisponible" value="{{ $combo->Stock }}">
                     </div>
 
-                        @csrf
-                        <button type="submit" class="btn btn-success save-btn">Guardar</button>
-                        <button type="button" class="btn btn-secondary cancel-btn" onclick="hideEditForm(this)">Cancelar</button>
-                    </form>
+                    @csrf
+                    <button type="submit" class="btn btn-success save-btn">Guardar</button>
+                    <button type="button" class="btn btn-secondary cancel-btn" onclick="hideEditForm(this)">Cancelar</button>
+                </form>
             </div>
             @endforeach
         </div>
 
-    
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
