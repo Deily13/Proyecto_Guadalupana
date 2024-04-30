@@ -64,12 +64,11 @@ Route::get('admin', [AdministradorController::class, 'index']);
 Route::post('/roles/store', [RolesController::class, 'store'])->name('user.store');
 Route::post('/roles/change-role/{id}', [RolesController::class, 'changeRole'])->name('user.change-role');
 Route::post('user-guardar', [RolesController::class, 'store'])->name('user.store');
+Route::post('quitar-permisos/{user_id}', [RolesController::class, ]) ->name('quitar-permisos.');
+
 Route::post('guardar', [EditarProductoController::class, 'store']) ->name('guardar.producto');
 Route::post('eliminar/{id}', [EditarProductoController::class, 'delete'])->name('eliminar.producto');
 Route::post('/actualizar/{id}', [EditarProductoController::class, 'update'])->name('actualizar.producto');
-
-
-Route::post('quitar-permisos/{user_id}', [RolesController::class, ]) ->name('quitar-permisos.');
 
 
 
