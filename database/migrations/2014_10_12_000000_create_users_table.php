@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('identification_number'); // Número de Identificación
             $table->string('phone_number'); // Número de Celular
             $table->string('address'); // Dirección
+            $table->string('rol')->default('usuario'); // Rol por defecto
             $table->rememberToken();
             $table->timestamps();
         });

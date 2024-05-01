@@ -25,7 +25,8 @@
         <div class="botonera">
             <a>
                 <div class="boton_toolbar1" onclick="toggleSearchBar()"></div>
-                <input type="text" id="searchBar" class="barraBusqueda" placeholder="Buscar..." style="display: none;">
+                <input type="text" id="searchBar" class="barraBusqueda" placeholder="Buscar..."
+                    style="display: none;">
             </a>
             <a href="/dashboard">
                 <div class="boton_toolbar2"></div>
@@ -38,9 +39,21 @@
             </a>
 
             <!--nombre de usuario registrado (perfil)  -->
-            <a>
-                <div class="usuario">usuario</div>
-            </a>
+            @if (Auth::check())
+                <div class="usuario">{{ Auth::user()->name }}</div>
+                <div class="boton_cerrar">
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit">Cerrar Sesión</button>
+                    </form>
+                </div>
+            @else
+                <a href="{{ route('login') }}">
+                    <div class="boton_iniciar">
+                        Iniciar Sesión
+                    </div>
+                </a>
+            @endif
 
         </div>
     </div>
@@ -92,12 +105,16 @@
     <div class="footer">
         <div class="Titulo_f"> Redes Sociales</div>
         <div class="Social">
-            <a href="https://api.whatsapp.com/send?phone=3134774134" target="_blank" rel="noopener noreferrer"><div class="Red Red-whatsaap"></div></a>
-            <a href="https://www.instagram.com/laguadalupana.ulloa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
+            <a href="https://api.whatsapp.com/send?phone=3134774134" target="_blank" rel="noopener noreferrer">
+                <div class="Red Red-whatsaap"></div>
+            </a>
+            <a href="https://www.instagram.com/laguadalupana.ulloa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                target="_blank" rel="noopener noreferrer">
                 <div class="Red Red-instagram"></div>
             </a>
-            <a href="https://web.facebook.com/people/La-Guadalupana-Ulloa/100088166905257/?_rdc=1&_rdr"><div class="Red Red-facebook"></div><a>
-            <div class="Red Red-email"></div>
+            <a href="https://web.facebook.com/people/La-Guadalupana-Ulloa/100088166905257/?_rdc=1&_rdr">
+                <div class="Red Red-facebook"></div><a>
+                    <div class="Red Red-email"></div>
         </div>
         <div class="Info">
             <p>Ubicación: Av. Ejemplo, Ciudad Ejemplo</p>

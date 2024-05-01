@@ -107,6 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <select id="rol" name="rol">
                     <option value="invitado">Invitado</option>
                     <option value="admin">Administrador</option>
+                    <option value="usuario">usuario</option>
                 </select>
             </div>
             <div>
@@ -139,6 +140,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <select id="rol" name="rol">
                     <option value="invitado">Invitado</option>
                     <option value="admin">Administrador</option>
+                    <option value="usuario">Usuario</option>
                 </select>
             </div>
             <div class="botones">

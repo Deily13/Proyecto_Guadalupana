@@ -20,7 +20,7 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
-        return view('auth.register');
+        return view('auth/register');
     }
 
     /**
@@ -29,35 +29,37 @@ class RegisteredUserController extends Controller
      * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request): RedirectResponse
-    {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required'],
-            'first_name' => ['required', 'string', 'max:255'], // Nombre
-            'last_name' => ['required', 'string', 'max:255'], // Apellidos
-            'identification_type' => ['required', 'string', 'max:255'], // Tipo de Identificación
-            'identification_number' => ['required', 'string', 'max:255'], // Número de Identificación
-            'phone_number' => ['required', 'string', 'max:255'], // Número de Celular
-            'address' => ['required', 'string', 'max:255'], // Dirección
-        ]);
+{
+    $request->validate([
+        'name' => ['required', 'string', 'max:255'],
+        'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+        'password' => ['required'],
+        'first_name' => ['required', 'string', 'max:255'], // Nombre
+        'last_name' => ['required', 'string', 'max:255'], // Apellidos
+        'identification_type' => ['required', 'string', 'max:255'], // Tipo de Identificación
+        'identification_number' => ['required', 'string', 'max:255'], // Número de Identificación
+        'phone_number' => ['required', 'string', 'max:255'], // Número de Celular
+        'address' => ['required', 'string', 'max:255'], // Dirección
+    ]);
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'first_name' => $request->first_name, // Nombre
-            'last_name' => $request->last_name, // Apellidos
-            'identification_type' => $request->identification_type, // Tipo de Identificación
-            'identification_number' => $request->identification_number, // Número de Identificación
-            'phone_number' => $request->phone_number, // Número de Celular
-            'address' => $request->address, // Dirección
-        ]);
+    $user = User::create([
+        'name' => $request->name,
+        'email' => $request->email,
+        'password' => Hash::make($request->password),
+        'first_name' => $request->first_name, // Nombre
+        'last_name' => $request->last_name, // Apellidos
+        'identification_type' => $request->identification_type, // Tipo de Identificación
+        'identification_number' => $request->identification_number, // Número de Identificación
+        'phone_number' => $request->phone_number, // Número de Celular
+        'address' => $request->address, // Dirección
+        'rol' => 'usuario', // Establecer el rol como "usuario"
+    ]);
 
-        event(new Registered($user));
+    event(new Registered($user));
 
-        Auth::login($user);
+    Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
-    }
+    return redirect(RouteServiceProvider::HOME);
+}
+
 }
