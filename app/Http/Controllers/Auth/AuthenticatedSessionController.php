@@ -45,4 +45,26 @@ class AuthenticatedSessionController extends Controller
 
         return redirect('/');
     }
+
+    public function index()
+    {
+        // Obtén el usuario autenticado
+        $user = Auth::user();
+
+        // Obtén la bolsa de compras del usuario
+        $bolsa = $user->bolsa;
+
+        // Si el usuario no tiene una bolsa de compras, crea una nueva
+        if (!$bolsa) {
+            $bolsa = $user->bolsa()->create();
+        }
+
+        // Obtén los productos en la bolsa de compras
+        $productos = $bolsa->productos;
+
+        // Calcula el total de la bolsa de compras
+        $total = $productos->sum('precio');
+
+        return view('auth.bolsa', compact('productos', 'total'));
+    }
 }

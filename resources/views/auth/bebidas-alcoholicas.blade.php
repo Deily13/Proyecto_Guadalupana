@@ -49,7 +49,7 @@
         </div>
     </div>
 
-   
+
     <div class="Titulo">Bebidas Alcoholicas</div>
 
     <div class="ContainerProductos">
@@ -65,7 +65,7 @@
                 <p>Precio: {{ $bebida->precio }}</p>
                 <p>Disponibles: {{ $bebida->Stock }}</p>
                 <div class="botones">
-                    <form action="/procesar_pedido" method="POST">
+                    <form action="{{ route('procesar_pedido') }}" method="POST">
                         @csrf <!-- Agrega esto si estás utilizando Blade para evitar el error CSRF -->
                         <div class="botones">
                             <label for="cantidad">
@@ -73,6 +73,7 @@
                             </label>
                             <input type="number" id="cantidad" name="cantidad" min="1" value="1">
                         </div>
+                        <input type="hidden" name="producto_id" > <!-- Esta variable ya está definida -->
                         <button type="submit" id="botonPedir1">Pedir</button>
                     </form>
                 </div>

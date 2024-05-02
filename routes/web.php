@@ -69,3 +69,7 @@ Route::post('quitar-permisos/{user_id}', [RolesController::class, ]) ->name('qui
 Route::post('guardar', [EditarProductoController::class, 'store']) ->name('guardar.producto');
 Route::post('eliminar/{id}', [EditarProductoController::class, 'delete'])->name('eliminar.producto');
 Route::post('/actualizar/{id}', [EditarProductoController::class, 'update'])->name('actualizar.producto');
+Route::post('/procesar_pedido', 'PedidoController@procesarPedido')->name('procesar_pedido');
+Route::post('/clear_cart', 'BolsaController@clear')->name('clear_cart');
+Route::post('/eliminar_producto', 'BolsaController@eliminarProducto')->name('eliminar_producto');
+

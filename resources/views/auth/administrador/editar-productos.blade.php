@@ -360,7 +360,7 @@
                 <p>Precio: <span class="product-price">{{ $combo->Precio }}</span></p>
                 <p>Características: <span class="product-features">{{ $combo->Descripción }}</span></p>
                 <div class="btn-action">
-                    <form action="{{ route('eliminar.producto', $refresco->id) }}" method="POST">
+                    <form action="{{ route('eliminar.producto', $combo->id) }}" method="POST">
                         @csrf
                         <button type="submit" class="btn btn-danger delete-btn">Eliminar</button>
                     </form>
@@ -380,7 +380,7 @@
                     </div>
                     <div class="form-group">
                         <label>Precio:</label>
-                        <input type="number" class="form-control" name="productPrice" value="{{ $combo->precio }}">
+                        <input type="number" class="form-control" name="productPrice" value="{{ $combo->Precio }}">
                     </div>
                     <div class="form-group">
                         <label>Características:</label>
@@ -398,6 +398,7 @@
             </div>
             @endforeach
         </div>
+
 
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
