@@ -13,9 +13,15 @@ class BebidasAlcholicasController extends Controller
 
         return view('/auth/bebidas-alcoholicas', ['bebidas' => $bebidas]);
     }
+
+    public function mostrarBebidasAlcholicas()
+{
+    $producto_id = 1; // Supongamos que tienes el ID del producto
+    return view('bebidas-alcoholicas', compact('producto_id'));
+}
 }
 
 //*campos de formulario
 
-//producto 
+//producto
 //cantidad
