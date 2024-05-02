@@ -58,7 +58,7 @@ class EditarProductoController extends Controller
         return redirect()->route('editar-productos');
     }
 
-    
+
     public function update(Request $request, $id) {
         // Valida los datos enviados desde el formulario
         $request->validate([
@@ -68,10 +68,10 @@ class EditarProductoController extends Controller
             'productFeatures' => 'required|string',
             // Agrega más reglas de validación según sea necesario para otros campos del formulario
         ]);
-    
+
         // Busca el producto en la base de datos
         $product = Product::find($id);
-    
+
         // Actualiza los campos del producto con los nuevos valores enviados desde el formulario
         $product->image = $request->input('productImage');
         $product->nombre = $request->input('productName');
@@ -79,10 +79,10 @@ class EditarProductoController extends Controller
         $product->Descripción = $request->input('productFeatures');
         $product->stock = $request->input('productDisponible');
         // Actualiza más campos según sea necesario
-    
+
         // Guarda los cambios en la base de datos
         $product->save();
-    
+
         // Redirige a la página anterior o a donde desees después de la actualización
 
         session()->flash('message', 'Producto actualizado correctamente');
