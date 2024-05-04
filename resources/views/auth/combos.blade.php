@@ -52,25 +52,28 @@
 
     <div class="ContainerProductos">
      @foreach ($combos as $combo)
-        <div class="Cuadro">
+     <div class="Cuadro">
             <div class="img">
-            <img src="{{ $combo->image}}" alt="Descripción de la imagen">
+                <img src="{{ $combo->image}}" alt="Descripción de la imagen">
             </div>
             <div class="Detalle">
                 <h1>{{ $combo->nombre }}</h1>
                 <p>{{ $combo->Descripción }}</p>
-                <p>Precio:{{ $combo->precio }}</p>
-
-                <form action="/procesar_pedido" method="POST">
-                    @csrf <!-- Agrega esto si estás utilizando Blade para evitar el error CSRF -->
-                    <div class="botones">
-                        <label for="cantidad">
-                            <h5>Cantidad</h5>
-                        </label>
-                        <input type="number" id="cantidad" name="cantidad" min="1" value="1">
-                    </div>
-                    <button type="submit" id="botonPedir1">Pedir</button>
-                </form>
+                <p>Precio: {{ $combo->precio }}</p>
+                <p>Disponibles: {{ $combo->Stock }}</p>
+                <div class="botones">
+                    <form action="{{ route('procesar.pedido') }}" method="POST">
+                        @csrf <!-- Agrega esto si estás utilizando Blade para evitar el error CSRF -->
+                        <div class="botones">
+                            <label for="cantidad">
+                                <h5>Cantidad</h5>
+                            </label>
+                            <input type="number" id="cantidad" name="cantidad" min="1" value="1">
+                        </div>
+                        <input type="hidden" name="producto_id" value="{{ $combo->id }}"> 
+                        <button id="botonPedir1" type="submit" onclick="cambiarTexto(this)">Pedir</button>
+                    </form>
+                </div>
             </div>
         </div>
         @endforeach
