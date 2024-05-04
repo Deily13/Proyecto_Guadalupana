@@ -10,7 +10,7 @@ class Bolsa extends Model
     protected $table = 'bolsa';
 
     // Define los campos asignables en masa
-    protected $fillable = ['id','nombre' ,'Descripción', 'cantidad', 'precio_total', 'sabor'];
+    protected $fillable = ['id','nombre' , 'image', 'Descripción', 'cantidad', 'precio_total', 'sabor'];
 
     // Relación con el modelo Product (si existe)
     public function producto()

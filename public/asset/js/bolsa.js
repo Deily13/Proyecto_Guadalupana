@@ -40,3 +40,11 @@ function toggleSearchBar() {
     }
 }
 
+function desplegable() {
+    var desplegable = document.getElementById('desplegableoption');
+    if (desplegable.style.display === 'none') {
+        desplegable.style.display = 'block';
+    } else {
+        desplegable.style.display = 'none';
+    }
+}

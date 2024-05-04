@@ -25,8 +25,7 @@
         <div class="botonera">
             <a>
                 <div class="boton_toolbar1" onclick="toggleSearchBar()"></div>
-                <input type="text" id="searchBar" class="barraBusqueda" placeholder="Buscar..."
-                    style="display: none;">
+                <input type="text" id="searchBar" class="barraBusqueda" placeholder="Buscar..." style="display: none;">
             </a>
             <a href="/dashboard">
                 <div class="boton_toolbar2"></div>
@@ -39,21 +38,25 @@
             </a>
 
             <!--nombre de usuario registrado (perfil)  -->
+
             @if (Auth::check())
-                <div class="usuario">{{ Auth::user()->name }}</div>
-                <div class="boton_cerrar">
+            <div class="usuario" onclick="desplegable()">
+                {{ Auth::user()->name }}
+                <div class="desplegable" id="desplegableoption" style="display: none;">
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
-                        <button type="submit">Cerrar Sesión</button>
+                        <button type="submit">Cerrar Sesion</button>
                     </form>
                 </div>
+            </div>
             @else
-                <a href="{{ route('login') }}">
-                    <div class="boton_iniciar">
-                        Iniciar Sesión
-                    </div>
-                </a>
+            <a href="{{ route('login') }}">
+                <div class="boton_iniciar">
+                    Iniciar Sesión
+                </div>
+            </a>
             @endif
+
 
         </div>
     </div>
@@ -108,8 +111,7 @@
             <a href="https://api.whatsapp.com/send?phone=3134774134" target="_blank" rel="noopener noreferrer">
                 <div class="Red Red-whatsaap"></div>
             </a>
-            <a href="https://www.instagram.com/laguadalupana.ulloa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/laguadalupana.ulloa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
                 <div class="Red Red-instagram"></div>
             </a>
             <a href="https://web.facebook.com/people/La-Guadalupana-Ulloa/100088166905257/?_rdc=1&_rdr">
