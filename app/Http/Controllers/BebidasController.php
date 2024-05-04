@@ -15,7 +15,3 @@ class BebidasController extends Controller
     }
 }
 
-//*campos de formulario
-
-//producto 
-//cantidad

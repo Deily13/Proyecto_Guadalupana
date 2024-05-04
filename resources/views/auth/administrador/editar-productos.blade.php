@@ -152,7 +152,7 @@
             <h3>Hamburguesas</h3>
             @foreach ($hamburguesas as $hamburguesa)
                 <div class="cuadro" data-id="{{ $hamburguesa->id }}">
-                    <img src="{{ $hamburguesa->image }}" alt="Producto" class="product-image">
+                <img src="{{ $hamburguesa->image }}" alt="Producto" class="product-image">
                     <p>Nombre: <span class="product-name">{{ $hamburguesa->nombre }}</span></p>
                     <p>Precio: <span class="product-price">{{ $hamburguesa->precio }}</span></p>
                     <p>Características: <span class="product-features">{{ $hamburguesa->Descripción }}</span></p>

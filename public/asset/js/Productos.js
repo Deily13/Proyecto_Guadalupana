@@ -22,18 +22,7 @@ document.querySelector('.menu').addEventListener('click', function(event) {
 });
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    var botonesPedir = document.querySelectorAll('button[id^="botonPedir"]');
 
-    botonesPedir.forEach(function(boton) {
-        boton.addEventListener('click', function(event) {
-
-            event.preventDefault();
-            boton.textContent = 'Seleccionado';
-            boton.disabled = true;
-        });
-    });
-});
 
 var limite = 2;
 var checkboxes = document.querySelectorAll('.SaborCheckbox-button');
@@ -93,3 +82,7 @@ function toggleSearchBar() {
       searchBar.style.display = "none"; // Oculta la barra de búsqueda
     }
   }
+
+  function cambiarTexto(boton) {
+    boton.textContent = 'Seleccionado';
+}

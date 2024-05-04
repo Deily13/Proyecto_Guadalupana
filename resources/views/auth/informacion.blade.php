@@ -47,7 +47,7 @@
         </div>
     </div>
 
-    <h1>Preguntas Frecuentes</h1>
+    <h1 class="Titulo">Preguntas Frecuentes</h1>
 
     <div class="glass">
         <h2 class="sub_titulo">Misión</h2>
@@ -138,15 +138,19 @@
         </ol>
         <p>
     </div>
-    <footer class="footer">
+    <div class="footer">
         <div class="Titulo_f"> Redes Sociales</div>
         <div class="Social">
-            <a href="https://api.whatsapp.com/send?phone=3134774134" target="_blank" rel="noopener noreferrer"><div class="Red Red-whatsaap"></div></a>
-            <a href="https://www.instagram.com/laguadalupana.ulloa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
+            <a href="https://api.whatsapp.com/send?phone=3134774134" target="_blank" rel="noopener noreferrer">
+                <div class="Red Red-whatsaap"></div>
+            </a>
+            <a href="https://www.instagram.com/laguadalupana.ulloa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                target="_blank" rel="noopener noreferrer">
                 <div class="Red Red-instagram"></div>
             </a>
-            <a href="https://web.facebook.com/people/La-Guadalupana-Ulloa/100088166905257/?_rdc=1&_rdr"><div class="Red Red-facebook"></div><a>
-            <div class="Red Red-email"></div>
+            <a href="https://web.facebook.com/people/La-Guadalupana-Ulloa/100088166905257/?_rdc=1&_rdr">
+                <div class="Red Red-facebook"></div><a>
+                    <div class="Red Red-email"></div>
         </div>
         <div class="Info">
             <p>Ubicación: Av. Ejemplo, Ciudad Ejemplo</p>
@@ -155,7 +159,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis auctor turpis nec velit pretium, nec
                 molestie mi sodales. Integer et magna quis arcu interdum malesuada.</p>
         </div>
-    </footer>
+    </div>
     <script src="{{ asset('asset/js/home.js') }}"></script>
 </body>
 
