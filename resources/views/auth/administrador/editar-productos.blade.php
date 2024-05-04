@@ -62,7 +62,7 @@
                     <option value="bebidas-alcoholicas">Bebidas Alcoholicas</option>
                     <option value="hamburguesas">Hamburguesas</option>
                     <option value="helados">Heladeria</option>
-                    <option value="comidas-rapidas'">Comidas Rapidas</option>
+                    <option value="comidas-rapidas">Comidas Rapidas</option>
                     <option value="refrescos">Refrescos</option>
                     <option value="combos">Combos</option>
                 </select>
@@ -258,7 +258,7 @@
             <div class="cuadro" data-id="{{ $comida->id }}">
                 <img src="{{ $comida->image }}" alt="Producto" class="product-image">
                 <p>Nombre: <span class="product-name">{{ $comida->nombre }}</span></p>
-                <p>Precio: <span class="product-price">{{ $comida->precio }}</span></p>
+                <p>Precio: <span class="product-price">{{ $comida->Precio }}</span></p>
                 <p>Características: <span class="product-features">{{ $comida->Descripción }}</span></p>
                 <div class="btn-action">
                     <form action="{{ route('eliminar.producto', $comida->id) }}" method="POST">
@@ -272,8 +272,8 @@
                 <form action="{{ route('actualizar.producto', $comida->id) }}" method="POST">
 
                     <div class="form-group">
-                        <label>Imagen:</label>
-                        <input type="text" class="form-control" name="productImage" value="{{ $comida->image }}">
+                        <label for="productImage">Imagen:</label>
+                        <input type="text" class="form-control-file" name="productImage" value="{{ $comida->image }}">
                     </div>
                     <div class="form-group">
                         <label>Nombre del Producto:</label>
@@ -281,7 +281,7 @@
                     </div>
                     <div class="form-group">
                         <label>Precio:</label>
-                        <input type="number" class="form-control" name="productPrice" value="{{ $comida->precio }}">
+                        <input type="number" class="form-control" name="productPrice" value="{{ $comida->Precio }}">
                     </div>
                     <div class="form-group">
                         <label>Características:</label>
@@ -295,7 +295,6 @@
                     @csrf
                     <button type="submit" class="btn btn-success save-btn">Guardar</button>
                     <button type="button" class="btn btn-secondary cancel-btn" onclick="hideEditForm(this)">Cancelar</button>
-
                 </form>
             </div>
             @endforeach
