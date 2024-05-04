@@ -131,6 +131,26 @@ body {
 .usuario {
     align-items: center;
     font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+}
+
+.desplegable {
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 60px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-top: 100px;
+}
+
+.desplegable form {
+    padding: 5px 5px;
+}
+
+#buttonc{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 .boton_iniciar {
@@ -191,9 +211,14 @@ body {
 }
 
 .img {
-    background-size: cover;
-    background-position: center;
-    width: 20%;
+    width: 10%;
+}
+
+.img img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor .img */
+    height: 100%; /* Asegura que la imagen ocupe todo el alto del contenedor .img */
+    object-fit: contain; 
+    border-radius: 3px; 
 }
 
 .Descripcion {
@@ -208,6 +233,10 @@ body {
 .Texto {
     width: 75%;
     margin-left: 8px;
+}
+
+h3{
+    margin-bottom: 6px;
 }
 
 .Eliminar {

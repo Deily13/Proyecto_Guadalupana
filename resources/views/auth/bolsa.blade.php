@@ -39,20 +39,22 @@
             <div class="boton_iniciar">
                 <!--nombre de usuario registrado (perfil)  -->
                 @if (Auth::check())
-                    <div class="usuario">{{ Auth::user()->name }}</div>
-                    <div class="boton_cerrar">
-                        <form action="{{ route('logout') }}" method="POST">
-                            @csrf
-                            <button type="submit">Cerrar Sesión</button>
-                        </form>
-                    </div>
-                @else
-                    <a href="{{ route('login') }}">
-                        <div class="boton_iniciar">
-                            Iniciar Sesión
-                        </div>
-                    </a>
-                @endif
+            <div class="usuario" onclick="desplegable()">
+                {{ Auth::user()->name }}
+                <div class="desplegable" id="desplegableoption" style="display: none;">
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button id="buttonc" type="submit">Cerrar Sesion</button>
+                    </form>
+                </div>
+            </div>
+            @else
+            <a href="{{ route('login') }}">
+                <div class="boton_iniciar">
+                    Iniciar Sesión
+                </div>
+            </a>
+            @endif
             </div>
         </div>
     </div>
@@ -64,17 +66,17 @@
                 <div class="Producto" data-producto-id="{{ $producto->id }}">
                     <div class="img">
                         <!-- Asegúrate de que la propiedad 'image' exista en tu modelo Bolsa -->
-                        <img src="{{ asset('storage/' . $producto->image) }}" alt="{{ $producto->nombre }}">
+                        <img src="{{ $producto->image }}" alt="{{ $producto->nombre }}">
                     </div>
                     <div class="Descripcion">
                         <div class="Texto">
                             <h3>{{ $producto->nombre }}</h3>
-                            <p>{{ $producto->descripcion }}</p>
+                            <p>{{ $producto->Descripción }}</p><br>
                             <p>Cantidad: {{ $producto->cantidad }}</p>
                         </div>
                         <h2>{{ $producto->precio_total }}</h2>
                         <div>
-                            <form action="{{ route('eliminar.producto', $producto->id) }}" method="POST">
+                            <form action="{{ route('borrar.producto', $producto->id) }}" method="POST">
                                 @csrf
                                 <button type="submit" class="Eliminar"></button>
                             </form>
