@@ -28,7 +28,7 @@ return array(
     'App\\Http\\Controllers\\HamburguesasController' => $baseDir . '/app/Http/Controllers/HamburguesasController.php',
     'App\\Http\\Controllers\\HeladeriaController' => $baseDir . '/app/Http/Controllers/HeladeriaController.php',
     'App\\Http\\Controllers\\ListaPedidosController' => $baseDir . '/app/Http/Controllers/ListaPedidosController.php',
-    'App\\Http\\Controllers\\PedidosController' => $baseDir . '/app/Http/Controllers/PedidosController.php',
+    'App\\Http\\Controllers\\PedidoController' => $baseDir . '/app/Http/Controllers/PedidoController.php',
     'App\\Http\\Controllers\\ProfileController' => $baseDir . '/app/Http/Controllers/ProfileController.php',
     'App\\Http\\Controllers\\RolesController' => $baseDir . '/app/Http/Controllers/RolesController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',

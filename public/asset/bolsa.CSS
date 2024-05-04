@@ -4,7 +4,8 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     background-image: url(../img/Icon/fondo.jpg);
     background-position: center;
     background-size: cover;
@@ -42,12 +43,9 @@ html, body {
     display: flex;
     justify-content: center;
     cursor: pointer;
-    /* Agregado para indicar que es clickeable */
     background: url(../img/Icon/menu.png);
     background-size: cover;
 }
-
-/* Se elimina la clase .menu-button ya que no es necesaria */
 
 .dropdown {
     position: absolute;
@@ -56,9 +54,7 @@ html, body {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     top: 100%;
-    /* Asegura que el menú desplegable aparezca debajo del botón .menu */
     left: 0;
-    /* Alinea el menú desplegable con el borde izquierdo del botón .menu */
     top: 0;
 }
 
@@ -143,7 +139,7 @@ html, body {
 
 }
 
-.Titulo{
+.Titulo {
     color: #00000000;
     text-align: center;
     font-size: 80px;
@@ -152,7 +148,7 @@ html, body {
     text-shadow: -1px -1px 0 #000000, 1px -5px 0 #78adf3, -1px 1px 0 #ffffff, 1px 3px 0 #ffffff;
 }
 
-.ContainerBolsa{
+.ContainerBolsa {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -178,31 +174,30 @@ html, body {
 
 .Producto {
     background-color: #ffffff;
-    width: 93%;
+    width: 95%;
     display: flex;
     justify-content: space-around;
-    padding-top: 5px;
-    padding-right: 4px;
+    padding: 5px 4px 0;
     margin-top: 5px;
-    padding-left: 4px;
     border: 1px solid black;
     border-radius: 3px;
 }
 
-.img{
+.img,
+.Descripcion {
     background-color: #ffffff;
-    background-size: cover;
-    background-position: center;
     height: 95%;
-    width: 20%;
     border-radius: 3px;
 }
 
-.Descripcion{
-    background-color: #ffffff;
-    height: 95%;
+.img {
+    background-size: cover;
+    background-position: center;
+    width: 20%;
+}
+
+.Descripcion {
     width: 79%;
-    border-radius: 3px;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -210,29 +205,45 @@ html, body {
     align-items: center;
 }
 
-.Texto{
+.Texto {
     width: 75%;
     margin-left: 8px;
 }
 
-.Eliminar{
+.Eliminar {
     background-color: #133ABF;
     width: 55px;
-    height: 50%;
-    border-radius: 60%;
+    height: 55px;
+    border-radius: 80%;
     display: flex;
-    margin-right: 10px;
-    margin-left: 15px;
-    background: url(../img/Icon/eliminar.png);
-    background-size: cover;
-    background-position: center;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 0 10px 0 15px;
+    background: url(../img/Icon/eliminar.png) no-repeat center;
+    background-size: 30px;
+    position: relative;
+    cursor: pointer;
 }
 
-.Eliminar:hover{
+.Eliminar:hover {
     box-shadow: 0px 0px 20px #010364af;
 }
 
-.Total{
+.Eliminar::after {
+    content: 'Eliminar';
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    font-size: 10px;
+    transform: translateX(-50%);
+    color: white;
+    padding: 2px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+
+.Total {
     background-color: #ffffff;
     height: 40px;
     width: 55%;
@@ -245,29 +256,34 @@ html, body {
     margin-top: 10px;
 }
 
-.Precio{
+.Precio {
     color: black;
     font-size: 20px;
     padding-right: 20px;
 }
 
-.BotonPagar{
-    background-color:blue;
-    height: 46px;
-    width: 25%;
-    color:white;
+.BotonPagar {
+    background-color: blue;
+    height: 50px;
+    width: 200px;
+    color: white;
     font-size: 30px;
     margin-top: 10px;
-    margin: 10px auto 0; /* Centra verticalmente y en los lados */
-    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 5px;
-    background-image: linear-gradient(to top, blue, #133ABF, #1882FF,  #7A96F9 );
+    background-image: linear-gradient(top, blue, #133ABF, #1882FF, #7A96F9);
     border: none;
-    font-family: 'Times New Roman', Times, serif
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
 }
 
-.BotonPagar:hover{
+.BotonPagar:hover {
     box-shadow: 0px 5px 20px white;
+    cursor: pointer;
 }
 
 @keyframes slideInFromLeft {
@@ -284,7 +300,6 @@ html, body {
     position: absolute;
     top: 0px;
     right: 80%;
-    /* Ajusta según sea necesario para alinear con la imagen */
     width: 200px;
     height: 54px;
     border-radius: 5px;
@@ -292,6 +307,4 @@ html, body {
     padding: 5px;
     display: none;
     animation: 1s ease-out 0s 1 slideInFromLeft;
-    /* Aplica la animación */
 }
-
