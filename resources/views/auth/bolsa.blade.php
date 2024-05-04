@@ -60,25 +60,35 @@
     <div class="Titulo">Bolsa</div>
     <div class="ContainerBolsa">
         <div class="ContainerProductos">
-            @foreach ($productos as $producto)
+            @forelse ($productos as $producto)
                 <div class="Producto" data-producto-id="{{ $producto->id }}">
-                    <div class="img"></div>
+                    <div class="img">
+                        <!-- Asegúrate de que la propiedad 'image' exista en tu modelo Bolsa -->
+                        <img src="{{ asset('storage/' . $producto->image) }}" alt="{{ $producto->nombre }}">
+                    </div>
                     <div class="Descripcion">
                         <div class="Texto">
-                            <h3>{{ $producto->nombre }}</h3><br>
-                            <p>{{ $producto->descripcion }}</p><br>
-                            <p>Cantidad:</p>
+                            <h3>{{ $producto->nombre }}</h3>
+                            <p>{{ $producto->descripcion }}</p>
+                            <p>Cantidad: {{ $producto->cantidad }}</p>
                         </div>
-                        <h2>{{ $producto->precio }}</h2>
-                        <div class="Eliminar" onclick="eliminarProductoDOM(this)" data-producto-id="{{ $producto->id }}"></div>
+                        <h2>{{ $producto->precio_total }}</h2>
+                        <div>
+                            <form action="{{ route('eliminar.producto', $producto->id) }}" method="POST">
+                                @csrf
+                                <button type="submit" class="Eliminar"></button>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            @endforeach
+            @empty
+                <p>No hay productos en la bolsa.</p>
+            @endforelse
         </div>
         <div class="Total"> Total a pagar
-            <div class="Precio">{{ $total }}</div>
+            <div class="Precio"></div>
         </div>
-        <form action="{{ route('clear_cart') }}" method="POST">
+        <form action="" method="POST">
             @csrf
             <button type="submit" class="BotonPagar">Pagar</button>
         </form>

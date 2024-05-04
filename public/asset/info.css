@@ -1,9 +1,10 @@
+html,
 body {
-    background-image: url('/fondo.jpg');
-    background-repeat: no-repeat;
+    background-image: url(../img/Icon/fondo.jpg);
+    background-position: center;
     background-size: cover;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .toolbar {
@@ -130,8 +131,13 @@ body {
 
 }
 
-h1 {
+.Titulo{
+    color: #ffffff00;
     text-align: center;
+    font-size: 80px;
+    font-family: 'time new roman';
+    font-weight: bold;
+    text-shadow: -1px -1px 0 #ffffff, 1px -5px 0 #000000, -1px 2px 0 #84c0f8, 1px 5px 0 #130c70;
 }
 
 .glass {
@@ -250,6 +256,7 @@ p {
 .Info {
     margin-top: 10px;
 }
+
 
 @keyframes slideInFromLeft {
     0% {

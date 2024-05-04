@@ -37,12 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    document.querySelectorAll(".delete-btn").forEach(function (button) {
-        button.addEventListener("click", function (e) {
-            e.preventDefault();
-            deleteProduct(this);
-        });
-    });
+
+   
 });
 
 function transformToEditForm(button) {

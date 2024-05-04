@@ -40,36 +40,3 @@ function toggleSearchBar() {
     }
 }
 
-// Función para eliminar un producto del DOM
-function eliminarProductoDOM(elemento) {
-    var producto = elemento.closest('.Producto');
-    producto.remove();
-}
-
-function eliminarProducto(productoId) {
-    // Realiza una solicitud AJAX para eliminar el producto de la bolsa
-    $.ajax({
-        type: "POST",
-        url: "/eliminar_producto",
-        data: {
-            _token: "{{ csrf_token() }}", // Agrega el token CSRF para protección
-            id: productoId
-        },
-        success: function(response) {
-            // Verifica si la eliminación fue exitosa
-            if (response.success) {
-                // Elimina el producto del DOM
-                eliminarProductoDOM(productoId);
-                // Muestra un mensaje de éxito o realiza cualquier otra acción necesaria
-                alert(response.message);
-            } else {
-                // Muestra un mensaje de error si la eliminación falló
-                alert("Error al eliminar el producto: " + response.message);
-            }
-        },
-        error: function(xhr, textStatus, errorThrown) {
-            // Maneja los errores de la solicitud AJAX si es necesario
-            console.error("Error al eliminar el producto:", errorThrown);
-        }
-    });
-}
