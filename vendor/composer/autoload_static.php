@@ -372,8 +372,8 @@ class ComposerStaticInit1fefed085ed07de123540a712216c647
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -605,7 +605,7 @@ class ComposerStaticInit1fefed085ed07de123540a712216c647
         'App\\Http\\Controllers\\HamburguesasController' => __DIR__ . '/../..' . '/app/Http/Controllers/HamburguesasController.php',
         'App\\Http\\Controllers\\HeladeriaController' => __DIR__ . '/../..' . '/app/Http/Controllers/HeladeriaController.php',
         'App\\Http\\Controllers\\ListaPedidosController' => __DIR__ . '/../..' . '/app/Http/Controllers/ListaPedidosController.php',
-        'App\\Http\\Controllers\\PedidosController' => __DIR__ . '/../..' . '/app/Http/Controllers/PedidosController.php',
+        'App\\Http\\Controllers\\PedidoController' => __DIR__ . '/../..' . '/app/Http/Controllers/PedidoController.php',
         'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
         'App\\Http\\Controllers\\RolesController' => __DIR__ . '/../..' . '/app/Http/Controllers/RolesController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
