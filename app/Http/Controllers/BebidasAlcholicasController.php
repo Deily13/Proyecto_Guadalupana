@@ -47,7 +47,7 @@ class BebidasAlcholicasController extends Controller
 
 
 
-    return redirect()->route('bebidas-alcoholicas')->with('success', 'Pedido procesado correctamente.');
+    return back()->with('success', 'Pedido procesado correctamente.');
     }
 
 }

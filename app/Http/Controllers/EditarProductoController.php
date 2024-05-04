@@ -25,7 +25,7 @@ class EditarProductoController extends Controller
             'helados' => $helados,
             'comidas' => $comidas,
             'refrescos' => $refrescos,
-            'combos' => $combos
+            'combos' => $combos,
         ]);
     }
 
