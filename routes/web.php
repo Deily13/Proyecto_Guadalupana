@@ -74,9 +74,7 @@ Route::post('/actualizar/{id}', [EditarProductoController::class, 'update'])->na
 
 
 Route::post('/procesar_pedido', [BebidasAlcholicasController::class, 'procesarPedido'])->name('procesar.pedido');
-Route::post('/procesar_pedido', [BebidasController::class, 'procesarPedido'])->name('procesar.pedido');
-Route::post('/procesar_pedido', [HamburguesasController::class, 'procesarPedido'])->name('procesar.pedido');
-Route::post('/procesar_pedido', [HeladeriaController::class, 'procesarPedido'])->name('procesar.pedido');
-Route::post('/procesar_pedido', [CombosController::class, 'procesarPedido'])->name('procesar.pedido');
-Route::post('/procesar_pedido', [ComidasRapidasController::class, 'procesarPedido'])->name('procesar.pedido');
+Route::post('/procesar_pedido/helado', [HeladeriaController::class, 'procesarPedido'])->name('procesar.pedido.helado');
 Route::post('/borrar-producto/{id}', [BolsaController::class, 'borrarProducto'])->name('borrar.producto');
+
+Route::post('/enviar-correo', [BolsaController::class, 'pagar'])->name('enviar.correo');

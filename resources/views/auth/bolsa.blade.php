@@ -66,15 +66,20 @@
                 <div class="Producto" data-producto-id="{{ $producto->id }}">
                     <div class="img">
                         <!-- Asegúrate de que la propiedad 'image' exista en tu modelo Bolsa -->
-                        <img src="{{ $producto->image }}" alt="{{ $producto->nombre }}">
+                        <img src="{{ $producto->product->image }}" alt="{{ $producto->product->nombre }}">
                     </div>
                     <div class="Descripcion">
                         <div class="Texto">
-                            <h3>{{ $producto->nombre }}</h3>
-                            <p>{{ $producto->Descripción }}</p><br>
-                            <p>Cantidad: {{ $producto->cantidad }}</p>
+                            <h3>{{ $producto->product->nombre }}</h3>
+                            <p>{{ $producto->product->Descripción }}</p>
+                            @if ($producto->sabor !== null)
+                            <p>Sabor: {{ $producto->sabor }}</p>
+                            @endif
+                            <br>
+                            <p>Cantidad: {{ $producto->cantidad }}</p><br>
+                            <p>Precio: ${{ number_format($producto->product->precio * $producto->cantidad, 2, ',', '.') }}</p>
                         </div>
-                        <h2>{{ $producto->precio_total }}</h2>
+                        <h2>{{ $producto->product->precio_total }}</h2>
                         <div>
                             <form action="{{ route('borrar.producto', $producto->id) }}" method="POST">
                                 @csrf
@@ -88,10 +93,11 @@
             @endforelse
         </div>
         <div class="Total"> Total a pagar
-            <div class="Precio"></div>
+            <div class="Precio"><strong>${{ number_format($total, 2, ',', '.') }}</strong></div>
         </div>
-        <form action="" method="POST">
+        <form action="{{ route('enviar.correo') }}"" method="POST">
             @csrf
+            <input type="hidden" name="total" value="{{ $total }}">
             <button type="submit" class="BotonPagar">Pagar</button>
         </form>
     </div>

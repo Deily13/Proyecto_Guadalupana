@@ -69,42 +69,40 @@
                     <h1>{{ $helado->nombre }}</h1>
                     <p>{{ $helado->Descripción }}</p>
                     <p>Precio:{{ $helado->precio }}</p>
-                    <div class="Sabores">
-                        <h3>Sabores:</h3>
-                        <form id="saboresForm">
+
+                    <div class="botones">
+                    <form action="{{ route('procesar.pedido.helado') }}" method="POST">
+                        @csrf <!-- Agrega esto si estás utilizando Blade para evitar el error CSRF -->
+                        <div class="Sabores">
+                            <h3>Sabores:</h3>
                             <label class="Sabor" id="sabor1">
-                                <input type="checkbox" name="sabor" value="Chocolate" class="SaborCheckbox-button">
+                                <input type="radio" name="sabor" value="Chocolate" class="SaborCheckbox-button">
                                 <div class="SaborImagen"></div>
                                 <span class="texto-descriptivo">Chocolate</span>
                             </label>
                             <label class="Sabor" id="sabor2">
-                                <input type="checkbox" name="sabor" value="Vainilla" class="SaborCheckbox-button">
+                                <input type="radio" name="sabor" value="Vainilla" class="SaborCheckbox-button">
                                 <div class="SaborImagen"></div>
                                 <span class="texto-descriptivo">Vainilla</span>
                             </label>
                             <label class="Sabor" id="sabor3">
-                                <input type="checkbox" name="sabor" value="Fresa" class="SaborCheckbox-button">
+                                <input type="radio" name="sabor" value="Fresa" class="SaborCheckbox-button">
                                 <div class="SaborImagen"></div>
                                 <span class="texto-descriptivo">Fresa</span>
                             </label>
                             <label class="Sabor" id="sabor4">
-                                <input type="checkbox" name="sabor" value="Chicle" class="SaborCheckbox-button">
+                                <input type="radio" name="sabor" value="Chicle" class="SaborCheckbox-button">
                                 <div class="SaborImagen"></div>
                                 <span class="texto-descriptivo">Chicle</span>
                             </label>
-                        </form>
-                    </div>
-
-                    <div class="botones">
-                    <form action="{{ route('procesar.pedido') }}" method="POST">
-                        @csrf <!-- Agrega esto si estás utilizando Blade para evitar el error CSRF -->
+                        </div>
                         <div class="botones">
                             <label for="cantidad">
                                 <h5>Cantidad</h5>
                             </label>
                             <input type="number" id="cantidad" name="cantidad" min="1" value="1">
                         </div>
-                        <input type="hidden" name="producto_id" value="{{ $helado->id }}"> 
+                        <input type="hidden" name="producto_id" value="{{ $helado->id }}">
                         <button id="botonPedir1" type="submit" onclick="cambiarTexto(this)">Pedir</button>
                     </form>
                 </div>
