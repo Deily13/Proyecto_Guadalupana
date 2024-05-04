@@ -41,9 +41,22 @@
             </a>
 
             <!--nombre de usuario registrado (perfil)  -->
-            <a>
-                <div class="usuario">usuario</div>
-            </a>
+            @if (Auth::check())
+            <div class="usuario" onclick="desplegable()">
+                {{ Auth::user()->name }}
+                <div class="desplegable" id="desplegableoption" style="display: none;">
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button id="buttonc" type="submit">Cerrar Sesion</button>
+                    </form>
+                </div>
+            </div>
+            @else
+            <a href="{{ route('login') }}">
+                <div class="boton_iniciar">
+                    Iniciar Sesión
+                </div>
+            @endif
 
         </div>
     </div>

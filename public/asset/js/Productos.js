@@ -21,7 +21,14 @@ document.querySelector('.menu').addEventListener('click', function(event) {
     event.stopPropagation();
 });
 
-
+function desplegable() {
+    var desplegable = document.getElementById('desplegableoption');
+    if (desplegable.style.display === 'none') {
+        desplegable.style.display = 'block';
+    } else {
+        desplegable.style.display = 'none';
+    }
+}
 
 
 var limite = 2;

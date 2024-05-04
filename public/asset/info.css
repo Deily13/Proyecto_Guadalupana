@@ -125,6 +125,25 @@ body {
     font-family: 'Times New Roman', Times, serif;
 }
 
+.desplegable {
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 60px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-top: 100px;
+}
+
+.desplegable form {
+    padding: 5px 5px;
+}
+
+.buttonc{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
 .boton_iniciar {
     align-items: center;
     font-family: 'Times New Roman', Times, serif;

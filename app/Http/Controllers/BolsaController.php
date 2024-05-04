@@ -20,14 +20,14 @@ class BolsaController extends Controller
         return view('/auth/bolsa', compact('productos')); // Pasar los productos a la vista
     }
 
-    public function eliminarProducto($id)
+    public function borrarProducto($id)
     {
         // Buscar el producto en la bolsa
         $bolsa = Bolsa::find($id);
     
         // Si el producto existe, eliminarlo
         if ($bolsa) {
-            $bolsa->delete();
+            $bolsa->delete(); // Utiliza el método delete() para eliminar el producto
             return back()->with('success', 'Producto eliminado correctamente.');
         } else {
             return back()->with('error', 'El producto no se encontró.');

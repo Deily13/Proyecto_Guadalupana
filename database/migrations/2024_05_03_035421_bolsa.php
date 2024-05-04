@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('bolsa', function (Blueprint $table) {
             $table->id('id');
             $table->string('nombre');
-            $table->string('image')->nullable();
+            $table->string('image');
             $table->string('precio_total')->nullable();
             $table->string('cantidad')->nullable();
             $table->string('Descripción')->nullable();

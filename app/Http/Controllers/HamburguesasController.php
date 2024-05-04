@@ -38,6 +38,7 @@ class HamburguesasController extends Controller
     // Crear una nueva entrada en la bolsa
     $bolsa = new Bolsa();
     $bolsa->id = $producto->id;
+    $bolsa->image = $producto->image;
     $bolsa->nombre = $producto->nombre;
     $bolsa->Descripción = $producto->Descripción; 
     $bolsa->cantidad = $validatedData['cantidad'];
