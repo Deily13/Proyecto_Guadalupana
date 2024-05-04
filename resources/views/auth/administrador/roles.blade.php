@@ -105,7 +105,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div>
                 <label for="rol">Rol:</label><br>
                 <select id="rol" name="rol">
-                    <option value="invitado">Invitado</option>
                     <option value="admin">Administrador</option>
                     <option value="usuario">usuario</option>
                 </select>
@@ -138,7 +137,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div>
                 <label for="rol">Rol:</label><br>
                 <select id="rol" name="rol">
-                    <option value="invitado">Invitado</option>
                     <option value="admin">Administrador</option>
                     <option value="usuario">Usuario</option>
                 </select>

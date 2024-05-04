@@ -37,7 +37,7 @@ class RolesController extends Controller
     {
         $user = User::find($id);
         if ($user) {
-            $user->rol = 'invitado';
+            $user->rol = 'usuario';
             $user->save();
             return redirect()->back()->with('success', 'Rol cambiado exitosamente.');
         } else {

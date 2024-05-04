@@ -8,9 +8,10 @@ use App\Http\Controllers\ComidasRapidasController;
 use App\Http\Controllers\HamburguesasController;
 use App\Http\Controllers\HeladeriaController;
 use App\Http\Controllers\ListaPedidosController;
-use App\Http\Controllers\PedidosController;
 use App\Http\Controllers\AdministradorController;
 use App\Http\Controllers\EditarProductoController;
+use App\Http\Controllers\InformacionController;
+use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RolesController;
 use Illuminate\Support\Facades\Route;
@@ -47,15 +48,16 @@ Route::get('/auth', function () {
 require __DIR__.'/auth.php';
 
 /* crear rutas desde aqui */
-Route::get('bebidas-alcoholicas', [BebidasAlcholicasController::class, 'index']);
+Route::get('bebidas-alcoholicas', [BebidasAlcholicasController::class, 'index'])->name('bebidas-alcoholicas');
 Route::get('hamburguesas', [HamburguesasController::class, 'index']);
 Route::get('heladeria', [HeladeriaController::class, 'index']);
 Route::get('comidas-rapidas', [ComidasRapidasController::class, 'index']);
 Route::get('bebidas', [BebidasController::class, 'index']);
 Route::get('combos', [CombosController::class, 'index']);
-Route::get('bolsa', [BolsaController::class, 'index']);
+Route::get('bolsa', [BolsaController::class, 'mostrarBolsa'])->name('bolsa.mostrar');
+Route::get('informacion', [InformacionController::class, 'index']);
 Route::get('lista-pedidos', [ListaPedidosController::class, 'index']);
-Route::get('pedidos', [PedidosController::class, 'index']);
+Route::get('pedidos', [PedidoController::class, 'index']);
 Route::get('editar-productos', [EditarProductoController::class, 'index'])->name('editar-productos');
 Route::get('roles', [RolesController::class, 'index']);
 Route::get('admin', [AdministradorController::class, 'index']);
@@ -69,7 +71,7 @@ Route::post('quitar-permisos/{user_id}', [RolesController::class, ]) ->name('qui
 Route::post('guardar', [EditarProductoController::class, 'store']) ->name('guardar.producto');
 Route::post('eliminar/{id}', [EditarProductoController::class, 'delete'])->name('eliminar.producto');
 Route::post('/actualizar/{id}', [EditarProductoController::class, 'update'])->name('actualizar.producto');
-Route::post('/procesar_pedido', 'PedidoController@procesarPedido')->name('procesar_pedido');
-Route::post('/clear_cart', 'BolsaController@clear')->name('clear_cart');
-Route::post('/eliminar_producto', 'BolsaController@eliminarProducto')->name('eliminar_producto');
 
+
+Route::post('/procesar_pedido', [BebidasAlcholicasController::class, 'procesarPedido'])->name('procesar.pedido');
+Route::post('/eliminar/{id}', [BolsaController::class, 'eliminarProducto'])->name('eliminar.producto');

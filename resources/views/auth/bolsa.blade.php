@@ -27,8 +27,7 @@
         <div class="botonera">
             <a>
                 <div class="boton_toolbar1" onclick="toggleSearchBar()"></div>
-                <input type="text" id="searchBar" class="barraBusqueda" placeholder="Buscar..."
-                    style="display: none;">
+                <input type="text" id="searchBar" class="barraBusqueda" placeholder="Buscar..." style="display: none;">
             </a>
             <a href="/">
                 <div class="boton_toolbar2"></div>
@@ -39,19 +38,19 @@
             <div class="boton_iniciar">
                 <!--nombre de usuario registrado (perfil)  -->
                 @if (Auth::check())
-                    <div class="usuario">{{ Auth::user()->name }}</div>
-                    <div class="boton_cerrar">
-                        <form action="{{ route('logout') }}" method="POST">
-                            @csrf
-                            <button type="submit">Cerrar Sesión</button>
-                        </form>
-                    </div>
+                <div class="usuario">{{ Auth::user()->name }}</div>
+                <div class="boton_cerrar">
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit">Cerrar Sesión</button>
+                    </form>
+                </div>
                 @else
-                    <a href="{{ route('login') }}">
-                        <div class="boton_iniciar">
-                            Iniciar Sesión
-                        </div>
-                    </a>
+                <a href="{{ route('login') }}">
+                    <div class="boton_iniciar">
+                        Iniciar Sesión
+                    </div>
+                </a>
                 @endif
             </div>
         </div>
@@ -60,25 +59,35 @@
     <div class="Titulo">Bolsa</div>
     <div class="ContainerBolsa">
         <div class="ContainerProductos">
-            @foreach ($productos as $producto)
-                <div class="Producto" data-producto-id="{{ $producto->id }}">
-                    <div class="img"></div>
-                    <div class="Descripcion">
-                        <div class="Texto">
-                            <h3>{{ $producto->nombre }}</h3><br>
-                            <p>{{ $producto->descripcion }}</p><br>
-                            <p>Cantidad:</p>
-                        </div>
-                        <h2>{{ $producto->precio }}</h2>
-                        <div class="Eliminar" onclick="eliminarProductoDOM(this)" data-producto-id="{{ $producto->id }}"></div>
+            @forelse ($productos as $producto)
+            <div class="Producto" data-producto-id="{{ $producto->id }}">
+                <div class="img">
+                    <!-- Asegúrate de que la propiedad 'image' exista en tu modelo Bolsa -->
+                    <img src="{{ asset('storage/' . $producto->image) }}" alt="{{ $producto->nombre }}">
+                </div>
+                <div class="Descripcion">
+                    <div class="Texto">
+                        <h3>{{ $producto->nombre }}</h3>
+                        <p>{{ $producto->descripcion }}</p>
+                        <p>Cantidad: {{ $producto->cantidad }}</p>
+                    </div>
+                    <h2>{{ $producto->precio_total }}</h2>
+                    <div class="Eliminar">
+                    <form action="{{ route('eliminar.producto', $producto->id) }}" method="POST">
+                        @csrf
+                        <button type="submit">Eliminar</button>
+                        </form>
                     </div>
                 </div>
-            @endforeach
+            </div>
+            @empty
+            <p>No hay productos en la bolsa.</p>
+            @endforelse
         </div>
         <div class="Total"> Total a pagar
-            <div class="Precio">{{ $total }}</div>
+            <div class="Precio"></div>
         </div>
-        <form action="{{ route('clear_cart') }}" method="POST">
+        <form action="" method="POST">
             @csrf
             <button type="submit" class="BotonPagar">Pagar</button>
         </form>
