@@ -16,4 +16,9 @@ class Product extends Model
         'Stock',
         'Descripción'
     ];
+
+    public function bolsa()
+    {
+        return $this->hasMany(Bolsa::class, 'product_id');
+    }
 }

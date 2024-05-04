@@ -7,16 +7,28 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bolsa extends Model
 {
+    use HasFactory;
+
     protected $table = 'bolsa';
 
     // Define los campos asignables en masa
-    protected $fillable = ['id','nombre' , 'image', 'Descripción', 'cantidad', 'precio_total', 'sabor'];
+    protected $fillable = [
+        'product_id',
+        'user_id',
+        'cantidad',
+        'sabor',
+        'pay'
+    ];
 
     // Relación con el modelo Product (si existe)
-    public function producto()
+    public function product()
     {
-        return $this->belongsTo(Product::class, 'id');
+        return $this->belongsTo(Product::class);
     }
-    
-    use HasFactory;
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }

@@ -5,9 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\Bolsa;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HeladeriaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->only('procesarPedido');
+    }
     //
     public function index()
     {
@@ -30,19 +35,17 @@ class HeladeriaController extends Controller
     }
 
     $bolsaExistente = Bolsa::where('id', $validatedData['producto_id'])->first();
-    if ($bolsaExistente) {
-        // Si el producto ya está en la bolsa, regresar con un mensaje
-        return back()->with('error', 'Ya agregaste este producto a la bolsa.');
-    }
 
     // Crear una nueva entrada en la bolsa
     $bolsa = new Bolsa();
-    $bolsa->id = $producto->id;
-    $bolsa->image = $producto->image;
-    $bolsa->nombre = $producto->nombre;
-    $bolsa->Descripción = $producto->Descripción; 
+    $bolsa->product_id = $producto->id;
+    $bolsa->user_id = Auth::id();
     $bolsa->cantidad = $validatedData['cantidad'];
-    $bolsa->precio_total = $producto->precio * $validatedData['cantidad']; 
+
+    if ($request->has('sabor')) {
+        $bolsa->sabor = $request->sabor;
+    }
+
     $bolsa->save();
 
 
