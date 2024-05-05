@@ -192,6 +192,13 @@ body {
     border-radius: 3px;
 }
 
+.BolsaVacia{
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-shadow: 2px 5px 4px #000000;
+}
+
 .Producto {
     background-color: #ffffff;
     width: 95%;
@@ -233,6 +240,7 @@ body {
 .Texto {
     width: 75%;
     margin-left: 8px;
+    padding-right: 20px;
 }
 
 h3{
@@ -292,7 +300,7 @@ h3{
 }
 
 .BotonPagar {
-    background-color: blue;
+    background: linear-gradient(blue, #133ABF, #1882FF, #7A96F9);
     height: 50px;
     width: 200px;
     color: white;
@@ -304,7 +312,6 @@ h3{
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    background-image: linear-gradient(top, blue, #133ABF, #1882FF, #7A96F9);
     border: none;
     font-family: 'Times New Roman', Times, serif;
     cursor: pointer;

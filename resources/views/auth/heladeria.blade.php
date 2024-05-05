@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,53 +55,53 @@
                 <div class="boton_iniciar">
                     Iniciar Sesión
                 </div>
+            </a>
             @endif
 
         </div>
     </div>
 
-    <div class="Titulo">Helados</div>
+    <div class="Titulo">Heladeria</div>
 
     <div class="ContainerProductos">
         @foreach ($helados as $helado)
-            <div class="Cuadro">
-                <div class="img">
-                    <img src="{{ $helado->image }}" alt="Descripción de la imagen">
-                </div>
-                <div class="Detalle">
-                    <h1>{{ $helado->nombre }}</h1>
-                    <p>{{ $helado->Descripción }}</p>
-                    <p>Precio:{{ $helado->precio }}</p>
-
-                    <div class="botones">
+        <div class="Cuadro">
+            <div class="img">
+                <img src="{{ $helado->image }}" alt="Descripción de la imagen">
+            </div>
+            <div class="Detalle">
+                <h1>{{ $helado->nombre }}</h1>
+                <p>{{ $helado->Descripción }}</p>
+                <p>Precio: {{ $helado->precio }}</p>
+                <div class="botones">
                     <form action="{{ route('procesar.pedido.helado') }}" method="POST">
                         @csrf <!-- Agrega esto si estás utilizando Blade para evitar el error CSRF -->
                         <div class="Sabores">
                             <h3>Sabores:</h3>
                             <label class="Sabor" id="sabor1">
-                                <input type="radio" name="sabor" value="Chocolate" class="SaborCheckbox-button">
+                                <input type="checkbox" name="sabor" value="Chocolate" class="SaborCheckbox-button">
                                 <div class="SaborImagen"></div>
                                 <span class="texto-descriptivo">Chocolate</span>
                             </label>
                             <label class="Sabor" id="sabor2">
-                                <input type="radio" name="sabor" value="Vainilla" class="SaborCheckbox-button">
+                                <input type="checkbox" name="sabor" value="Vainilla" class="SaborCheckbox-button">
                                 <div class="SaborImagen"></div>
                                 <span class="texto-descriptivo">Vainilla</span>
                             </label>
                             <label class="Sabor" id="sabor3">
-                                <input type="radio" name="sabor" value="Fresa" class="SaborCheckbox-button">
+                                <input type="checkbox" name="sabor" value="Fresa" class="SaborCheckbox-button">
                                 <div class="SaborImagen"></div>
                                 <span class="texto-descriptivo">Fresa</span>
                             </label>
                             <label class="Sabor" id="sabor4">
-                                <input type="radio" name="sabor" value="Chicle" class="SaborCheckbox-button">
+                                <input type="checkbox" name="sabor" value="Chicle" class="SaborCheckbox-button">
                                 <div class="SaborImagen"></div>
                                 <span class="texto-descriptivo">Chicle</span>
                             </label>
                         </div>
                         <div class="botones">
                             <label for="cantidad">
-                                <h5>Cantidad</h5>
+                                <h3>Cantidad</h3>
                             </label>
                             <input type="number" id="cantidad" name="cantidad" min="1" value="1">
                         </div>
@@ -107,11 +110,10 @@
                     </form>
                 </div>
             </div>
+        </div>
         @endforeach
     </div>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
     <script src="{{ asset('asset/js/Productos.js') }}"></script>
 </body>
 

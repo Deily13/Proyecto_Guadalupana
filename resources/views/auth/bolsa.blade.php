@@ -27,8 +27,7 @@
         <div class="botonera">
             <a>
                 <div class="boton_toolbar1" onclick="toggleSearchBar()"></div>
-                <input type="text" id="searchBar" class="barraBusqueda" placeholder="Buscar..."
-                    style="display: none;">
+                <input type="text" id="searchBar" class="barraBusqueda" placeholder="Buscar..." style="display: none;">
             </a>
             <a href="/">
                 <div class="boton_toolbar2"></div>
@@ -39,22 +38,22 @@
             <div class="boton_iniciar">
                 <!--nombre de usuario registrado (perfil)  -->
                 @if (Auth::check())
-            <div class="usuario" onclick="desplegable()">
-                {{ Auth::user()->name }}
-                <div class="desplegable" id="desplegableoption" style="display: none;">
-                    <form action="{{ route('logout') }}" method="POST">
-                        @csrf
-                        <button id="buttonc" type="submit">Cerrar Sesion</button>
-                    </form>
+                <div class="usuario" onclick="desplegable()">
+                    {{ Auth::user()->name }}
+                    <div class="desplegable" id="desplegableoption" style="display: none;">
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <button id="buttonc" type="submit">Cerrar Sesion</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
-            @else
-            <a href="{{ route('login') }}">
-                <div class="boton_iniciar">
-                    Iniciar Sesión
-                </div>
-            </a>
-            @endif
+                @else
+                <a href="{{ route('login') }}">
+                    <div class="boton_iniciar">
+                        Iniciar Sesión
+                    </div>
+                </a>
+                @endif
             </div>
         </div>
     </div>
@@ -63,42 +62,49 @@
     <div class="ContainerBolsa">
         <div class="ContainerProductos">
             @forelse ($productos as $producto)
-                <div class="Producto" data-producto-id="{{ $producto->id }}">
-                    <div class="img">
-                        <!-- Asegúrate de que la propiedad 'image' exista en tu modelo Bolsa -->
-                        <img src="{{ $producto->product->image }}" alt="{{ $producto->product->nombre }}">
-                    </div>
-                    <div class="Descripcion">
-                        <div class="Texto">
-                            <h3>{{ $producto->product->nombre }}</h3>
-                            <p>{{ $producto->product->Descripción }}</p>
-                            @if ($producto->sabor !== null)
-                            <p>Sabor: {{ $producto->sabor }}</p>
-                            @endif
-                            <br>
-                            <p>Cantidad: {{ $producto->cantidad }}</p><br>
-                            <p>Precio: ${{ number_format($producto->product->precio * $producto->cantidad, 2, ',', '.') }}</p>
-                        </div>
-                        <h2>{{ $producto->product->precio_total }}</h2>
-                        <div>
-                            <form action="{{ route('borrar.producto', $producto->id) }}" method="POST">
-                                @csrf
-                                <button type="submit" class="Eliminar"></button>
-                            </form>
-                        </div>
-                    </div>
+            <div class="Producto" data-producto-id="{{ $producto->id }}">
+                <div class="img">
+                    <!-- Asegúrate de que la propiedad 'image' exista en tu modelo Bolsa -->
+                    <img src="{{ $producto->product->image }}" alt="{{ $producto->product->nombre }}">
                 </div>
+                <div class="Descripcion">
+                    <div class="Texto">
+                        <h3>{{ $producto->product->nombre }}</h3>
+                        <p>{{ $producto->product->Descripción }}</p><br>
+                        @if ($producto->sabor !== null)
+                        <p>Sabor: {{ $producto->sabor }}</p>
+                        @endif
+                        <br>
+                        <p>Cantidad: {{ $producto->cantidad }}</p><br>
+                    </div>
+
+                    <h2> ${{ number_format($producto->product->precio * $producto->cantidad, 2, ',', '.') }}</h2>
+                    <h2>{{ $producto->product->precio_total }}</h2>
+
+                    <form action="{{ route('borrar.producto', $producto->id) }}" method="POST">
+                        @csrf
+                        <button type="submit" class="Eliminar"></button>
+                    </form>
+                </div>
+
+    
+                   
+            
+
+            </div>
             @empty
-                <p>No hay productos en la bolsa.</p>
+            <div class="BolsaVacia">
+            Tu bolsa esta vacia
+            </div>
             @endforelse
         </div>
         <div class="Total"> Total a pagar
             <div class="Precio"><strong>${{ number_format($total, 2, ',', '.') }}</strong></div>
         </div>
-        <form action="{{ route('enviar.correo') }}"" method="POST">
+        <form action="{{ route('enviar.correo') }}" method=" POST">
             @csrf
             <input type="hidden" name="total" value="{{ $total }}">
-            <button type="submit" class="BotonPagar">Pagar</button>
+            <button class="BotonPagar" type="submit" >Pagar</button>
         </form>
     </div>
 
