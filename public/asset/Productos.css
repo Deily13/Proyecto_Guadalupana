@@ -221,7 +221,7 @@ img {
 }
 
 p {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 
@@ -236,9 +236,10 @@ p {
 
 .Sabores {
     width: calc(100% - 10px);
-    height: 50px;
+    height: 40px;
     display: inline-flex;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 h3 {
@@ -290,7 +291,8 @@ h3 {
     left: 0;
 }
 
-.Sabor input[type="checkbox"]:checked+.SaborImagen:before {
+.Sabor input[type="checkbox"]:checked + .SaborImagen:before {
+    transform: scale(1.1); 
     content: "";
     position: absolute;
     width: 100%;

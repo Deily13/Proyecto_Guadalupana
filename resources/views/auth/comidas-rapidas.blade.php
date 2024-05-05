@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +27,8 @@
         <div class="botonera">
             <a>
                 <div class="boton_toolbar1" onclick="toggleSearchBar()"></div>
-                <input type="text" id="searchBar" class="barraBusqueda" placeholder="Buscar..." style="display: none;">
+                <input type="text" id="searchBar" class="barraBusqueda" placeholder="Buscar..."
+                    style="display: none;">
             </a>
             <a href="/dashboard">
                 <div class="boton_toolbar2"></div>
@@ -42,20 +42,21 @@
 
             <!--nombre de usuario registrado (perfil)  -->
             @if (Auth::check())
-            <div class="usuario" onclick="desplegable()">
-                {{ Auth::user()->name }}
-                <div class="desplegable" id="desplegableoption" style="display: none;">
-                    <form action="{{ route('logout') }}" method="POST">
-                        @csrf
-                        <button id="buttonc" type="submit">Cerrar Sesion</button>
-                    </form>
+                <div class="usuario" onclick="desplegable()">
+                    {{ Auth::user()->name }}
+                    <div class="desplegable" id="desplegableoption" style="display: none;">
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <button id="buttonc" type="submit">Cerrar Sesion</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
             @else
-            <a href="{{ route('login') }}">
-                <div class="boton_iniciar">
-                    Iniciar Sesión
-                </div>
+                <a href="{{ route('login') }}">
+                    <div class="boton_iniciar">
+                        Iniciar Sesión
+                    </div>
+                </a>
             @endif
 
         </div>
@@ -65,32 +66,34 @@
 
     <div class="ContainerProductos">
         @foreach ($comidas as $comida)
-        <div class="Cuadro">
-            <div class="img">
-                <img src="{{ $comida->image}}" alt="Descripción de la imagen">
-            </div>
-            <div class="Detalle">
-                <h1>{{ $comida->nombre }}</h1>
-                <p>{{ $comida->Descripción }}</p>
-                <p>Precio: {{ $comida->precio }}</p>
-                <p>Disponibles: {{ $comida->Stock }}</p>
-                <div class="botones">
-                    <form action="{{ route('procesar.pedido') }}" method="POST">
-                        @csrf <!-- Agrega esto si estás utilizando Blade para evitar el error CSRF -->
-                        <div class="botones">
-                            <label for="cantidad">
-                                <h5>Cantidad</h5>
-                            </label>
-                            <input type="number" id="cantidad" name="cantidad" min="1" value="1">
-                        </div>
-                        <input type="hidden" name="producto_id" value="{{ $comida->id }}"> 
-                        <button id="botonPedir1" type="submit" onclick="cambiarTexto(this)">Pedir</button>
-                    </form>
+            <div class="Cuadro">
+                <div class="img">
+                    <img src="{{ $comida->image }}" alt="Descripción de la imagen">
+                </div>
+                <div class="Detalle">
+                    <h1>{{ $comida->nombre }}</h1>
+                    <p>{{ $comida->Descripción }}</p>
+                    <p>Precio: {{ $comida->precio }}</p>
+                    <p>Disponibles: {{ $comida->Stock }}</p>
+                    <div class="botones">
+                        <form action="{{ route('procesar.pedido') }}" method="POST">
+                            @csrf <!-- Agrega esto si estás utilizando Blade para evitar el error CSRF -->
+                            <div class="botones">
+                                <label for="cantidad">
+                                    <h5>Cantidad</h5>
+                                </label>
+                                <input type="number" id="cantidad" name="cantidad" min="1" value="1">
+                            </div>
+                            <input type="hidden" name="producto_id" value="{{ $comida->id }}"> 
+                            <button id="botonPedir1" type="submit" onclick="cambiarTexto(this)">Pedir</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
         @endforeach
     </div>
 
     <script src="{{ asset('asset/js/Productos.js') }}"></script>
 </body>
+
+</html>

@@ -146,7 +146,7 @@ body {
     padding: 5px 5px;
 }
 
-.button{
+button{
     background-color: transparent;
     border: none;
     cursor: pointer;
