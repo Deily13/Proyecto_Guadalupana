@@ -14,7 +14,7 @@ class LoginController extends Controller
     {
         // Verifica si el usuario tiene el rol de administrador
         if ($user->rol === 'admin') {
-            return redirect('/admin'); // Redirige a la vista de administrador
+            return redirect()->to('/admin'); // Redirige a la vista de administrador
         }
 
         // Si el usuario no es administrador, puedes redirigirlo a otra vista, por ejemplo, la página de inicio

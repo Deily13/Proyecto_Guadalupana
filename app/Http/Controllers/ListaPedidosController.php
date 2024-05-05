@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ListaPedidosController extends Controller
@@ -9,10 +10,18 @@ class ListaPedidosController extends Controller
     //
     public function index()
     {
-        return view('/auth/administrador/lista-pedidos');
+        $pedidos = User::whereHas('bolsa', function($query){
+            $query->where('pay', false);
+        })
+        ->with([
+            'bolsa'=> function($query){
+            $query->where('pay', false);
+            },
+            'bolsa.product'
+        ])
+        ->get();
 
+        // dd(json_decode($pedidos));
+        return view('/auth/administrador/lista-pedidos', compact('pedidos'));
     }
 }
-
-
-//no hay formulario solo boton de revisar pedido

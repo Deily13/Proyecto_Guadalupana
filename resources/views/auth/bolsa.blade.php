@@ -101,7 +101,7 @@
         <div class="Total"> Total a pagar
             <div class="Precio"><strong>${{ number_format($total, 2, ',', '.') }}</strong></div>
         </div>
-        <form action="{{ route('enviar.correo') }}" method=" POST">
+        <form action="{{ route('enviar.correo') }}" method="POST">
             @csrf
             <input type="hidden" name="total" value="{{ $total }}">
             <button class="BotonPagar" type="submit" >Pagar</button>
