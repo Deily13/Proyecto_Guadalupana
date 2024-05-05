@@ -131,6 +131,8 @@ body {
     align-items: center;
     font-family: 'Times New Roman', Times, serif;
     cursor: pointer;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 .desplegable {
@@ -156,8 +158,16 @@ button{
     align-items: center;
     font-family: 'Times New Roman', Times, serif;
     cursor: pointer;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
+.boton_iniciar a, .boton_iniciar a:link, .boton_iniciar a:visited, .boton_iniciar a:hover, .boton_iniciar a:active {
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+}
 
 .toolbar_img {
     display: flex;
@@ -180,12 +190,12 @@ button{
     background-color: white;
 }
 
-.saludo {
-    justify-content: center;
-    color: white;
-    text-align: center;
-    font-size: 30px;
-    margin-bottom: 70px;
+
+@font-face {
+    font-family: 'Oleo Script';
+    src: url('/fonts/OleoScript.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 .Container_Producto {
@@ -221,12 +231,18 @@ button{
 h4 {
     margin: 12px 8px;
     color: #fff;
-    font-size: 25px;
-    width: 100%;
+    font-size: 35px;
     text-align: center;
-    font-family: 'Stardos Stencil', sans-serif;
-    text-decoration: none !important;
-    border-bottom: none !important;
+    font-family: 'Oleo Script';
+    text-shadow: 2px 8px 4px #000000;
+}
+
+.Cuadro, .Cuadro:link, .Cuadro:visited, .Cuadro:hover, .Cuadro:active {
+    text-decoration: none;
+}
+
+.Cuadro h4, .Cuadro h4:link, .Cuadro h4:visited, .Cuadro h4:hover, .Cuadro h4:active {
+    text-decoration: none;
 }
 
 h4::after,
@@ -239,10 +255,11 @@ h4::before {
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
+
 }
 
 img {
-    width: 300px;
+    width: 380px;
     height: 350px;
 }
 

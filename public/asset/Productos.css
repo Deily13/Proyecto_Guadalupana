@@ -154,10 +154,19 @@ body {
 
 .boton_iniciar {
     align-items: center;
+    text-align: center;
     font-family: 'Times New Roman', Times, serif;
-
+    cursor: pointer;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
+ .boton_iniciar a, .boton_iniciar a:link, .boton_iniciar a:visited, .boton_iniciar a:hover, .boton_iniciar a:active {
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+}
 
 .toolbar_img {
     display: flex;

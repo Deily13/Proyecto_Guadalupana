@@ -53,13 +53,10 @@
                 </div>
             </div>
             @else
-            <a href="{{ route('login') }}">
                 <div class="boton_iniciar">
-                    Iniciar Sesión
+                <a href="{{ route('login') }}">Iniciar Sesión</a>
                 </div>
             @endif
-            </a>
-
         </div>
     </div>
 
