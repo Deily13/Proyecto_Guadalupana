@@ -19,7 +19,7 @@
     <button class="openbtn" onclick="openNav()">☰ Menú</button>
 
     <div class="content">
-        <h2 id="welcome">Bienvenido</h2>
+        <h2>Bienvenido {{ auth()->check() ? auth()->user()->first_name . ' ' . auth()->user()->last_name : '' }}</h2>
         <p>Some text..</p>
     </div>
 
