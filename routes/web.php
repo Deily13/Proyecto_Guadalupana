@@ -11,7 +11,6 @@ use App\Http\Controllers\ListaPedidosController;
 use App\Http\Controllers\AdministradorController;
 use App\Http\Controllers\EditarProductoController;
 use App\Http\Controllers\InformacionController;
-use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RolesController;
 use Illuminate\Support\Facades\Route;
@@ -57,7 +56,6 @@ Route::get('combos', [CombosController::class, 'index']);
 Route::get('bolsa', [BolsaController::class, 'mostrarBolsa'])->name('bolsa.mostrar');
 Route::get('informacion', [InformacionController::class, 'index']);
 Route::get('lista-pedidos', [ListaPedidosController::class, 'index']);
-Route::get('pedidos', [PedidoController::class, 'index']);
 Route::get('editar-productos', [EditarProductoController::class, 'index'])->name('editar-productos');
 Route::get('roles', [RolesController::class, 'index']);
 Route::get('admin', [AdministradorController::class, 'index']);
@@ -78,3 +76,4 @@ Route::post('/procesar_pedido/helado', [HeladeriaController::class, 'procesarPed
 Route::post('/borrar-producto/{id}', [BolsaController::class, 'borrarProducto'])->name('borrar.producto');
 
 Route::post('/enviar-correo', [BolsaController::class, 'pagar'])->name('enviar.correo');
+

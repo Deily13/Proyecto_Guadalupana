@@ -24,24 +24,31 @@
 
     <div class="ContenedorPedidos">
         @foreach ($pedidos as $key => $pedido)
-            <div class="DescripcionBreve">
-                <div class="Numerador">{{ $key+1 }}</div>
-                <div class="Datos">
-                    <h4><b>Momento:</b> {{ $pedido->bolsa[0]->created_at->diffForHumans()  }}</h4>
-                    <a><b>Cliente:</b> {{ $pedido->first_name.' '.$pedido->last_name }}</a><br>
-                    <a><b>Productos:</b>  @php
-                        $total = 0;
+        <div class="DescripcionBreve">
+            <div class="Numerador">{{ $key+1 }}</div>
+            <div class="Datos">
+                <h5><b>Momento:</b> {{ $pedido->bolsa[0]->created_at->diffForHumans()  }}</h5>
+                <a><b>Cliente:</b> {{ $pedido->first_name.' '.$pedido->last_name }}</a><br>
+                <a><b> Dirección:</b> {{ $pedido->address }}</a></br>
+                <a><b> Teléfono:</b> {{ $pedido->phone_number }}</a></br>
+                <a><b> Correo:</b> {{ $pedido->email }}</a></br>
+                <a><b>Productos:</b>
+                    @php
+                    $total = 0;
                     @endphp
                     @foreach ($pedido->bolsa as $bolsa)
-                        {{ $bolsa->product->nombre }},
-                        @php
-                            $total += $bolsa->cantidad * $bolsa->product->precio;
-                        @endphp
-                    @endforeach</a><br>
-                    <a><b>Total:</b> ${{ number_format($total, 2) }}</a>
-                </div>
-                <div class="BotonRevisar" onclick="window.location.href='/pedidos'">Revisar</div>
+                    {{ $bolsa->product->nombre }},
+                    @php
+                    $total += $bolsa->cantidad * $bolsa->product->precio;
+                    @endphp
+                    Sabor: {{ $bolsa->sabor}}</br>
+                    Cantidad: {{ $bolsa->cantidad}}</br>
+                    Precio: {{ $bolsa->product->precio}}<br>
+                    @endforeach
+                </a>
+                <a><b>Total:</b> ${{ number_format($total, 2) }}</a>
             </div>
+        </div>
         @endforeach
     </div>
 
