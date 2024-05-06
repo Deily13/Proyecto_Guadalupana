@@ -1,45 +1,3 @@
-<?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nombre = trim($_POST['nombre']);
-    $apellido = trim($_POST['apellido']);
-    $usuario = trim($_POST['user']);
-    $correo = trim($_POST['correo']);
-    $tipoId = $_POST['tipoId'];
-    $numeroId = trim($_POST['numeroId']);
-    $movil = trim($_POST['movil']);
-    $direccion = trim($_POST['direccion']);
-    $rol = $_POST['rol'];
-
-    if (!empty($nombre) && !empty($apellido) && !empty($usuario) && !empty($correo) && !empty($tipoId) && !empty($numeroId) && !empty($movil) && !empty($direccion) && !empty($rol)) {
-        // Crea una conexión a la base de datos (debes reemplazar los valores)
-        $servername = 'localhost';
-        $username = 'username';
-        $password = 'password';
-        $dbname = 'nombre_base_de_datos';
-
-        $conn = new mysqli($servername, $username, $password, $dbname);
-
-        // Verifica la conexión
-        if ($conn->connect_error) {
-            die('Conexión fallida: ' . $conn->connect_error);
-        }
-
-        // Inserta los datos en la base de datos
-        $sql = "INSERT INTO usuarios (nombre, apellido, usuario, correo, tipo_id, numero_id, movil, direccion, rol) VALUES ('$nombre', '$apellido', '$usuario', '$correo', '$tipoId', '$numeroId', '$movil', '$direccion', '$rol')";
-
-        if ($conn->query($sql) === true) {
-            echo 'Registro insertado correctamente';
-        } else {
-            echo 'Error: ' . $sql . '<br>' . $conn->error;
-        }
-
-        $conn->close();
-    } else {
-        echo 'Por favor, complete todos los campos del formulario.';
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -118,36 +76,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <input type="submit" value="Agregar" id="addButton">
             </div>
         </form>
-
-
-        <form class="form-horizontal" id="form-buscar">
-            @csrf
-            <div>
-                <label for="nombre">Nombre:</label><br>
-                <input type="text" id="nombre" name="nombre">
-            </div>
-            <div>
-                <label for="apellido">Apellido:</label><br>
-                <input type="text" id="apellido" name="apellido">
-            </div>
-            <div>
-                <label for="correo">Correo:</label><br>
-                <input type="text" id="correo" name="correo">
-            </div>
-            <div>
-                <label for="rol">Rol:</label><br>
-                <select id="rol" name="rol">
-                    <option value="admin">Administrador</option>
-                    <option value="usuario">Usuario</option>
-                </select>
-            </div>
-            <div class="botones">
-                <input type="submit" value="Agregar" id="addButton">
-            </div>
-        </form>
-
-
-
 
         <div class="info-container">
             <div class="info">
