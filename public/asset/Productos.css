@@ -311,25 +311,25 @@ h3 {
 }
 
 .SaborCheckbox-button[value="Chocolate"]+.SaborImagen {
-    background: url('../img/Icon/IMG-20240315-WA0006.jpg');
+    background: url('../img/Productos/chocolate.jpg');
     background-size: cover;
     background-position: center;
 }
 
 .SaborCheckbox-button[value="Vainilla"]+.SaborImagen {
-    background: url('../img/Icon/IMG-20240315-WA0011.jpg');
+    background: url('../img/Productos/vainilla.jpg');
     background-size: cover;
     background-position: center;
 }
 
 .SaborCheckbox-button[value="Fresa"]+.SaborImagen {
-    background: url('../img/Icon/IMG-20240315-WA0006.jpg');
+    background: url('../img/Productos/fresa.jpg');
     background-size: cover;
     background-position: center;
 }
 
 .SaborCheckbox-button[value="Chicle"]+.SaborImagen {
-    background: url('../img/Icon/IMG-20240315-WA0011.jpg');
+    background: url('../img/Productos/chicle.jpg');
     background-size: cover;
     background-position: center;
 }
