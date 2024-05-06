@@ -16,7 +16,6 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->string('total');
             $table->string('numero_factura');
-            $table->boolean('revisado');
             $table->timestamps();
         });
     }
