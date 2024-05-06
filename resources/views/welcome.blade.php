@@ -24,10 +24,6 @@
         </div>
 
         <div class="botonera">
-            <a>
-                <div class="boton_toolbar1" onclick="toggleSearchBar()"></div>
-                <input type="text" id="searchBar" class="barraBusqueda" placeholder="Buscar..." style="display: none;">
-            </a>
             <a href="/">
                 <div class="boton_toolbar2"></div>
             </a>
