@@ -67,7 +67,6 @@
                 <h1>{{ $comida->nombre }}</h1>
                 <p>{{ $comida->Descripción }}</p>
                 <p>Precio: {{ $comida->precio }}</p>
-                <p>Disponibles: {{ $comida->Stock }}</p>
                 <div class="botones">
                     <form action="{{ route('procesar.pedido') }}" method="POST">
                         @csrf <!-- Agrega esto si estás utilizando Blade para evitar el error CSRF -->

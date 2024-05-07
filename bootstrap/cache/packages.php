@@ -1,4 +1,11 @@
 <?php return array (
+  'laravel-latam/spanish' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'LaravelLatam\\Spanish\\SpanishServiceProvider',
+    ),
+  ),
   'laravel/breeze' => 
   array (
     'providers' => 

@@ -56,7 +56,19 @@ class BolsaController extends Controller
         $productos = Bolsa::with('product', 'user')
             ->where('pay', false)
             ->where('user_id', auth()->id())
+            ->get();
+
+        foreach ($productos as $producto) {
+            $productoEnStock = $producto->product;
+            $productoEnStock->Stock -= $producto->cantidad;
+            $productoEnStock->save();
+        }
+
+        $productos = Bolsa::with('product', 'user')
+            ->where('pay', false)
+            ->where('user_id', auth()->id())
             ->update(['pay' => true]);
+
 
         $user = auth()->user();
         $nombre = strtoupper($user->first_name . ' ' . $user->last_name);
