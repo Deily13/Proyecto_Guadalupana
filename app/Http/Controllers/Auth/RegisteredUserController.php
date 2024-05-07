@@ -33,26 +33,26 @@ class RegisteredUserController extends Controller
     $request->validate([
         'name' => ['required', 'string', 'max:255'],
         'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-        'password' => ['required'],
-        'first_name' => ['required', 'string', 'max:255'], // Nombre
-        'last_name' => ['required', 'string', 'max:255'], // Apellidos
-        'identification_type' => ['required', 'string', 'max:255'], // Tipo de Identificación
-        'identification_number' => ['required', 'string', 'max:255'], // Número de Identificación
-        'phone_number' => ['required', 'string', 'max:255'], // Número de Celular
-        'address' => ['required', 'string', 'max:255'], // Dirección
+        'password' => ['required', 'string', 'min:8', 'max:12', 'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/', 'confirmed'],
+        'first_name' => ['required', 'string', 'max:255'],
+        'last_name' => ['required', 'string', 'max:255'], 
+        'identification_type' => ['required', 'string', 'max:255'], 
+        'identification_number' => ['required', 'string', 'max:255'],
+        'phone_number' => ['required', 'string', 'max:255'], 
+        'address' => ['required', 'string', 'max:255'], 
     ]);
 
     $user = User::create([
         'name' => $request->name,
         'email' => $request->email,
         'password' => Hash::make($request->password),
-        'first_name' => $request->first_name, // Nombre
-        'last_name' => $request->last_name, // Apellidos
-        'identification_type' => $request->identification_type, // Tipo de Identificación
-        'identification_number' => $request->identification_number, // Número de Identificación
-        'phone_number' => $request->phone_number, // Número de Celular
-        'address' => $request->address, // Dirección
-        'rol' => 'usuario', // Establecer el rol como "usuario"
+        'first_name' => $request->first_name, 
+        'last_name' => $request->last_name, 
+        'identification_type' => $request->identification_type, 
+        'identification_number' => $request->identification_number, 
+        'phone_number' => $request->phone_number, 
+        'address' => $request->address, 
+        'rol' => 'usuario', 
     ]);
 
     event(new Registered($user));

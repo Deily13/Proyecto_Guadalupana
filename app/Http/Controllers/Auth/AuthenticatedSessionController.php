@@ -20,17 +20,7 @@ class AuthenticatedSessionController extends Controller
         return view('auth.login');
     }
 
-    /**
-     * Handle an incoming authentication request.
-     */
-    // public function store(LoginRequest $request): RedirectResponse
-    // {
-    //     $request->authenticate();
-
-    //     $request->session()->regenerate();
-
-    //     return redirect()->intended(RouteServiceProvider::HOME);
-    // }
+ 
 
     public function store(LoginRequest $request): RedirectResponse
     {
@@ -38,7 +28,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        if (auth()->user()->rol == 'admin') { // Asegúrate de tener un método isAdmin en tu modelo User
+        if (auth()->user()->rol == 'admin') { 
             return redirect()->to('/admin');
         }
 
@@ -63,14 +53,8 @@ class AuthenticatedSessionController extends Controller
     {
         // Obtén el usuario autenticado
         $user = Auth::user();
-
-        // Obtén la bolsa de compras del usuario
         $bolsa = $user->bolsa;
-
-        // Obtén los productos en la bolsa de compras
         $productos = $bolsa->productos;
-
-        // Calcula el total de la bolsa de compras
         $total = $productos->sum('precio');
 
         return view('auth.bolsa', compact('productos', 'total'));

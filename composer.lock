@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "467a4527514ed174f8a754bf7e2191d6",
+    "content-hash": "a677320c84f730b9d7458bef7de00559",
     "packages": [
         {
             "name": "brick/math",
@@ -1388,6 +1388,63 @@
                 }
             ],
             "time": "2023-12-03T19:50:20+00:00"
+        },
+        {
+            "name": "laravel-latam/spanish",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CodericLatam/laravel-spanish.git",
+                "reference": "09f2527095c201663c750173f3b80e3cedf82baa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CodericLatam/laravel-spanish/zipball/09f2527095c201663c750173f3b80e3cedf82baa",
+                "reference": "09f2527095c201663c750173f3b80e3cedf82baa",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^9.0|^10.0",
+                "laravel/framework": "^9.0|^10.0",
+                "php": "^7.3|^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LaravelLatam\\Spanish\\SpanishServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaravelLatam\\Spanish\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Neftalí Yagua",
+                    "email": "neftaliyagua@fedoraproject.org",
+                    "homepage": "https://neftaliyagua.fedorapeople.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Spanish Package for Laravel",
+            "homepage": "https://github.com/laravel-latam/spanish",
+            "keywords": [
+                "laravel",
+                "latam",
+                "spanish"
+            ],
+            "support": {
+                "issues": "https://github.com/CodericLatam/laravel-spanish/issues",
+                "source": "https://github.com/CodericLatam/laravel-spanish/tree/1.1.1"
+            },
+            "time": "2024-01-28T21:04:13+00:00"
         },
         {
             "name": "laravel/framework",
