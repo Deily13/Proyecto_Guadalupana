@@ -34,11 +34,11 @@ window.addEventListener("resize", function (event) {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Define la función addInfo aquí
-    function addInfo(event) {
-        event.preventDefault(); // Evita que el formulario se envíe y la página se recargue
 
-        // Obtiene los valores del formulario
+    function addInfo(event) {
+        event.preventDefault(); 
+
+        
         var nombre = document.getElementById('nombre').value.trim();
         var apellido = document.getElementById('apellido').value.trim();
         var usuario = document.getElementById('user').value.trim();
@@ -49,13 +49,13 @@ document.addEventListener("DOMContentLoaded", function () {
         var direccion = document.getElementById('direccion').value.trim();
         var rol = document.getElementById('rol').value;
 
-        // Verifica si todos los campos del formulario están completos
+        
         if (nombre !== '' && apellido !== '' && usuario !== '' && correo !== '' && tipoId !== '' && numeroId !== '' && movil !== '' && direccion !== '' && rol !== '') {
-            // Crea una nueva fila en la tabla
+           
             var tabla = document.querySelector(".info table tbody");
             var nuevaFila = tabla.insertRow(-1);
 
-            // Inserta celdas en la fila
+            
             nuevaFila.insertCell(0).textContent = nombre;
             nuevaFila.insertCell(1).textContent = apellido;
             nuevaFila.insertCell(2).textContent = usuario;
@@ -69,36 +69,16 @@ document.addEventListener("DOMContentLoaded", function () {
             if (rol === 'admin') {
                 var quitarButton = document.createElement('button');
                 quitarButton.textContent = 'Quitar Permisos';
-                // Define la función que se ejecutará cuando se haga clic en el botón
-                quitarButton.onclick = function() {
-                    // Cambia el rol del usuario a 'invitado'
-                    document.getElementById('rol').value = 'invitado';
-                    // Actualiza el texto de la celda del rol en la tabla
-                    nuevaFila.cells[3].textContent = 'invitado';
-                    // Oculta el botón en lugar de eliminarlo
-                    this.style.display = 'none';
-                };
+                
                 nuevaFila.insertCell(9).appendChild(quitarButton);
             }
         } else {
             console.error("Por favor, complete todos los campos del formulario.");
         }
 
-        // Restablece el formulario después de agregar la fila
         document.getElementById("Form-user-dat").reset();
     }
 
-    // Agrega el evento 'submit' al formulario y vincula la función addInfo
-    var form = document.getElementById("Form-user-dat");
-    if (form) {
-        form.addEventListener("submit", addInfo);
-    } else {
-        console.error('El formulario con ID "Form-user-dat" no se encontró en el DOM.');
-    }
-
-
-
-    // Agrega el evento 'submit' al formulario y vincula la función addInfo
     var form = document.getElementById("Form-user-dat");
     if (form) {
         form.addEventListener("submit", addInfo);
