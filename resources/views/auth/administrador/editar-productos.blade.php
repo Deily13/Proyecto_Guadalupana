@@ -42,7 +42,7 @@
 
             <div class="form-group">
                 <label for="productFeatures">Características:</label>
-                <textarea class="form-control" id="productFeatures" name="Descripción"></textarea>
+                <textarea class="form-control" id="productFeatures" name="Descripción" required></textarea>
             </div>
 
             <div class="form-group">
@@ -405,11 +405,4 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <script src="{{ asset('asset/js/editar-productos.js') }}"></script>
 </body>
-<script>
-    window.setTimeout(function() {
-        var flash = document.getElementById('flash-message');
-        if (flash) flash.style.display = 'none';
-    }, 2000);
-</script>
-
 </html>

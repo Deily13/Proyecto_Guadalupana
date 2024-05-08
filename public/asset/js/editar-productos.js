@@ -105,3 +105,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+window.setTimeout(function() {
+    var flash = document.getElementById('flash-message');
+    if (flash) flash.style.display = 'none';
+}, 2000);

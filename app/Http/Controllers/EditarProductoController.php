@@ -64,7 +64,7 @@ class EditarProductoController extends Controller
         $request->validate([
             'productImage' => 'required|url',
             'productName' => 'required|string|max:255',
-            'productPrice' => 'required|numeric',
+            'productPrice' => 'required|numeric|min:1',
             'productFeatures' => 'required|string',
             // Agrega más reglas de validación según sea necesario para otros campos del formulario
         ]);

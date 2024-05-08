@@ -44,7 +44,7 @@ class BolsaController extends Controller
 
         // Si el producto existe, eliminarlo
         if ($bolsa) {
-            $bolsa->delete(); // Utiliza el método delete() para eliminar el producto
+            $bolsa->delete();
             return back()->with('success', 'Producto eliminado correctamente.');
         } else {
             return back()->with('error', 'El producto no se encontró.');
